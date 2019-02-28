@@ -1,3 +1,3 @@
-# Aleksander Szewczak 246749
+# Aleksander Szewczak
 
 email?
