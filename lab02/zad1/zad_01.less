@@ -1,0 +1,25 @@
+
+body {
+    background: gray;
+}
+
+.repeat(@bg-color: white, @border-color: black) {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-color: @bg-color;
+    border: 2px solid @border-color;
+    text-align: center;
+}
+
+.A {
+    .repeat(yellow, red);
+    left: 15%;
+    top: 15%;
+}
+
+.B {
+    .repeat(white, blue);
+    right: 15%;
+    top: 30%;
+}
