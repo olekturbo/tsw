@@ -1,0 +1,61 @@
+@aColor: rgb(143,51,51);
+@borderColor: rgb(61,58,58);
+@color: rgb(82,79,79);
+@background: rgb(192, 188, 188);
+@menuWidth: 14%;
+
+body {
+    background: gray;
+}
+
+#menu {
+    float: left;
+    display: grid;
+    width: @menuWidth;
+    text-align: center;
+    margin-top: 5%;
+
+    .el_menu {
+        background: white;
+        border-bottom: 1px solid black;
+        border-right: 1px solid black;
+        padding: 2px;
+    
+        a {
+            color: @aColor;
+            text-decoration: none;
+        }
+    }
+}
+
+#tresc {
+    float: left;
+    left: 15%;
+    border-left: 3px solid @borderColor;
+    padding-left: 1%;
+    min-height: 99vh;
+    position: absolute;
+    top: 4%;
+}
+
+#naglowek {
+    width: 50%;
+    border-bottom: 1px solid black;
+    background: @background;
+    color: @color;
+    position: fixed;
+    left: 0;
+    padding: 10px;
+    top: 0;
+}
+
+#stopka {
+    width: 50%;
+    border-top: 1px solid black;
+    background: @background;
+    color: @color;
+    position: fixed;
+    left: 0;
+    padding: 10px;
+    bottom: 0;
+}
