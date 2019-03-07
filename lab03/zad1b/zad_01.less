@@ -1,0 +1,32 @@
+@gray_color: rgb(88, 87, 87);
+@box_size: 40px;
+
+#outer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    height: @box_size;
+    width: @box_size;
+    text-align: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:first-child {
+        background: @gray_color
+    }
+
+    &:nth-child(2) {
+        background: lighten(@gray_color, 20%)
+    }
+
+    &:nth-child(3) {
+        background: lighten(@gray_color, 40%)
+    }
+}
