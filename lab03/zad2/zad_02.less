@@ -1,0 +1,35 @@
+@gray_color: rgb(170, 165, 165);
+@darken_gray_color: darken(@gray_color, 15%);
+
+#all {
+    display: flex;
+    flex-direction: row;
+}
+
+#menu {
+    background: @gray_color;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+        background: white;
+        width: 60%;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding: 5px 0;
+        border-left: 5px solid @darken_gray_color;
+        border-top: 2px solid @darken_gray_color;
+        border-top-left-radius: 20%;
+    }
+}
+
+#main {
+    background: lighten(@gray_color, 20%);
+    display: flex;
+    flex-direction: column;
+    padding-left: 2%;
+    width: 80%;
+}
