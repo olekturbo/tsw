@@ -21,6 +21,9 @@
     &:first-child {
         background: @gray_color;
         align-self: flex-start;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 
     &:nth-child(2) {
@@ -31,5 +34,8 @@
     &:nth-child(3) {
         background: lighten(@gray_color, 40%);
         align-self: flex-end;
+        position: absolute;
+        bottom: 0;
+        right: 0;
     }
 }
