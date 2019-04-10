@@ -19,24 +19,35 @@ let createGame = (size, colorCount, steps) => {
     };
 };
 
-let countBlack = (game, move) => {
-    let count = 0;
-    for(let i = game.length; i--;) {
-        if(game[i] === move[i])
-            count++;
-    }
 
-    return count;
-};
-
-let countWhite = (game, move) => {
-    let count = 0;
-    move.forEach((element, i) => {
-        if(game.includes(element) && element !== game[i]) {
-            count++;
+let countSolution = (solution, move) => {
+    let whiteColors = 0;
+    let blackColors = 0;
+    let flags = new Array(solution.length);
+    
+    solution.forEach((s,i) => {
+        if(s === move[i]) {
+            flags[i] = true;
+            blackColors++;
         }
     });
-    return count;
+
+    solution.forEach((s, i) => {
+        if(s !== move[i]) {
+            move.forEach((m, j) => {
+                if(!flags[j] && j !== i && m === s) {
+                    flags[j] = true;
+                    whiteColors++;
+                    return;
+                }
+            });
+        }
+    });
+
+    return {
+        "black": blackColors,
+        "white": whiteColors
+    };
 };
 
 app.post('/game/new', (req, res) => {
@@ -57,14 +68,12 @@ app.post('/game/move', (req, res) => {
     let move = req.body.move;
     let result = {
         "game": req.body.game,
-        "result": {
-            "black": countBlack(solution, move),
-            "white": countWhite(solution, move)
-        },
+        "result": countSolution(solution, move),
         "steps": --games.get(req.body.game).steps,    
+        "solution": solution
     };
 
-    if(countBlack(solution, move) === games.get(req.body.game).size) {
+    if(countSolution(solution, move).black === games.get(req.body.game).size) {
         games.get(req.body.game).solved = true;
     }
 
