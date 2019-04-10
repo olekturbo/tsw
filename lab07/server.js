@@ -59,21 +59,20 @@ app.post('/game/new', (req, res) => {
         "colors": req.body.colors,
         "steps": req.body.steps
     };
+    
     games.set(newId, game);
     res.json(result);
 });
 
 app.post('/game/move', (req, res) => {
     let solution = games.get(req.body.game).solution;
-    let move = req.body.move;
     let result = {
         "game": req.body.game,
-        "result": countSolution(solution, move),
-        "steps": --games.get(req.body.game).steps,    
-        "solution": solution
+        "result": countSolution(solution, req.body.move),
+        "steps": --games.get(req.body.game).steps
     };
 
-    if(countSolution(solution, move).black === games.get(req.body.game).size) {
+    if(countSolution(solution, req.body.move).black === games.get(req.body.game).size) {
         games.get(req.body.game).solved = true;
     }
 
