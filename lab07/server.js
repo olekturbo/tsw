@@ -8,40 +8,76 @@ const port = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
 
-let ids = new Map();
-const colors = ['red', 'yellow', 'purple', 'cyan',
-                'orange', 'green', 'gray', 'blue',
-                'brown', 'orchid', 'salmon', 'violet',
-                'deepskyblue', 'dodgerblue', 'firebrick'];
+let games = new Map();
 
-let createGame = (size, colorCount) => {
-    let gameBoard = [];
-    colors.forEach(element => {
-        colors[Math.floor(Math.random()*colors.length)];
+let createGame = (size, colorCount, steps) => {
+    return {
+        solution: [...Array(size).keys()].map(x => Math.floor(Math.random() * colorCount) + 1),
+        solved: false,
+        steps: steps,
+        size: size
+    };
+};
+
+let countBlack = (game, move) => {
+    let count = 0;
+    for(let i = game.length; i--;) {
+        if(game[i] === move[i])
+            count++;
+    }
+
+    return count;
+};
+
+let countWhite = (game, move) => {
+    let count = 0;
+    move.forEach((element, i) => {
+        if(game.includes(element) && element !== game[i]) {
+            count++;
+        }
     });
+    return count;
 };
 
 app.post('/game/new', (req, res) => {
     let newId = uuidv1();
-    let game = createGame(req.body.size, req.body.colors);
+    let game = createGame(req.body.size, req.body.colors, req.body.steps);
     let result = {
         "game": newId,
         "size": req.body.size,
         "colors": req.body.colors,
         "steps": req.body.steps
     };
-    ids.set(newId, game);
+    games.set(newId, game);
     res.json(result);
 });
 
 app.post('/game/move', (req, res) => {
+    let solution = games.get(req.body.game).solution;
+    let move = req.body.move;
     let result = {
         "game": req.body.game,
         "result": {
-            "black": 1,
-            "white": 0
-        }
+            "black": countBlack(solution, move),
+            "white": countWhite(solution, move)
+        },
+        "steps": --games.get(req.body.game).steps,    
     };
+
+    if(countBlack(solution, move) === games.get(req.body.game).size) {
+        games.get(req.body.game).solved = true;
+    }
+
+    res.json(result);
+});
+
+app.post('/game/status', (req, res) => {
+    let isSolved = games.get(req.body.game).solved;
+    let result = {
+        "game": req.body.game,
+        "solved": isSolved
+    };
+
     res.json(result);
 });
 
