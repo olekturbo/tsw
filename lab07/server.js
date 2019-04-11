@@ -4,9 +4,11 @@
 const app = require('express')();
 const uuidv1 = require('uuid/v1');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const port = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
+app.use(cors());
 
 let games = new Map();
 
