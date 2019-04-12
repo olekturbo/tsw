@@ -7,6 +7,18 @@ let size = document.getElementById('form-size');
 let colors = document.getElementById('form-colors');
 let steps = document.getElementById('form-steps');
 
+const colorPool = [
+    'rgb(231, 76, 60)', 'rgb(136, 78, 160)', 'rgb(46, 134, 193)', 'rgb(23, 165, 137)',
+    'rgb(40, 180, 99)', 'rgb(247, 220, 111)', '#9a7d0a', '#eb984e',
+    '#d35400', '#839192', '#212f3d'
+];
+
+let colorMap = new Map();
+
+colorPool.forEach((element, i) => {
+    colorMap.set(element, i + 1);
+});
+
 const isFormValidated = () => {
 
     let array = [size, colors, steps];
@@ -30,9 +42,9 @@ function loadGame() {
                 }
             };
             let data = {
-                "size": size.value,
-                "colors": colors.value,
-                "steps": steps.value
+                "size": parseInt(size.value),
+                "colors": parseInt(colors.value),
+                "steps": parseInt(steps.value)
             };
             xhttp.open("POST", serverIp + "game/new", true);
             xhttp.setRequestHeader("Content-Type", "application/json");
@@ -82,10 +94,13 @@ const createStepsSection = (size, steps) => {
         }
 
         for (let k = 1; k <= size; k++) {
-            let solutionElement = document.createElement("span");
-            solutionElement.setAttribute("id", "solution" + i + k);
-            solutionElement.className = "solutions";
-            document.getElementById("step" + i).append(solutionElement);
+            let pegElement = document.createElement("span");
+            pegElement.setAttribute("id", "peg" + i + k);
+            if (i != steps) {
+                pegElement.setAttribute("disabled", "disabled");
+            }
+            pegElement.className = "pegs";
+            document.getElementById("step" + i).append(pegElement);
         }
     }
 };
@@ -100,30 +115,82 @@ const createSubmitButton = () => {
 const createEventListeners = () => {
     const colorsArray = [...document.getElementsByClassName('colors')];
     const sizesArray = [...document.getElementsByClassName('sizes')];
+    const pegsArray = [...document.getElementsByClassName('pegs')];
 
+    createColorsListener(colorsArray);
+    createSizesListener(sizesArray);
+    createSubmitListener(sizesArray, pegsArray);
+};
+
+const createColorsListener = (colorsArray) => {
     colorsArray.forEach(element => {
         element.addEventListener('click', function () {
             localStorage.setItem("color", getComputedStyle(element).backgroundColor);
         });
     });
+};
 
+const createSizesListener = (sizesArray) => {
     sizesArray.forEach(element => {
         element.addEventListener('click', function () {
             if (!element.hasAttribute("disabled")) {
                 element.style.backgroundColor = localStorage.getItem("color");
+                element.setAttribute("data-color", colorMap.get(localStorage.getItem("color")));
             }
         });
     });
+};
 
+const createSubmitListener = (sizesArray, pegsArray) => {
     document.getElementById('submitButton').addEventListener('click', function () {
-        sizesArray.forEach(element => {
-            if (!element.hasAttribute("disabled")) {
-                element.setAttribute("disabled", "disabled");
-                let id = element.getAttribute("id").replace("size", "") - 10;
-                if (document.getElementById("size" + id) !== null) {
-                    document.getElementById("size" + id).removeAttribute("disabled");
-                }
-            }
-        });
+        handleMove();
+        handleDisabled(sizesArray, "size");
+        handleDisabled(pegsArray, "peg");
     });
+};
+
+const handleDisabled = (array, toReplace) => {
+    array.forEach(element => {
+        if (!element.hasAttribute("disabled")) {
+            element.setAttribute("disabled", "disabled");
+            let id = element.getAttribute("id").replace(toReplace, "") - 10;
+            if (document.getElementById(toReplace + id) !== null) {
+                document.getElementById(toReplace + id).removeAttribute("disabled");
+            }
+        }
+    });
+};
+
+const handleMove = () => {
+    try {
+        const tempColorsArray = [...document.querySelectorAll('.sizes:not([disabled="disabled"])')];
+        const tempPegsArray = [...document.querySelectorAll('.pegs:not([disabled="disabled"])')];
+        let move = [];
+        tempColorsArray.forEach(element => {
+            move.push(parseInt(element.getAttribute("data-color")));
+        });
+        var xhttp = new XMLHttpRequest();
+        xhttp.responseType = "json";
+        xhttp.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                let pegs = JSON.parse(this.response.result.places);
+                pegs.forEach((element, i) => {
+                    if (element) {
+                        tempPegsArray[i].style.backgroundColor = element;
+                    }
+                });
+            }
+        };
+        let data = {
+            "game": localStorage.getItem("gameId"),
+            "move": move
+        };
+        xhttp.open("POST", serverIp + "game/move", true);
+        xhttp.setRequestHeader("Content-Type", "application/json");
+        xhttp.send(JSON.stringify(data));
+
+    }
+    catch (e) {
+        alert(e);
+    }
 };

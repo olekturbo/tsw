@@ -14,10 +14,12 @@ exports.countSolution = function countSolution(solution, move) {
     let whiteColors = 0;
     let blackColors = 0;
     let flags = new Array(solution.length);
+    let places = new Array(solution.length);
     
     solution.forEach((s,i) => {
         if(s === move[i]) {
             flags[i] = true;
+            places[i] = "BLACK";
             blackColors++;
         }
     });
@@ -27,6 +29,7 @@ exports.countSolution = function countSolution(solution, move) {
             move.forEach((m, j) => {
                 if(!flags[j] && j !== i && m === s) {
                     flags[j] = true;
+                    places[j] = "WHITE";
                     whiteColors++;
                     return;
                 }
@@ -36,6 +39,7 @@ exports.countSolution = function countSolution(solution, move) {
 
     return {
         "black": blackColors,
-        "white": whiteColors
+        "white": whiteColors,
+        "places": JSON.stringify(places)
     };
 };
