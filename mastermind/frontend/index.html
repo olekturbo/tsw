@@ -12,15 +12,20 @@
 
 <body>
     <div id="start-form">
-            <label for="size">Size</label>
-            <input step="1" type="number" name="size" id="form-size">
-            <label for="colors">Colors</label>
-            <input step="1" type="number" name="colors" id="form-colors">
-            <label for="steps">Steps</label>
-            <input step="1" type="number" name="steps" id="form-steps">
+        <label for="size">Size</label>
+        <input step="1" type="number" name="size" id="form-size">
+        <label for="colors">Colors</label>
+        <input step="1" type="number" name="colors" id="form-colors">
+        <label for="steps">Steps</label>
+        <input step="1" type="number" name="steps" id="form-steps">
         <div>
             <button class="form-button" type="button" onclick="loadGame()">Send</button>
         </div>
+    </div>
+
+    <div id="game">
+      <div id="colors-list"></div>
+      <div id="steps-list"></div>
     </div>
 
 

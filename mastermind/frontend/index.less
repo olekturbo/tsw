@@ -1,3 +1,9 @@
+@import "../../node_modules/kolos.mixins/for.less";
+
+@colors: #e74c3c, #884ea0, #2e86c1, #17a589,
+    #28b463, #f7dc6f, #9a7d0a, #eb984e, #d35400,
+    #839192, #212f3d;
+
 body {
     text-align : center;
     font-family: 'Oswald', sans-serif;
@@ -26,14 +32,83 @@ body {
     input:focus {
         border-color: #4CAF50;
     }
+}
 
-    button {
-        background-color: #4CAF50;
-        border          : none;
-        color           : white;
-        padding         : 15px 32px;
-        text-decoration : none;
-        display         : inline-block;
-        font-size       : 16px;
+button {
+    background-color: #4CAF50;
+    border          : none;
+    color           : white;
+    padding         : 15px 32px;
+    text-decoration : none;
+    display         : inline-block;
+    font-size       : 16px;
+}
+
+#submitButton {
+    margin-left: 30px;
+}
+
+#game {
+    display        : none;
+    justify-content: center;
+    align-items    : center;
+    margin-top     : 60px;
+
+    #welcome {
+        display      : block;
+        margin-bottom: 80px;
+        font-size    : 32px;
+    }
+
+    .colors {
+        -webkit-box-orient    : vertical;
+        -moz-box-orient       : vertical;
+        -webkit-flex-direction: column;
+        -ms-flex-direction    : column;
+        flex-direction        : column;
+        padding               : 30px;
+        width                 : 30px;
+        margin-top            : 10px;
+    }
+
+    .for(@colors, {
+        #color@{i} {
+            background-color: @value;
+        }
+    }
+
+    );
+
+    .steps {
+        -webkit-box-orient    : horizontal;
+        -moz-box-orient       : horizontal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction    : row;
+        flex-direction        : row;
+        margin-left           : 30px;
+    }
+
+    .steps,
+    .colors {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+    }
+
+    .sizes {
+        padding: 30px;
+        width  : 30px;
+        border : 1px solid black;
+    }
+
+    .solutions {
+        width           : 30px;
+        height          : 30px;
+        margin-left     : 5px;
+        border-radius   : 50%;
+        background-color: gray;
+        margin-top      : 20px;
     }
 }
