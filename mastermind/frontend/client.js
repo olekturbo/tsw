@@ -3,10 +3,6 @@
 
 const serverIp = "http://localhost:3001/";
 
-let size = document.getElementById('form-size');
-let colors = document.getElementById('form-colors');
-let steps = document.getElementById('form-steps');
-
 const colorPool = [
     'rgb(231, 76, 60)', 'rgb(136, 78, 160)', 'rgb(46, 134, 193)', 'rgb(23, 165, 137)',
     'rgb(40, 180, 99)', 'rgb(247, 220, 111)', 'rgb(154, 125, 10)', 'rgb(235, 152, 78)',
@@ -19,7 +15,7 @@ colorPool.forEach((element, i) => {
     colorMap.set(element, i + 1);
 });
 
-const isFormValidated = () => {
+const isFormValidated = (size, colors, steps) => {
 
     let array = [size, colors, steps];
 
@@ -30,8 +26,11 @@ const isFormValidated = () => {
     return size.value > 0 && colors.value > 0 && steps.value > 0 ? true : false;
 };
 
-function loadGame() {
-    if (isFormValidated()) {
+function createGameboard() {
+    let size = document.getElementById('form-size');
+    let colors = document.getElementById('form-colors');
+    let steps = document.getElementById('form-steps');
+    if (isFormValidated(size, colors, steps)) {
         try {
             var xhttp = new XMLHttpRequest();
             xhttp.responseType = "json";
@@ -59,48 +58,49 @@ function loadGame() {
 }
 
 const createGame = (size, colors, steps) => {
-    document.getElementById("game").style.display = "flex";
-
-    createColorsSection(colors);
-    createStepsSection(size, steps);
+    displayGame();
+    createSections(colors, size, steps);
     createSubmitButton();
     createEventListeners();
 };
 
-const createColorsSection = (colors) => {
-    for (let i = 1; i <= colors; i++) {
-        let element = document.createElement("span");
-        element.setAttribute("id", "color" + i);
-        element.className = "colors";
-        document.getElementById("colors-list").append(element);
-    }
+const displayGame = () => {
+    document.getElementById("game").style.display = "flex";
 };
 
-const createStepsSection = (size, steps) => {
+const createElement = (type, singular, plural, appendTo, counter) => {
+    let element = document.createElement(type);
+    element.setAttribute("id", singular + counter);
+    element.className = plural;
+    document.getElementById(appendTo).append(element);
+};
+
+const createDisabledElement = (type, singular, plural, appendTo, firstCounter, secondCounter, condition) => {
+    let element = document.createElement(type);
+    element.setAttribute("id", singular + firstCounter + secondCounter);
+    if (condition) {
+        element.setAttribute("disabled", "disabled");
+    }
+    element.className = plural;
+    document.getElementById(appendTo).append(element);
+};
+
+
+const createSections = (colors, size, steps) => {
+
+    for (let i = 1; i <= colors; i++) {
+        createElement("span", "color", "colors", "colors-list", i);
+    }
+
     for (let i = 1; i <= steps; i++) {
-        let stepElement = document.createElement("div");
-        stepElement.setAttribute("id", "step" + i);
-        stepElement.className = "steps";
-        document.getElementById("steps-list").append(stepElement);
+        createElement("div", "step", "steps", "steps-list", i);
 
         for (let j = 1; j <= size; j++) {
-            let sizeElement = document.createElement("span");
-            sizeElement.setAttribute("id", "size" + i + j);
-            if (i != steps) {
-                sizeElement.setAttribute("disabled", "disabled");
-            }
-            sizeElement.className = "sizes";
-            document.getElementById("step" + i).append(sizeElement);
+            createDisabledElement("span", "size", "sizes", "step" + i, i, j, i != steps);
         }
 
         for (let k = 1; k <= size; k++) {
-            let pegElement = document.createElement("span");
-            pegElement.setAttribute("id", "peg" + i + k);
-            if (i != steps) {
-                pegElement.setAttribute("disabled", "disabled");
-            }
-            pegElement.className = "pegs";
-            document.getElementById("step" + i).append(pegElement);
+            createDisabledElement("span", "peg", "pegs", "step" + i, i, k, i != steps);
         }
     }
 };
@@ -202,12 +202,14 @@ const handleStatus = (steps) => {
         xhttp.responseType = "json";
         xhttp.onreadystatechange = function () {
             if (this.readyState === 4 && this.status === 200) {
+
                 if (this.response.solved) {
                     alert("Congratulations, you've won!");
-                    localStorage.clear();
-                    location.reload();
-                } else if (!steps && !this.response.solved) {
+                } else if (!steps) {
                     alert("Unfortunetely, you've lost!");
+                }
+
+                if (this.response.solved || !steps) {
                     localStorage.clear();
                     location.reload();
                 }
