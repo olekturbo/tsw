@@ -20,7 +20,7 @@ const isFormValidated = (size, colors, steps) => {
     let array = [size, colors, steps];
 
     array.forEach(element => {
-        element.style.borderBottomColor = steps.value < 1 ? "red" : "#3f3f3f";
+        element.style.borderBottomColor = element.value < 1 ? "red" : "#3f3f3f";
     });
 
     return size.value > 0 && colors.value > 0 && steps.value > 0 ? true : false;
