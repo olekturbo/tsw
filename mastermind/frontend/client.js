@@ -179,6 +179,7 @@ const handleMove = () => {
                         tempPegsArray[i].style.backgroundColor = element;
                     }
                 });
+                handleStatus(this.response.steps);
             }
         };
         let data = {
@@ -191,6 +192,34 @@ const handleMove = () => {
 
     }
     catch (e) {
+        alert(e);
+    }
+};
+
+const handleStatus = (steps) => {
+    try {
+        var xhttp = new XMLHttpRequest();
+        xhttp.responseType = "json";
+        xhttp.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                if (this.response.solved) {
+                    alert("Congratulations, you've won!");
+                    localStorage.clear();
+                    location.reload();
+                } else if (!steps && !this.response.solved) {
+                    alert("Unfortunetely, you've lost!");
+                    localStorage.clear();
+                    location.reload();
+                }
+            }
+        };
+        let data = {
+            "game": localStorage.getItem("gameId"),
+        };
+        xhttp.open("POST", serverIp + "game/status", true);
+        xhttp.setRequestHeader("Content-Type", "application/json");
+        xhttp.send(JSON.stringify(data));
+    } catch (e) {
         alert(e);
     }
 };
