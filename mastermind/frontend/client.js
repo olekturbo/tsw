@@ -9,8 +9,8 @@ let steps = document.getElementById('form-steps');
 
 const colorPool = [
     'rgb(231, 76, 60)', 'rgb(136, 78, 160)', 'rgb(46, 134, 193)', 'rgb(23, 165, 137)',
-    'rgb(40, 180, 99)', 'rgb(247, 220, 111)', '#9a7d0a', '#eb984e',
-    '#d35400', '#839192', '#212f3d'
+    'rgb(40, 180, 99)', 'rgb(247, 220, 111)', 'rgb(154, 125, 10)', 'rgb(235, 152, 78)',
+    'rgb(211, 84, 0)', 'rgb(131, 145, 146)', 'rgb(33, 47, 61)'
 ];
 
 let colorMap = new Map();
