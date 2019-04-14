@@ -10,6 +10,8 @@ const colorPool = [
 ];
 
 let colorMap = new Map();
+let movesMap = new Map();
+let pegsMap = new Map();
 
 colorPool.forEach((element, i) => {
     colorMap.set(element, i + 1);
@@ -26,6 +28,7 @@ const isFormValidated = (size, colors, steps) => {
     return size.value > 0 && colors.value > 0 && steps.value > 0 ? true : false;
 };
 
+
 function createGameboard() {
     let size = document.getElementById('form-size');
     let colors = document.getElementById('form-colors');
@@ -36,8 +39,10 @@ function createGameboard() {
             xhttp.responseType = "json";
             xhttp.onreadystatechange = function () {
                 if (this.readyState === 4 && this.status === 200) {
-                    document.getElementById('start-form').style.display = "none";
                     localStorage.setItem('gameId', this.response.game);
+                    localStorage.setItem('size', this.response.size);
+                    localStorage.setItem('colors', this.response.colors);
+                    localStorage.setItem('steps', this.response.steps);
                 }
             };
             let data = {
@@ -58,10 +63,15 @@ function createGameboard() {
 }
 
 const createGame = (size, colors, steps) => {
+    hideForm();
     displayGame();
     createSections(colors, size, steps);
     createSubmitButton();
     createEventListeners();
+};
+
+const hideForm = () => {
+    document.getElementById('start-form').style.display = "none";
 };
 
 const displayGame = () => {
@@ -168,6 +178,8 @@ const handleMove = () => {
         let move = [];
         tempColorsArray.forEach(element => {
             move.push(parseInt(element.getAttribute("data-color")));
+            movesMap.set(element.getAttribute("id"), getComputedStyle(element).backgroundColor);
+            localStorage.setItem("movesMap", JSON.stringify(Array.from(movesMap.entries())));
         });
         var xhttp = new XMLHttpRequest();
         xhttp.responseType = "json";
@@ -177,6 +189,8 @@ const handleMove = () => {
                 pegs.forEach((element, i) => {
                     if (element) {
                         tempPegsArray[i].style.backgroundColor = element;
+                        pegsMap.set(tempPegsArray[i].getAttribute("id"), element);
+                        localStorage.setItem("pegsMap", JSON.stringify(Array.from(pegsMap.entries())));
                     }
                 });
                 handleStatus(this.response.steps);
@@ -225,3 +239,36 @@ const handleStatus = (steps) => {
         alert(e);
     }
 };
+
+const handleHistory = () => {
+    let movesMap = JSON.parse(localStorage.getItem("movesMap"));
+    let pegsMap = JSON.parse(localStorage.getItem("pegsMap"));
+    const size = localStorage.getItem('size');
+    for (const [key, value] of movesMap) {
+        document.getElementById(key).style.backgroundColor = value;
+        document.getElementById(key).setAttribute("data-moved", "true");
+        document.getElementById(key).setAttribute("disabled", "disabled");
+    }
+    for (const [key, value] of pegsMap) {
+        document.getElementById(key).style.backgroundColor = value;
+        document.getElementById(key).setAttribute("data-moved", "true");
+        document.getElementById(key).setAttribute("disabled", "disabled");
+    }
+
+    const colors = [...document.querySelectorAll('.sizes[disabled="disabled"]:not([data-moved="true"])')];
+    const pegs = [...document.querySelectorAll('.pegs[disabled="disabled"]:not([data-moved="true"])')];
+    colors.forEach((element, i) => {
+        if (i >= colors.length - size) {
+            element.removeAttribute("disabled");
+        }
+    });
+    pegs.forEach((element, i) => {
+        if (i >= pegs.length - size)
+            element.removeAttribute("disabled");
+    });
+};
+
+if (localStorage.getItem('gameId')) {
+    createGame(localStorage.getItem('size'), localStorage.getItem('colors'), localStorage.getItem('steps'));
+    handleHistory();
+}
