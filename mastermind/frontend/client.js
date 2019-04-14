@@ -244,15 +244,19 @@ const handleHistory = () => {
     let movesMap = JSON.parse(localStorage.getItem("movesMap"));
     let pegsMap = JSON.parse(localStorage.getItem("pegsMap"));
     const size = localStorage.getItem('size');
-    for (const [key, value] of movesMap) {
-        document.getElementById(key).style.backgroundColor = value;
-        document.getElementById(key).setAttribute("data-moved", "true");
-        document.getElementById(key).setAttribute("disabled", "disabled");
+    if(movesMap !== null) {
+        for (const [key, value] of movesMap) {
+            document.getElementById(key).style.backgroundColor = value;
+            document.getElementById(key).setAttribute("data-moved", "true");
+            document.getElementById(key).setAttribute("disabled", "disabled");
+        }
     }
-    for (const [key, value] of pegsMap) {
-        document.getElementById(key).style.backgroundColor = value;
-        document.getElementById(key).setAttribute("data-moved", "true");
-        document.getElementById(key).setAttribute("disabled", "disabled");
+    if(pegsMap !== null) {
+        for (const [key, value] of pegsMap) {
+            document.getElementById(key).style.backgroundColor = value;
+            document.getElementById(key).setAttribute("data-moved", "true");
+            document.getElementById(key).setAttribute("disabled", "disabled");
+        }
     }
 
     const colors = [...document.querySelectorAll('.sizes[disabled="disabled"]:not([data-moved="true"])')];
