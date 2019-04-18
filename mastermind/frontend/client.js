@@ -67,6 +67,7 @@ const createGame = (size, colors, steps) => {
     displayGame();
     createSections(colors, size, steps);
     createSubmitButton();
+    createRefreshButton();
     createEventListeners();
 };
 
@@ -76,6 +77,16 @@ const hideForm = () => {
 
 const displayGame = () => {
     document.getElementById("game").style.display = "flex";
+};
+
+const makeElementMoved = (map) => {
+    if (map !== null) {
+        for (const [key, value] of map) {
+            document.getElementById(key).style.backgroundColor = value;
+            document.getElementById(key).setAttribute("data-moved", "true");
+            document.getElementById(key).setAttribute("disabled", "disabled");
+        }
+    }
 };
 
 const createElement = (type, singular, plural, appendTo, counter) => {
@@ -118,8 +129,13 @@ const createSections = (colors, size, steps) => {
 const createSubmitButton = () => {
     let element = document.createElement("button");
     element.setAttribute("id", "submitButton");
-    element.innerHTML = "Check";
-    document.getElementById("game").append(element);
+    document.getElementById("buttons").append(element);
+};
+
+const createRefreshButton = () => {
+    let element = document.createElement("button");
+    element.setAttribute("id", "refreshButton");
+    document.getElementById("buttons").append(element);
 };
 
 const createEventListeners = () => {
@@ -129,6 +145,7 @@ const createEventListeners = () => {
 
     createColorsListener(colorsArray);
     createSizesListener(sizesArray);
+    createRefreshListener();
     createSubmitListener(sizesArray, pegsArray);
 };
 
@@ -159,6 +176,12 @@ const createSubmitListener = (sizesArray, pegsArray) => {
     });
 };
 
+const createRefreshListener = () => {
+    document.getElementById('refreshButton').addEventListener('click', function () {
+        clearStorage();
+    });
+};
+
 const handleDisabled = (array, toReplace) => {
     array.forEach(element => {
         if (!element.hasAttribute("disabled")) {
@@ -185,12 +208,19 @@ const handleMove = () => {
         xhttp.responseType = "json";
         xhttp.onreadystatechange = function () {
             if (this.readyState === 4 && this.status === 200) {
-                let pegs = JSON.parse(this.response.result.places);
-                pegs.forEach((element, i) => {
-                    if (element) {
-                        tempPegsArray[i].style.backgroundColor = element;
+                let white = JSON.parse(this.response.result.white);
+                let black = JSON.parse(this.response.result.black);
+                tempPegsArray.forEach((element, i) => {
+                    if (white) {
+                        tempPegsArray[i].style.backgroundColor = "white";
                         pegsMap.set(tempPegsArray[i].getAttribute("id"), element);
                         localStorage.setItem("pegsMap", JSON.stringify(Array.from(pegsMap.entries())));
+                        white--;
+                    } else if (black) {
+                        tempPegsArray[i].style.backgroundColor = "black";
+                        pegsMap.set(tempPegsArray[i].getAttribute("id"), element);
+                        localStorage.setItem("pegsMap", JSON.stringify(Array.from(pegsMap.entries())));
+                        black--;
                     }
                 });
                 handleStatus(this.response.steps);
@@ -224,8 +254,7 @@ const handleStatus = (steps) => {
                 }
 
                 if (this.response.solved || !steps) {
-                    localStorage.clear();
-                    location.reload();
+                    clearStorage();
                 }
             }
         };
@@ -240,24 +269,13 @@ const handleStatus = (steps) => {
     }
 };
 
+
 const handleHistory = () => {
     let movesMap = JSON.parse(localStorage.getItem("movesMap"));
     let pegsMap = JSON.parse(localStorage.getItem("pegsMap"));
     const size = localStorage.getItem('size');
-    if(movesMap !== null) {
-        for (const [key, value] of movesMap) {
-            document.getElementById(key).style.backgroundColor = value;
-            document.getElementById(key).setAttribute("data-moved", "true");
-            document.getElementById(key).setAttribute("disabled", "disabled");
-        }
-    }
-    if(pegsMap !== null) {
-        for (const [key, value] of pegsMap) {
-            document.getElementById(key).style.backgroundColor = value;
-            document.getElementById(key).setAttribute("data-moved", "true");
-            document.getElementById(key).setAttribute("disabled", "disabled");
-        }
-    }
+    makeElementMoved(movesMap);
+    makeElementMoved(pegsMap);
 
     const colors = [...document.querySelectorAll('.sizes[disabled="disabled"]:not([data-moved="true"])')];
     const pegs = [...document.querySelectorAll('.pegs[disabled="disabled"]:not([data-moved="true"])')];
@@ -276,3 +294,8 @@ if (localStorage.getItem('gameId')) {
     createGame(localStorage.getItem('size'), localStorage.getItem('colors'), localStorage.getItem('steps'));
     handleHistory();
 }
+
+const clearStorage = () => {
+    localStorage.clear();
+    location.reload();
+};

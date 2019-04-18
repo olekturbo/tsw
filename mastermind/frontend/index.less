@@ -44,10 +44,6 @@ button {
     font-size       : 16px;
 }
 
-#submitButton {
-    margin-left: 30px;
-}
-
 #game {
     display        : none;
     justify-content: center;
@@ -103,10 +99,35 @@ button {
         border : 1px solid black;
     }
 
-    .sizes[disabled="disabled"]{
+    .sizes[disabled="disabled"] {
         background-color: #dddddd;
     }
-    
+
+    #buttons {
+        display       : flex;
+        margin-left   : 30px;
+        flex-direction: column;
+    }
+
+    #submitButton {
+        margin-bottom: 10px;
+
+        &::before {
+            content    : "\f058";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 400;
+        }
+    }
+
+    #refreshButton {
+        background: #dc3545;
+
+        &::before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 400;
+            content    : "\f057";
+        }
+    }
 
     .pegs {
         width           : 30px;
@@ -115,6 +136,6 @@ button {
         border-radius   : 50%;
         background-color: gray;
         margin-top      : 20px;
-        border: 1px solid black;
+        border          : 1px solid black;
     }
 }
