@@ -15,14 +15,13 @@ document.onreadystatechange = () => {
         let sendName = document.getElementById('send-name');
         let nameForm = document.getElementById('name-form');
         let chatForm = document.getElementById('chat-form');
-        let messagesHistory;
         let socket;
 
         status.textContent = 'Brak połącznia';
         close.disabled = true;
         send.disabled = true;
 
-        if(localStorage.getItem('name')) {
+        if (localStorage.getItem('name')) {
             nameForm.className = "hidden";
             chatForm.className = "";
         } else {
@@ -47,6 +46,30 @@ document.onreadystatechange = () => {
                 send.disabled = false;
                 status.src = 'img/bullet_green.png';
                 console.log('Nawiązano połączenie przez Socket.io');
+                socket.on('db', (data) => {
+                    data.forEach(el => {
+                        let li = document.createElement('li');
+                        li.textContent = `(${el.date}) ${el.author}: ${el.text}`;
+                        li.classList = 'list-unstyled';
+                        message.append(li);
+                    });
+                });
+                let author = localStorage.getItem('name');
+                socket.emit('new author', {
+                    author: author
+                });
+                socket.on('check author', (data) => {
+                    if (!data) {
+                        localStorage.clear();
+                        alert('Name is busy.');
+                        close.disabled = true;
+                        send.disabled = true;
+                        nameForm.className = "";
+                        chatForm.className = "hidden";
+                        message.textContent = '';
+                        socket.disconnect();
+                    }
+                });
             });
             socket.on('disconnect', () => {
                 open.disabled = false;
@@ -61,14 +84,6 @@ document.onreadystatechange = () => {
                 li.textContent = `(${data.date}) ${data.author}: ${data.text}`;
                 li.classList = 'list-unstyled';
                 message.append(li);
-            });
-            socket.on('db', (data) => {
-                data.forEach(el => {
-                    let li = document.createElement('li');
-                    li.textContent = `(${el.date}) ${el.author}: ${el.text}`;
-                    li.classList = 'list-unstyled';
-                    message.append(li);
-                });
             });
         });
 
@@ -87,7 +102,7 @@ document.onreadystatechange = () => {
             socket.emit('send message', {
                 text: text.value,
                 author: author,
-                date: today.getHours() + ':' + today.getMinutes()
+                date: today.toLocaleTimeString()
             });
             console.log(`Wysłałem wiadomość: „${text.value}” od "${author}"`);
             text.value = '';

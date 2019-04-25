@@ -11,18 +11,20 @@ const io = socketio.listen(httpServer);
 const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
 
-const adapter = new FileSync('db.json');
+const adapter = new FileSync('../czat_db/db.json');
 const db = low(adapter);
 
 app.use(serveStatic('public'));
 
+let onlineUsers = [];
+
 io.sockets.on('connect', (socket) => {
     console.log('Socket.io: połączono.');
     
-    socket.emit('db', db.get('messages').take(5));
+    socket.emit('db', db.get('messages').takeRight(5));
 
     socket.on('send message', (data) => {
-        socket.emit('echo', data);
+        io.emit('echo', data);
         db.get('messages')
             .push({
                 date: data.date,
@@ -36,6 +38,16 @@ io.sockets.on('connect', (socket) => {
     });
     socket.on('error', (err) => {
         console.dir(err);
+    });
+    socket.on('new author', (data) => {
+        if(!onlineUsers.includes(data.author)) {
+            onlineUsers.push(data.author);
+        } else {
+            socket.emit('check author', false);
+        }
+    });
+    socket.on('remove author', (data) => {
+        onlineUsers = onlineUsers.filter(user => user !== data);
     });
 });
 
