@@ -48,11 +48,9 @@ document.onreadystatechange = () => {
                 console.log('Nawiązano połączenie przez Socket.io');
                 socket.on('db', (data) => {
                     data.forEach(el => {
-                        let li = document.createElement('li');
-                        li.textContent = `(${el.date}) ${el.author}: ${el.text}`;
-                        li.classList = 'list-unstyled';
-                        message.append(li);
+                        newMessage(el.date, el.author, el.text);
                     });
+                    message.scrollTop = 0;
                 });
                 let author = localStorage.getItem('name');
                 socket.emit('new author', {
@@ -80,12 +78,28 @@ document.onreadystatechange = () => {
                 message.textContent = `Błąd połączenia z serwerem: "${JSON.stringify(err)}"`;
             });
             socket.on('echo', (data) => {
-                let li = document.createElement('li');
-                li.textContent = `(${data.date}) ${data.author}: ${data.text}`;
-                li.classList = 'list-unstyled';
-                message.append(li);
+                newMessage(data.date, data.author, data.text);
             });
         });
+
+        let newMessage = (date, author, text) => {
+            let li = document.createElement('li');
+            let dateSpan = document.createElement('span');
+            let authorSpan = document.createElement('span');
+            let textSpan = document.createElement('span');
+            dateSpan.textContent = '(' + date + ')';
+            authorSpan.textContent = author + ':';
+            textSpan.textContent = text;
+            dateSpan.classList = 'msg-date';
+            authorSpan.classList = 'msg-author';
+            textSpan.classList = 'msg-text';
+            li.appendChild(dateSpan);
+            li.appendChild(authorSpan);
+            li.appendChild(textSpan);
+            li.classList = 'list-unstyled';
+            message.appendChild(li);
+            message.scrollTop = 0;
+        }
 
         // Zamknij połączenie po kliknięciu guzika „Rozłącz”
         close.addEventListener('click', () => {

@@ -4,6 +4,7 @@
 <head>
   <title>Prosty klient WebSockets</title>
   <meta charset="UTF-8">
+  <style>@import url('https://fonts.googleapis.com/css?family=Roboto');</style>
   <link rel="stylesheet" href="stylesheets/index.css">
   <script src="/socket.io/socket.io.js"></script>
   <script src="js/skrypt.js"></script>
@@ -11,8 +12,8 @@
 
 <body>
   <div id="name-form">
-    Podaj imię:
-    <input id="name">&nbsp;<input id="send-name" type="button" value="Wyślij">
+    <p>Podaj imię:</p>
+    <input id="name"><input id="send-name" type="button" value="Wyślij">
   </div>
   <div id="chat-form">
     <table>
@@ -26,7 +27,7 @@
       Komunikat:&nbsp;
       <input id="text">&nbsp;<input id="send" type="button" value="Wyślij">
     </p>
-    <p id="message"></p>
+    <ul id="message"></ul>
   </div>
 </body>
 
