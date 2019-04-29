@@ -20,16 +20,24 @@ let onlineUsers = [];
 
 io.sockets.on('connect', (socket) => {
     console.log('Socket.io: połączono.');
-    
-    socket.emit('db', db.get('messages').takeRight(5));
+    socket.emit('update rooms', 'default');
+    socket.join('default');
+    socket.emit('db-messages', db.get('messages').filter({ room: 'default' }).takeRight(5));
+    socket.emit('db-rooms', db.get('rooms'));
 
     socket.on('send message', (data) => {
-        io.emit('echo', data);
+        let currentRoom = 'default';
+        if (data.room !== 'default') {
+            currentRoom = data.room;
+        }
+        io.to(currentRoom).emit('echo', data);
+
         db.get('messages')
             .push({
                 date: data.date,
                 author: data.author,
-                text: data.text
+                text: data.text,
+                room: currentRoom
             })
             .write();
     });
@@ -40,14 +48,35 @@ io.sockets.on('connect', (socket) => {
         console.dir(err);
     });
     socket.on('new author', (data) => {
-        if(!onlineUsers.includes(data.author)) {
+        if (!onlineUsers.includes(data.author)) {
             onlineUsers.push(data.author);
         } else {
             socket.emit('check author', false);
         }
     });
     socket.on('remove author', (data) => {
-        onlineUsers = onlineUsers.filter(user => user !== data);
+        onlineUsers = onlineUsers.filter(user => user !== data.author);
+    });
+    socket.on('new room', (data) => {
+        if (data.room !== "") {
+            io.emit('update rooms', data.room);
+            db.get('rooms')
+                .push({
+                    name: data.room
+                })
+                .write();
+        }
+    });
+    socket.on('switch room', (data) => {
+        socket.emit('clear room', {});
+        socket.emit('echo', {
+            date: new Date().toLocaleTimeString(),
+            author: 'SERWER',
+            text: 'Przełączono na pokój: ' + data.room
+        });
+        socket.emit('db-messages', db.get('messages').filter({ room: data.room }).takeRight(5));
+        socket.leave(data.oldRoom);
+        socket.join(data.room);
     });
 });
 

@@ -4,7 +4,9 @@
 <head>
   <title>Prosty klient WebSockets</title>
   <meta charset="UTF-8">
-  <style>@import url('https://fonts.googleapis.com/css?family=Roboto');</style>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+  </style>
   <link rel="stylesheet" href="stylesheets/index.css">
   <script src="/socket.io/socket.io.js"></script>
   <script src="js/skrypt.js"></script>
@@ -23,11 +25,21 @@
         <td> <input id="close" type="button" value="Rozłącz"> </td>
       </tr>
     </table>
-    <p>
-      Komunikat:&nbsp;
-      <input id="text">&nbsp;<input id="send" type="button" value="Wyślij">
-    </p>
-    <ul id="message"></ul>
+    <div id="my-flex">
+      <div id="flex-message">
+        <p class="info">WIADOMOŚCI:</p>
+        <ul id="message"></ul>
+        <p>
+          Komunikat:&nbsp;
+          <input id="text">&nbsp;<input id="send" type="button" value="Wyślij">
+        </p>
+      </div>
+      <div id="flex-room">
+        <p class="info">LISTA POKOJÓW:</p>
+        <ul id="room-list"></ul>
+        <p>Nowy pokój:&nbsp; <input id="room">&nbsp;<input id="create-room" type="button" value="Nowy pokój"></p>
+      </div>
+    </div>
   </div>
 </body>
 

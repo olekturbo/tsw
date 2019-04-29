@@ -31,20 +31,23 @@ input[type="button"] {
     }
 }
 
-#message {
-    height         : 110px;
+#message,
+#room-list {
+    height         : 125px;
     overflow-y     : auto;
     width          : 50%;
     scroll-behavior: auto;
     margin         : 0 auto;
     display        : flex;
     flex-direction : column-reverse;
-    text-align     : left;
+    margin         : 60px auto;
+    padding        : 10px;
 
     .msg-date {
         margin-right  : 5px;
         font-size     : 12px;
         vertical-align: text-top;
+        float         : left;
     }
 
     .msg-author {
@@ -53,8 +56,21 @@ input[type="button"] {
     }
 }
 
+#room-list li {
+    cursor: pointer;
+}
+
+.single-room[active="true"] {
+    font-weight: bold;
+
+    &:after {
+        content: ' [AKTYWNY]';
+    }
+}
+
 #name,
-#text {
+#text,
+#room {
     display      : block;
     margin       : 0 auto;
     margin-bottom: 15px;
@@ -78,4 +94,37 @@ input[type="button"] {
 
 .list-unstyled {
     list-style-type: none;
+    padding        : 10px;
+    border-bottom  : 1px solid white;
+}
+
+#room-info {
+    font-size     : 30px;
+    font-weight   : bold;
+    margin        : 40px auto;
+    text-transform: uppercase;
+}
+
+#my-flex {
+    display       : flex;
+    flex-direction: row;
+}
+
+#flex-message,
+#flex-room {
+    display       : flex;
+    flex-direction: column;
+}
+
+#flex-message {
+    flex: 70%;
+}
+
+#flex-room {
+    flex: 30%;
+}
+
+.info {
+    font-size     : 30px;
+    text-transform: uppercase;
 }
