@@ -184,5 +184,17 @@ document.onreadystatechange = () => {
             });
             room.value = '';
         });
+
+        window.onbeforeunload = function() {
+            close.disabled = true;
+            send.disabled = true;
+            createRoom.disabled = true;
+            message.textContent = '';
+            roomList.textContent = '';
+            socket.emit('remove author', {
+                author: localStorage.getItem('name')
+            });
+            socket.disconnect();
+        };
     }
 };
