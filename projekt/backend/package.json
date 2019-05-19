@@ -1,0 +1,25 @@
+{
+  "name": "sio-auth",
+  "version": "0.1.0",
+  "description": "Uwierzytelnianie w Socket.io za pomocą Passport.js",
+  "main": "serwer.js",
+  "scripts": {
+    "start": "node serwer.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "connect-redis": "^3.4.1",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "express-session": "^1.16.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "passport.socketio": "^3.7.0",
+    "redis": "^2.8.0",
+    "socket.io": "^2.2.0"
+  }
+  
+}
