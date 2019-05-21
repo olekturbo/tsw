@@ -20,5 +20,26 @@
       "name": "lol",
       "country": "lol"
     }
+  ],
+  "classes": [
+    {
+      "id": "cP3E5o7ku",
+      "number": "1",
+      "category": "ogiery_trzyletnie",
+      "comission": [
+        "lSt-7CWDJ",
+        "WQaOCDRR0",
+        "nWK76-UnI"
+      ]
+    },
+    {
+      "id": "N34qe1Fbq",
+      "number": "1",
+      "category": "klacze_dwuletnie",
+      "comission": [
+        "WQaOCDRR0",
+        "nWK76-UnI"
+      ]
+    }
   ]
 }

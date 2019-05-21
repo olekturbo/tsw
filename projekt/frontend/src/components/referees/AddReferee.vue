@@ -50,6 +50,7 @@
                     params.append("country", this.country);
                     this.$http.post("referee", params).then((response) => {
                         this.$store.dispatch('loadReferees');
+                        this.$store.dispatch('loadMessage', "Sędzia został pomyślnie dodany.");
                         this.name = "";
                         this.country = "";
                     })
@@ -72,7 +73,7 @@
 
 <style>
 .error-badge {
-    margin-top: 10px;
-    display: block;
+    margin-top: 10px !important;
+    display: block !important;
 }
 </style>

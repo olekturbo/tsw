@@ -111,6 +111,10 @@ app.put('/referee/:id', (req, res) => {
     updateReferee(req, res, id);
 });
 
+app.post('/class', (req, res) => {
+    addClass(req, res);
+});
+
 const addReferee = (req, res) => {
         db.get('referees')
         .push({
@@ -147,12 +151,23 @@ const updateReferee = (req, res, id) => {
     .write();
 
     res.status(200).send("Referee has been updated");
+};
 
-
+const addClass = (req, res) => {
+    db.get('classes')
+    .push({
+        id: shortid.generate(),
+        number: req.body.number,
+        category: req.body.category,
+        comission: JSON.parse(req.body.comission)
+    })
+    .write();
+    
+    res.status(201).send("Class has been created");
 };
 
 
-db.defaults({ referees: [] })
+db.defaults({ referees: [], classes: [] })
   .write();
 
 // serwer HTTP dla aplikacji „app”

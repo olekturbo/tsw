@@ -29,7 +29,8 @@ const store = new Vuex.Store({
         }),
         isLoggedIn: false,
         username: "",
-        referees: []
+        referees: [],
+        message: null
     },
     actions: {
         loadUsername({
@@ -53,6 +54,11 @@ const store = new Vuex.Store({
                 .catch((errors) => {
                     console.log(errors);
                 });
+        },
+        loadMessage({
+            commit
+        }, message) {
+            commit("setMessage", message);
         }
     },
     mutations: {
@@ -64,6 +70,12 @@ const store = new Vuex.Store({
         },
         setReferees(state, referees) {
             state.referees = referees;
+        },
+        setMessage(state, message) {
+            state.message = message;
+            setTimeout(() => {
+                state.message = null;
+            }, 3000);
         }
     }
 });

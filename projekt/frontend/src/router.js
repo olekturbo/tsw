@@ -3,6 +3,7 @@ import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Login from "./views/Login.vue";
 import Referee from "./views/Referee.vue";
+import Class from "./views/Class.vue";
 import store from "./store";
 
 
@@ -30,6 +31,14 @@ let router =  new Router({
             path: "/referees",
             name: "referees",
             component: Referee,
+            meta: {
+                auth: true
+            }
+        },
+        {
+            path: "/classes",
+            name: "classes",
+            component: Class,
             meta: {
                 auth: true
             }

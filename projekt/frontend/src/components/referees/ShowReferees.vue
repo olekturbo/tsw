@@ -1,7 +1,6 @@
 <template>
     <div class="col-md-12">
         <p>Lista sędziowska</p>
-        <b-alert v-if="message" show>{{ message }}</b-alert>
         <b-list-group>
             <b-list-group-item v-for="referee in referees" :key="referee.id">
                 <div class="row">
@@ -35,20 +34,15 @@ export default {
         this.$store.dispatch('loadReferees');
     },
     computed: {
-            referees() {
-                return this.$store.state.referees;
-            }
-    },
-    data() {
-        return {
-            message: null
+        referees() {
+            return this.$store.state.referees;
         }
     },
     methods: {
         onClickRemove(referee) {
             this.$http.delete("referee/" + referee.id).then((response) => {
                 this.$store.dispatch('loadReferees');
-                this.updateMessage("Sędzia " + referee.name + " został pomyślnie usunięty.")
+                this.$store.dispatch('loadMessage', "Sędzia " + referee.name + " został pomyślnie usunięty.");
             })
             .catch((errors) => {
                 console.log(errors);
@@ -60,17 +54,11 @@ export default {
             params.append("country", referee.country);
             this.$http.put("referee/" + referee.id, params).then((response) => {
                 this.$store.dispatch('loadReferees');
-                this.updateMessage("Sędzia " + referee.name + " został pomyślnie zaktualizowany.")
+                this.$store.dispatch('loadMessage', "Sędzia " + referee.name + " został pomyślnie zaktualizowany.");
             })
             .catch((errors) => {
                 console.log(errors);
             });
-        },
-        updateMessage(message) {
-                this.message = message;
-                setTimeout(() => {
-                    this.message = null;
-                }, 3000);
         }
     }
 }

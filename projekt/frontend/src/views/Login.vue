@@ -52,8 +52,8 @@
                             reply: "odzew klienta"
                         });
                     });
-                    this.$store.commit("setAuthStatus", true);
                     this.$router.go(0);
+                    this.$store.commit("setAuthStatus", true);
                 })
                     .catch((e) => {
                         alert("Coś poszło nie tak. Spróbuj ponownie później: " + e.message);

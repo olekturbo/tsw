@@ -4,23 +4,21 @@
             <b-alert v-if="message" show>{{ message }}</b-alert>
         </div>
         <div class="col-md-9">
-            <ShowReferees/>
+        
         </div>
         <div class="col-md-3">
-            <AddReferee/>
+            <AddClass/>
         </div>
     </div>
 </template>
 
 <script>
-import AddReferee from '@/components/referees/AddReferee.vue'
-import ShowReferees from '@/components/referees/ShowReferees.vue'
+import AddClass from '@/components/classes/AddClass.vue'
 
 export default {
-    name: "Referee",
+    name: "Class",
     components: {
-        AddReferee,
-        ShowReferees
+        AddClass
     },
     computed: {
         message() {
