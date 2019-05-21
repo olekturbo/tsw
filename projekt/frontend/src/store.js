@@ -18,12 +18,7 @@ const store = new Vuex.Store({
             setTimeout(() => {
                 base.get("user")    
                     .then((response) => {  
-                        let requestResult;
-                        if(response.data.user) {
-                            requestResult = true;
-                        } else {
-                            requestResult = false;
-                        }
+                        let requestResult = response.data.user ? true : false;
                         store.commit("setAuthStatus", requestResult);
                         resolve(requestResult);
                     })    
@@ -41,12 +36,7 @@ const store = new Vuex.Store({
         }) { 
             base.get("user")    
                 .then((response) => {    
-                    let requestName;
-                    if(response.data.user) {
-                        requestName = response.data.user.username;
-                    } else {
-                        requestName = "Gość";
-                    }
+                    let requestName = response.data.user ? response.data.user.username : "Gość";
                     commit("setUsername", requestName);  
                 })    
                 .catch((errors) => {    
