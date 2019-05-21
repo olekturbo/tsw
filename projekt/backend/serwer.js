@@ -83,7 +83,7 @@ app.get('/logout', (req, res) => {
 });
 
 app.get('/user', (req, res) => {
-      res.send(req.session.passport.user);
+      res.send(req.session.passport);
 });
 
 // serwer HTTP dla aplikacji „app”
@@ -103,9 +103,7 @@ const onAuthorizeSuccess = (data, accept) => {
 };
 // połączenie od nieutoryzowanego użytkownika lub sytuacja błędna
 const onAuthorizeFail = (data, message, error, accept) => {
-    if (error) { // wystąpił błąd
-        throw new Error(message);
-    }
+   
     // połączenie nieautoryzowane (ale nie błąd)
     console.log('Nieudane połączenie z socket.io');
     accept(new Error('Brak autoryzacji!'));

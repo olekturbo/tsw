@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import axios from "axios";
 import VueSocketIO from "vue-socket.io";
+import store from "./store";
 
 Vue.use(new VueSocketIO({
     debug: true,
@@ -24,5 +25,6 @@ Vue.config.productionTip = false;
 
 new Vue({
     router,
+    store,
     render: h => h(App)
 }).$mount("#app");

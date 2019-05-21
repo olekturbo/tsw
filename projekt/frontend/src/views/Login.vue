@@ -45,15 +45,15 @@
                 const params = new URLSearchParams();
                 params.append("username", this.username);
                 params.append("password", this.password);
-                this.$http.post("login", params).then((response) => {
+                this.$http.post("login", params).then(() => {
                     this.$socket.on("news", (data) => {
                         console.log(JSON.stringify(data));
                         this.$socket.emit("reply", {
                             reply: "odzew klienta"
                         });
                     });
-                    console.log(response.data);
-                    window.location.reload();
+                    this.$store.commit("setAuthStatus", true);
+                    this.$router.push("home");
                 })
                     .catch((e) => {
                         alert("Coś poszło nie tak. Spróbuj ponownie później: " + e.message);

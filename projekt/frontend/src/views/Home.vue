@@ -15,25 +15,13 @@
         components: {
             HelloWorld
         },
-        data() {    
-            return {    
-                username: ""    
-            };    
-        }, 
-        methods: {    
-            getUserData: function() {    
-                let self = this;    
-                this.$http.get("user")    
-                    .then((response) => {    
-                        self.$set(this, "username", response.data.username);    
-                    })    
-                    .catch((errors) => {    
-                        console.log(errors);  
-                    });    
-            }    
-        },    
-        mounted() {    
-            this.getUserData();    
-        } 
+        computed: {
+            username() {
+                return this.$store.state.username;
+            }
+        },
+        mounted() {
+            this.$store.dispatch("loadUsername");
+        }
     };
 </script>

@@ -7,10 +7,10 @@
                     <li class="nav-item active">
                         <router-link to="/">Home</router-link>
                     </li>
-                    <li v-if="!isLogged" class="nav-item dropdown">
+                    <li v-if="!isLoggedIn" class="nav-item dropdown">
                         <router-link to="/login">Logowanie</router-link>
                     </li>
-                    <li v-if="isLogged" class="nav-item dropdown">
+                    <li v-if="isLoggedIn" class="nav-item dropdown">
                         <a @click="onClickLogout" href="#">Wyloguj</a>
                     </li>
                 </ul>
@@ -37,35 +37,19 @@
 
 <script>
     export default {
-        data() {
-            return {
-                isLogged: false
-            };
-        },
         methods: {
             onClickLogout: function() {
                 this.$http.get("logout").then(() => {
-                    window.location.reload();
+                    this.$store.commit("setAuthStatus", false);
+                    this.$router.go(0);
                 });
             },
-            checkIfUserIsLogged: function() {
-                let self = this;    
-                this.$http.get("user")    
-                    .then((response) => {    
-                        if(response.data) {
-                            self.$set(this, "isLogged", true); 
-                        } else {
-                            self.$set(this, "isLogged", false); 
-                        }
-                    })    
-                    .catch((errors) => {    
-                        console.log(errors);  
-                    });    
-            }
         },
-        mounted() {    
-            this.checkIfUserIsLogged();    
-        } 
+        computed: {
+            isLoggedIn() {
+                return this.$store.state.isLoggedIn;
+            }
+        }
     };
 </script>
 
