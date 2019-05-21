@@ -7,12 +7,19 @@
                     <li class="nav-item active">
                         <router-link to="/">Home</router-link>
                     </li>
-                    <li v-if="!isLoggedIn" class="nav-item dropdown">
-                        <router-link to="/login">Logowanie</router-link>
-                    </li>
-                    <li v-if="isLoggedIn" class="nav-item dropdown">
-                        <a @click="onClickLogout" href="#">Wyloguj</a>
-                    </li>
+                    <template v-if="isLoggedIn">
+                        <li class="nav-item dropdown">
+                            <a @click="onClickLogout" href="#">Wyloguj</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <router-link to="/referees">Sędziowie</router-link>
+                        </li>
+                    </template>
+                    <template v-else>
+                        <li class="nav-item dropdown">
+                            <router-link to="/login">Logowanie</router-link>
+                        </li>
+                    </template>
                 </ul>
             </div>
         </nav>
@@ -32,6 +39,11 @@
 
 .nav-item a {
   padding: 30px;
+}
+
+.col-centered {
+  float: none;
+  margin: 0 auto;
 }
 </style>
 

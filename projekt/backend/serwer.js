@@ -14,6 +14,13 @@ const sessionStore = new RedisStore({
     ttl:  260
 });
 
+// baza danych lowdb
+const low = require('lowdb');
+const FileSync = require('lowdb/adapters/FileSync');
+const adapter = new FileSync('../database/database.json');
+const db = low(adapter);
+const shortid = require('shortid');
+
 // Passport.js
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
@@ -86,6 +93,68 @@ app.get('/user', (req, res) => {
       res.send(req.session.passport);
 });
 
+app.post('/referee', (req, res) => {
+    addReferee(req, res);
+});
+
+app.get('/referee', (req, res) => {
+    getReferees(req, res);
+});
+
+app.delete('/referee/:id', (req, res) => {
+    const id = req.params.id;
+    removeReferee(req, res, id);
+});
+
+app.put('/referee/:id', (req, res) => {
+    const id = req.params.id;
+    updateReferee(req, res, id);
+});
+
+const addReferee = (req, res) => {
+        db.get('referees')
+        .push({
+            id: shortid.generate(),
+            name: req.body.name,
+            country: req.body.country
+        })
+        .write();
+        
+    res.status(201).send("Referee has been created");
+};
+
+const getReferees = (req, res) => {
+    const referees = db.get('referees');
+
+    res.json(referees);
+};
+
+const removeReferee = (req, res, id) => {
+    db.get('referees')
+    .remove({ id: id })
+    .write();
+
+    res.status(200).send("Referee has been removed");
+};
+
+const updateReferee = (req, res, id) => {
+    db.get('referees')
+    .find({ id: id })
+    .assign({
+        name: req.body.name,
+        country: req.body.country
+    })
+    .write();
+
+    res.status(200).send("Referee has been updated");
+
+
+};
+
+
+db.defaults({ referees: [] })
+  .write();
+
 // serwer HTTP dla aplikacji „app”
 const server = require('http').createServer(app);
 
@@ -122,6 +191,6 @@ sio.sockets.on('connection', (socket) => {
     console.log('test');
 });
 
-server.listen(3000, () => {
-    console.log('Serwer pod adresem http://localhost:3000/');
+server.listen(3001, () => {
+    console.log('Serwer pod adresem http://localhost:3001/');
 });

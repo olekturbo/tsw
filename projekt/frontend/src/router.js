@@ -2,6 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Login from "./views/Login.vue";
+import Referee from "./views/Referee.vue";
 import store from "./store";
 
 
@@ -24,6 +25,14 @@ let router =  new Router({
             meta: {
                 guest: true
             }
+        },
+        {
+            path: "/referees",
+            name: "referees",
+            component: Referee,
+            meta: {
+                auth: true
+            }
         }
     ]
 });
@@ -31,13 +40,10 @@ let router =  new Router({
 router.beforeEach((to, from, next) => {
     store.state.authStatus.then(isLoggedIn => {
         if(to.matched.some(record => record.meta.guest)) {
-            if(!isLoggedIn){
-                next();
-            }
-            else{
-                next({name: "home"});
-            }
-        }else {
+            isLoggedIn ? next({name: "home"}) : next();
+        } else if(to.matched.some(record => record.meta.auth)) {
+            isLoggedIn ?  next() : next({name: "home"});
+        } else {
             next(); 
         }
     });

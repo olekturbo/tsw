@@ -53,7 +53,7 @@
                         });
                     });
                     this.$store.commit("setAuthStatus", true);
-                    this.$router.push("home");
+                    this.$router.go(0);
                 })
                     .catch((e) => {
                         alert("Coś poszło nie tak. Spróbuj ponownie później: " + e.message);
@@ -62,12 +62,3 @@
         },
     };
 </script>
-
-
-<style>
-.col-centered {
-  float: none;
-  margin: 0 auto;
-}
-</style>
-
