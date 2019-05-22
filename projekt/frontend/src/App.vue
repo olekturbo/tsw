@@ -17,6 +17,9 @@
                         <li class="nav-item dropdown">
                             <router-link to="/classes">Klasy</router-link>
                         </li>
+                        <li class="nav-item dropdown">
+                            <router-link to="/horses">Konie</router-link>
+                        </li>
                     </template>
                     <template v-else>
                         <li class="nav-item dropdown">

@@ -4,6 +4,7 @@ import Home from "./views/Home.vue";
 import Login from "./views/Login.vue";
 import Referee from "./views/Referee.vue";
 import Class from "./views/Class.vue";
+import Horse from "./views/Horse.vue";
 import store from "./store";
 
 
@@ -39,6 +40,14 @@ let router =  new Router({
             path: "/classes",
             name: "classes",
             component: Class,
+            meta: {
+                auth: true
+            }
+        },
+        {
+            path: "/horses",
+            name: "horses",
+            component: Horse,
             meta: {
                 auth: true
             }

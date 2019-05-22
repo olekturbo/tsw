@@ -1,8 +1,7 @@
 <template>
     <div class="home">
+        <HelloWorld/>
         <img alt="Vue logo" src="../assets/logo.png">
-        <HelloWorld msg="Welcome to Your Vue.js App"/>
-        <h2>Witaj {{ username }}</h2>
     </div>
 </template>
 
@@ -15,13 +14,5 @@
         components: {
             HelloWorld
         },
-        computed: {
-            username() {
-                return this.$store.state.username;
-            }
-        },
-        mounted() {
-            this.$store.dispatch("loadUsername");
-        }
     };
 </script>

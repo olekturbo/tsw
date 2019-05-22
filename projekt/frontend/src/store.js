@@ -41,7 +41,8 @@ const store = new Vuex.Store({
             { value: "klacze_trzyletnie", text: "Klacze trzyletnie"},
             { value: "ogiery_trzyletnie", text: "Ogiery trzyletnie"},
         ],
-        refereeOptions: []
+        refereeOptions: [],
+        classOptions: []
     },
     actions: {
         loadUsername({
@@ -85,6 +86,11 @@ const store = new Vuex.Store({
             commit
         }, referees) {
             commit("setRefereeOptions", referees);
+        },
+        loadClassOptions({
+            commit
+        }, classes) {
+            commit("setClassOptions", classes);
         }
     },
     mutations: {
@@ -116,6 +122,23 @@ const store = new Vuex.Store({
             });
 
             state.refereeOptions = options;
+        },
+        setClassOptions(state, classes) {
+            let options = [];
+            options.push({
+                value: null,
+                text: "Proszę wybrać klasę"
+            });
+            classes.forEach(singleClass => {
+                let category = singleClass.category.replace("_", " ");
+                category = category[0].toUpperCase() + category.slice(1);
+                options.push({
+                    value: singleClass.id,
+                    text: singleClass.number + " (" + category + ")" 
+                });
+            });
+
+            state.classOptions = options;
         }
     }
 });
