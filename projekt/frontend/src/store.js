@@ -30,7 +30,18 @@ const store = new Vuex.Store({
         isLoggedIn: false,
         username: "",
         referees: [],
-        message: null
+        classes: [],
+        message: null,
+        categoryOptions: [
+            { value: "null", text: "Proszę wybrać kategorię", disabled: true},
+            { value: "klacze_roczne", text: "Klacze roczne"},
+            { value: "ogiery_roczne", text: "Ogiery roczne"},
+            { value: "klacze_dwuletnie", text: "Klacze dwuletnie"},
+            { value: "ogiery_dwuletnie", text: "Ogiery dwuletnie"},
+            { value: "klacze_trzyletnie", text: "Klacze trzyletnie"},
+            { value: "ogiery_trzyletnie", text: "Ogiery trzyletnie"},
+        ],
+        refereeOptions: []
     },
     actions: {
         loadUsername({
@@ -55,10 +66,25 @@ const store = new Vuex.Store({
                     console.log(errors);
                 });
         },
+        loadClasses({
+            commit
+        }) {
+            base.get("class").then((response) => {
+                commit("setClasses", response.data);
+            })
+                .catch((errors) => {
+                    console.log(errors);
+                });
+        },
         loadMessage({
             commit
         }, message) {
             commit("setMessage", message);
+        },
+        loadRefereeOptions({
+            commit
+        }, referees) {
+            commit("setRefereeOptions", referees);
         }
     },
     mutations: {
@@ -71,11 +97,25 @@ const store = new Vuex.Store({
         setReferees(state, referees) {
             state.referees = referees;
         },
+        setClasses(state, classes) {
+            state.classes = classes;
+        },
         setMessage(state, message) {
             state.message = message;
             setTimeout(() => {
                 state.message = null;
             }, 3000);
+        },
+        setRefereeOptions(state, referees) {
+            let options = [];
+            referees.forEach(referee => {
+                options.push({
+                    value: referee.id,
+                    text: referee.name + " (" + referee.country + ")" 
+                });
+            });
+
+            state.refereeOptions = options;
         }
     }
 });

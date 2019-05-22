@@ -4,7 +4,7 @@
             <b-alert v-if="message" show>{{ message }}</b-alert>
         </div>
         <div class="col-md-9">
-        
+            <ShowClasses/>
         </div>
         <div class="col-md-3">
             <AddClass/>
@@ -13,12 +13,14 @@
 </template>
 
 <script>
-import AddClass from '@/components/classes/AddClass.vue'
+import AddClass from '@/components/classes/AddClass.vue';
+import ShowClasses from '@/components/classes/ShowClasses.vue';
 
 export default {
     name: "Class",
     components: {
-        AddClass
+        AddClass,
+        ShowClasses
     },
     computed: {
         message() {

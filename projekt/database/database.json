@@ -2,7 +2,7 @@
   "referees": [
     {
       "id": "lSt-7CWDJ",
-      "name": "Aleksander Szewczak",
+      "name": "Olek Szewczak",
       "country": "Niemcy"
     },
     {
@@ -14,11 +14,6 @@
       "id": "nWK76-UnI",
       "name": "Kamil Stasiak",
       "country": "Nowa Zelandia"
-    },
-    {
-      "id": "c6pdJiiV-",
-      "name": "lol",
-      "country": "lol"
     }
   ],
   "classes": [
@@ -34,8 +29,8 @@
     },
     {
       "id": "N34qe1Fbq",
-      "number": "1",
-      "category": "klacze_dwuletnie",
+      "number": "2",
+      "category": "klacze_roczne",
       "comission": [
         "WQaOCDRR0",
         "nWK76-UnI"

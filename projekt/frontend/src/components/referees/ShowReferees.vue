@@ -2,6 +2,10 @@
     <div class="col-md-12">
         <p>Lista sędziowska</p>
         <b-list-group>
+            <div class="row">
+                <div class="col-md-3">Imię</div>
+                <div class="col-md-3">Kraj</div>
+            </div>
             <b-list-group-item v-for="referee in referees" :key="referee.id">
                 <div class="row">
                     <div class="col-md-3"><input v-model="referee.name"></div>
@@ -27,7 +31,6 @@
 </template>
 
 <script>
-import { setTimeout } from 'timers';
 export default {
     name: "ShowReferees",
     mounted() {

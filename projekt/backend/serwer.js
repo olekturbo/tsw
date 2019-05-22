@@ -93,6 +93,8 @@ app.get('/user', (req, res) => {
       res.send(req.session.passport);
 });
 
+/* Referees */
+
 app.post('/referee', (req, res) => {
     addReferee(req, res);
 });
@@ -111,9 +113,27 @@ app.put('/referee/:id', (req, res) => {
     updateReferee(req, res, id);
 });
 
+/* Classes */
+
 app.post('/class', (req, res) => {
     addClass(req, res);
 });
+
+app.get('/class', (req, res) => {
+    getClasses(req, res);
+});
+
+app.delete('/class/:id', (req, res) => {
+    const id = req.params.id;
+    removeClass(req, res, id);
+});
+
+app.put('/class/:id', (req, res) => {
+    const id = req.params.id;
+    updateClass(req, res, id);
+});
+
+/* Referees */
 
 const addReferee = (req, res) => {
         db.get('referees')
@@ -153,6 +173,8 @@ const updateReferee = (req, res, id) => {
     res.status(200).send("Referee has been updated");
 };
 
+/* Classes */
+
 const addClass = (req, res) => {
     db.get('classes')
     .push({
@@ -164,6 +186,33 @@ const addClass = (req, res) => {
     .write();
     
     res.status(201).send("Class has been created");
+};
+
+const getClasses = (req, res) => {
+    const classes = db.get('classes');
+
+    res.json(classes);
+};
+
+const removeClass = (req, res, id) => {
+    db.get('classes')
+    .remove({ id: id })
+    .write();
+
+    res.status(200).send("Class has been removed");
+};
+
+const updateClass = (req, res, id) => {
+    db.get('classes')
+    .find({ id: id })
+    .assign({
+        number: req.body.number,
+        category: req.body.category,
+        comission: JSON.parse(req.body.comission)
+    })
+    .write();
+
+    res.status(200).send("Class has been updated");
 };
 
 
