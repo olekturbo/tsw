@@ -13,7 +13,7 @@
     {
       "id": "nWK76-UnI",
       "name": "Kamil Stasiak",
-      "country": "Nowa Zelandia"
+      "country": "Polska"
     }
   ],
   "classes": [
@@ -22,7 +22,6 @@
       "number": "1",
       "category": "ogiery_trzyletnie",
       "comission": [
-        "lSt-7CWDJ",
         "WQaOCDRR0",
         "nWK76-UnI"
       ]
@@ -35,6 +34,60 @@
         "WQaOCDRR0",
         "nWK76-UnI"
       ]
+    }
+  ],
+  "horses": [
+    {
+      "id": "Q-vA3C2zI",
+      "number": "1",
+      "class": "undefined",
+      "name": "Liliana",
+      "country": "Polska",
+      "year": "2018",
+      "color": "kasztan",
+      "gender": "female",
+      "farmer": {
+        "name": "Kamil Stasiak",
+        "country": "Węgry"
+      },
+      "father": {
+        "name": "Abelardo",
+        "country": "Włochy"
+      },
+      "mother": {
+        "name": "Amnezja",
+        "country": "Francja"
+      },
+      "grandpa": {
+        "name": "Bogumił",
+        "country": "Brazylia"
+      }
+    },
+    {
+      "id": "lBuIF21KY",
+      "number": "1",
+      "class": "N34qe1Fbq",
+      "name": "Amnezja",
+      "country": "Polska",
+      "year": "2017",
+      "color": "kasztan",
+      "gender": "female",
+      "farmer": {
+        "name": "Wojciech Szewczak",
+        "country": "Polska"
+      },
+      "father": {
+        "name": "Abelardo",
+        "country": "Meksyk"
+      },
+      "mother": {
+        "name": "Navalia",
+        "country": "Francja"
+      },
+      "grandpa": {
+        "name": "Kowal",
+        "country": "Uzbekistan"
+      }
     }
   ]
 }

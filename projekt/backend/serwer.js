@@ -133,6 +133,12 @@ app.put('/class/:id', (req, res) => {
     updateClass(req, res, id);
 });
 
+/* Horsers */
+
+app.post('/horse', (req, res) => {
+    addHorse(req, res);
+});
+
 /* Referees */
 
 const addReferee = (req, res) => {
@@ -215,8 +221,43 @@ const updateClass = (req, res, id) => {
     res.status(200).send("Class has been updated");
 };
 
+/* Horses */
 
-db.defaults({ referees: [], classes: [] })
+const addHorse = (req, res) => {
+    db.get('horses')
+    .push({
+        id: shortid.generate(),
+        number: req.body.number,
+        class: req.body.class,
+        name: req.body.name,
+        country: req.body.country,
+        year: req.body.year,
+        color: req.body.color,
+        gender: req.body.gender,
+        farmer: {
+            name: req.body.farmersName,
+            country: req.body.farmersCountry
+        },
+        father: {
+            name: req.body.fathersName,
+            country: req.body.fathersCountry
+        },
+        mother: {
+            name: req.body.mothersName,
+            country: req.body.mothersCountry
+        },
+        grandpa: {
+            name: req.body.grandpasName,
+            country: req.body.grandpasCountry
+        }
+    })
+    .write();
+    
+res.status(201).send("Referee has been created");
+};
+
+
+db.defaults({ referees: [], classes: [], horses: [] })
   .write();
 
 // serwer HTTP dla aplikacji „app”
