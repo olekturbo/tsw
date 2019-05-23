@@ -5,6 +5,7 @@ import Login from "./views/Login.vue";
 import Referee from "./views/Referee.vue";
 import Class from "./views/Class.vue";
 import Horse from "./views/Horse.vue";
+import SingleHorse from "./views/SingleHorse.vue";
 import store from "./store";
 
 
@@ -48,6 +49,14 @@ let router =  new Router({
             path: "/horses",
             name: "horses",
             component: Horse,
+            meta: {
+                auth: true
+            }
+        },
+        {
+            path: "/horses/:id",
+            name: "horse",
+            component: SingleHorse,
             meta: {
                 auth: true
             }

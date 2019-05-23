@@ -103,6 +103,11 @@ app.get('/referee', (req, res) => {
     getReferees(req, res);
 });
 
+app.get('/referee/:id', (req, res) => {
+    const id = req.params.id;
+    getReferee(req, res, id);
+});
+
 app.delete('/referee/:id', (req, res) => {
     const id = req.params.id;
     removeReferee(req, res, id);
@@ -123,6 +128,11 @@ app.get('/class', (req, res) => {
     getClasses(req, res);
 });
 
+app.get('/class/:id', (req, res) => {
+    const id = req.params.id;
+    getClass(req, res, id);
+});
+
 app.delete('/class/:id', (req, res) => {
     const id = req.params.id;
     removeClass(req, res, id);
@@ -139,6 +149,14 @@ app.post('/horse', (req, res) => {
     addHorse(req, res);
 });
 
+app.get('/horse', (req, res) => {
+    getHorses(req, res);
+});
+
+app.get('/horse/:id', (req, res) => {
+    const id = req.params.id;
+    getHorse(req, res, id);
+});
 /* Referees */
 
 const addReferee = (req, res) => {
@@ -157,6 +175,12 @@ const getReferees = (req, res) => {
     const referees = db.get('referees');
 
     res.json(referees);
+};
+
+const getReferee = (req, res, id) => {
+    const referee = db.get('referees').find({ id: id }).value();
+
+    res.json(referee);
 };
 
 const removeReferee = (req, res, id) => {
@@ -198,6 +222,12 @@ const getClasses = (req, res) => {
     const classes = db.get('classes');
 
     res.json(classes);
+};
+
+const getClass = (req, res, id) => {
+    const singleClass = db.get('classes').find({ id: id }).value();
+
+    res.json(singleClass);
 };
 
 const removeClass = (req, res, id) => {
@@ -254,6 +284,18 @@ const addHorse = (req, res) => {
     .write();
     
 res.status(201).send("Referee has been created");
+};
+
+const getHorses = (req, res) => {
+    const horses = db.get('horses');
+
+    res.json(horses);
+};
+
+const getHorse = (req, res, id) => {
+    const horse = db.get('horses').find({ id: id }).value();
+
+    res.json(horse);
 };
 
 
