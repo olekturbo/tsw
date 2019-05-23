@@ -9,11 +9,11 @@
             <th>sędzia</th>
         </tr>
         <tr v-for="(referee, index) in referees" :key="referee.id">
-            <td><input type="number" v-model="marks.types[index]" step=0.5></td>
-            <td><input type="number" v-model="marks.heads[index]" step=0.5></td>
-            <td><input type="number" v-model="marks.blocks[index]" step=0.5></td>
-            <td><input type="number" v-model="marks.legs[index]" step=0.5></td>
-            <td><input type="number" v-model="marks.moves[index]" step=0.5></td>
+            <td><CustomInput v-model="marks.types[index]" :index="1"/></td>
+            <td><CustomInput v-model="marks.heads[index]" :index="2"/></td>
+            <td><CustomInput v-model="marks.blocks[index]" :index="3"/></td>
+            <td><CustomInput v-model="marks.legs[index]" :index="4"/></td>
+            <td><CustomInput v-model="marks.moves[index]" :index="5"/></td>
             <td>{{ referee.name }} ({{ getCountryCode(referee.country) }})</td>
         </tr>
         <tr>
@@ -33,8 +33,12 @@
 
 <script>
 import { setTimeout } from 'timers';
+import CustomInput from "@/components/CustomInput.vue";
 export default {
     name: "SingleHourse",
+    components: {
+        CustomInput
+    },
     data() {
         return {
             horse: null,
