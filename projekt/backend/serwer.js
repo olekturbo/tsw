@@ -157,6 +157,18 @@ app.get('/horse/:id', (req, res) => {
     const id = req.params.id;
     getHorse(req, res, id);
 });
+
+app.delete('/horse/:id', (req, res) => {
+    const id = req.params.id;
+    removeHorse(req, res, id);
+});
+
+app.put('/horse/:id', (req, res) => {
+    const id = req.params.id;
+    updateHorse(req, res, id);
+});
+
+
 /* Referees */
 
 const addReferee = (req, res) => {
@@ -296,6 +308,47 @@ const getHorse = (req, res, id) => {
     const horse = db.get('horses').find({ id: id }).value();
 
     res.json(horse);
+};
+
+const updateHorse = (req, res, id) => {
+    db.get('horses')
+    .find({ id: id })
+    .assign({
+        number: req.body.number,
+        class: req.body.class,
+        name: req.body.name,
+        country: req.body.country,
+        year: req.body.year,
+        color: req.body.color,
+        gender: req.body.gender,
+        farmer: {
+            name: req.body.farmersName,
+            country: req.body.farmersCountry
+        },
+        father: {
+            name: req.body.fathersName,
+            country: req.body.fathersCountry
+        },
+        mother: {
+            name: req.body.mothersName,
+            country: req.body.mothersCountry
+        },
+        grandpa: {
+            name: req.body.grandpasName,
+            country: req.body.grandpasCountry
+        }
+    })
+    .write();
+
+    res.status(200).send("Horse has been updated");
+};
+
+const removeHorse = (req, res, id) => {
+    db.get('horses')
+    .remove({ id: id })
+    .write();
+
+    res.status(200).send("Horse has been removed");
 };
 
 

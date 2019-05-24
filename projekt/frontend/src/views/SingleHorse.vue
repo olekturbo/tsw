@@ -1,143 +1,264 @@
 <template>
-    <table>
-        <tr>
-            <th>typ</th>
-            <th>głowa</th>
-            <th>kłoda</th>
-            <th>nogi</th>
-            <th>ruch</th>
-            <th>sędzia</th>
-        </tr>
-        <tr v-for="(referee, index) in referees" :key="referee.id">
-            <td><CustomInput v-model="marks.types[index]" :index="1"/></td>
-            <td><CustomInput v-model="marks.heads[index]" :index="2"/></td>
-            <td><CustomInput v-model="marks.blocks[index]" :index="3"/></td>
-            <td><CustomInput v-model="marks.legs[index]" :index="4"/></td>
-            <td><CustomInput v-model="marks.moves[index]" :index="5"/></td>
-            <td>{{ referee.name }} ({{ getCountryCode(referee.country) }})</td>
-        </tr>
-        <tr>
-            <th colspan="6">SUMA PUNKTÓW</th>
-        </tr>
-        <tr>
-            <td style="background: #bb2124; color: white">{{ sum.types }} pkt</td>
-            <td>{{ sum.heads }} pkt</td>
-            <td>{{ sum.blocks }} pkt</td>
-            <td>{{ sum.legs }} pkt</td>
-            <td style="background: #bb2124; color: white">{{ sum.moves }} pkt</td>
-            <td style="background: #22bb33; color: white">{{ totalSum.value }} pkt</td>
-        </tr>
-    </table>
+  <div>
+    <h2 style="font-weight: bold; margin-top: 30px; margin-bottom: 30px;">DANE KONIA</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <b-alert v-if="message" show>{{ message }}</b-alert>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="number">Numer konia</label>
+          <input
+            type="number"
+            class="form-control"
+            id="number"
+            placeholder="Wprowadź numer konia"
+            v-model="horse.number"
+          >
+        </div>
+        <div class="form-group">
+          <label for="class">Klasa konia</label>
+          <b-form-select id="class" v-model="horse.class" :options="classOptions"></b-form-select>
+        </div>
+        <div class="form-group">
+          <label for="name">Nazwa konia</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            placeholder="Wprowadź nazwę konia"
+            v-model="horse.name"
+          >
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="country">Kraj konia</label>
+          <input
+            type="text"
+            class="form-control"
+            id="country"
+            placeholder="Wprowadź kraj konia"
+            v-model="horse.country"
+          >
+        </div>
+        <div class="form-group">
+          <label for="year">Rok urodzenia konia</label>
+          <input
+            type="number"
+            class="form-control"
+            id="year"
+            placeholder="Wprowadź rok urodzenia konia"
+            v-model="horse.year"
+            min="1950"
+            max="2019"
+          >
+        </div>
+        <div class="form-group">
+          <label for="color">Maść konia</label>
+          <input
+            type="text"
+            class="form-control"
+            id="color"
+            placeholder="Wprowadź maść konia"
+            v-model="horse.color"
+          >
+        </div>
+        <div class="form-group">
+          <label for="gender">Płeć konia</label>
+          <b-form-select id="gender" v-model="horse.gender" :options="genderOptions"></b-form-select>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="farmersName">Nazwa hodowcy</label>
+          <input
+            type="text"
+            class="form-control"
+            id="farmersName"
+            placeholder="Wprowadź nazwę hodowcy"
+            v-model="horse.farmer.name"
+          >
+        </div>
+        <div class="form-group">
+          <label for="farmersCountry">Kraj hodowcy</label>
+          <input
+            type="text"
+            class="form-control"
+            id="farmersCountry"
+            placeholder="Wprowadź kraj hodowcy"
+            v-model="horse.farmer.country"
+          >
+        </div>
+        <div class="form-group">
+          <label for="fathersName">Nazwa ojca</label>
+          <input
+            type="text"
+            class="form-control"
+            id="fathersName"
+            placeholder="Wprowadź nazwę ojca"
+            v-model="horse.father.name"
+          >
+        </div>
+        <div class="form-group">
+          <label for="fathersCountry">Kraj ojca</label>
+          <input
+            type="text"
+            class="form-control"
+            id="fathersCountry"
+            placeholder="Wprowadź kraj ojca"
+            v-model="horse.father.country"
+          >
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="mothersName">Nazwa matki</label>
+          <input
+            type="text"
+            class="form-control"
+            id="mothersName"
+            placeholder="Wprowadź nazwę matki"
+            v-model="horse.mother.name"
+          >
+        </div>
+        <div class="form-group">
+          <label for="mothersCountry">Kraj matki</label>
+          <input
+            type="text"
+            class="form-control"
+            id="mothersCountry"
+            placeholder="Wprowadź kraj matki"
+            v-model="horse.mother.country"
+          >
+        </div>
+        <div class="form-group">
+          <label for="grandpasName">Nazwa ojca matki</label>
+          <input
+            type="text"
+            class="form-control"
+            id="grandpasName"
+            placeholder="Wprowadź nazwę ojca matki"
+            v-model="horse.grandpa.name"
+          >
+        </div>
+        <div class="form-group">
+          <label for="grandpasCountry">Kraj ojca matki</label>
+          <input
+            type="text"
+            class="form-control"
+            id="grandpasCountry"
+            placeholder="Wprowadź kraj ojca matki"
+            v-model="horse.grandpa.country"
+          >
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" @click="onClickUpdate">Aktualizuj</button>
+    <div>
+      <Table :horse="horse"/>
+    </div>
+  </div>
 </template>
 
-
 <script>
-import { setTimeout } from 'timers';
-import CustomInput from "@/components/CustomInput.vue";
+import Table from "@/components/horses/Table.vue";
 export default {
-    name: "SingleHourse",
-    components: {
-        CustomInput
-    },
-    data() {
-        return {
-            horse: null,
-            singleClass: null,
-            referees: [],
-            marks: {
-                types: [],
-                heads: [],
-                blocks: [],
-                legs: [],
-                moves: []
-            },
+  name: "SingleHourse",
+  data() {
+    return {
+      horse: {
+        number: null,
+        number: null,
+        singleClass: null,
+        name: "",
+        country: "",
+        year: 2019,
+        color: "",
+        gender: null,
+        farmer: {
+          name: "",
+          country: ""
+        },
+        father: {
+          name: "",
+          country: ""
+        },
+        mother: {
+          name: "",
+          country: ""
+        },
+        grandpa: {
+          name: "",
+          country: ""
         }
+      },
+      genderOptions: [
+        { value: null, text: "Proszę wybrać płeć", disabled: true },
+        { value: "male", text: "Ogier" },
+        { value: "female", text: "Klacz" }
+      ]
+    };
+  },
+  components: {
+    Table
+  },
+  mounted() {
+    this.getHorseById(this.$route.params.id);
+    this.$store.dispatch("loadClasses");
+    setTimeout(() => {
+      this.$store.dispatch("loadClassOptions", this.$store.state.classes);
+    }, 100);
+  },
+  computed: {
+    classOptions() {
+      return this.$store.state.classOptions;
     },
-    computed: {
-        sum() {
-            return {
-                types: this.add(this.marks.types),
-                heads: this.add(this.marks.heads),
-                blocks: this.add(this.marks.blocks),
-                legs: this.add(this.marks.legs),
-                moves: this.add(this.marks.moves)
-            }
-        },
-        totalSum() {
-            return {
-                value: this.sum.types + this.sum.heads + this.sum.blocks
-                    + this.sum.legs + this.sum.moves
-            }
-        }
-    },
-    mounted() {
-        this.getHorseById(this.$route.params.id);
-        setTimeout(() => {
-            this.getClassById(this.horse.class);
-            setTimeout(() => {
-                this.getReferees();
-            }, 100);
-        }, 100);
-    },
-    methods: {
-        getHorseById(id) {
-            this.$http.get("horse/" + id).then((response) => {
-                this.horse = response.data;
-            })
-            .catch((errors) => {
-                console.log(errors);
-            });
-        },
-        getClassById(id) {
-            this.$http.get("class/" + id).then((response) => {
-                this.singleClass = response.data;
-            })
-            .catch((errors) => {
-                console.log(errors);
-            });
-        },
-        getReferees() {
-            this.singleClass.comission.forEach(id => {
-                this.$http.get("referee/" + id).then((response) => {
-                    this.referees.push(response.data);
-                })
-                .catch((errors) => {
-                    console.log(errors);
-                });
-            });
-        },
-        add(arr) {
-            return arr.map(Number).reduce(function(a,b){
-                return a + b
-            }, 0);
-        },
-        getCountryCode(country) {
-            return country.substring(0,3).toUpperCase();
-        }
+    message() {
+      return this.$store.state.message;
     }
-}
+  },
+  methods: {
+    getHorseById(id) {
+      this.$http
+        .get("horse/" + id)
+        .then(response => {
+          this.horse = response.data;
+        })
+        .catch(errors => {
+          console.log(errors);
+        });
+    },
+    onClickUpdate() {
+      const params = new URLSearchParams();
+      params.append("number", this.horse.number);
+      params.append("class", this.horse.class);
+      params.append("name", this.horse.name);
+      params.append("country", this.horse.country);
+      params.append("year", this.horse.year);
+      params.append("color", this.horse.color);
+      params.append("gender", this.horse.gender);
+      params.append("farmersName", this.horse.farmer.name);
+      params.append("farmersCountry", this.horse.farmer.country);
+      params.append("fathersName", this.horse.father.name);
+      params.append("fathersCountry", this.horse.father.country);
+      params.append("mothersName", this.horse.mother.name);
+      params.append("mothersCountry", this.horse.mother.country);
+      params.append("grandpasName", this.horse.grandpa.name);
+      params.append("grandpasCountry", this.horse.grandpa.country);
+      this.$http
+        .put("horse/" + this.horse.id, params)
+        .then(response => {
+          this.$store.dispatch("loadHorses");
+          this.$store.dispatch(
+            "loadMessage",
+            "Koń " + this.horse.name + " został pomyślnie zaktualizowany."
+          );
+        })
+        .catch(errors => {
+          console.log(errors);
+        });
+    }
+  }
+};
 </script>
-
-<style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 80%;
-  margin: 50px auto 0 auto;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-  text-align: center;
-}
-
-td {
-  background-color: #dddddd;
-}
-
-td input {
-    text-align: center;
-}
-</style>

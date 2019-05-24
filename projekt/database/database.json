@@ -39,55 +39,29 @@
   ],
   "horses": [
     {
-      "id": "Q-vA3C2zI",
+      "id": "gcwjoUl3J",
       "number": "1",
-      "class": "undefined",
-      "name": "Liliana",
-      "country": "Polska",
-      "year": "2018",
+      "class": "cP3E5o7ku",
+      "name": "Avanti",
+      "country": "Boliwia",
+      "year": "2016",
       "color": "kasztan",
-      "gender": "female",
+      "gender": "male",
       "farmer": {
-        "name": "Kamil Stasiak",
-        "country": "Węgry"
+        "name": "Vino",
+        "country": "Maseratii"
       },
       "father": {
-        "name": "Abelardo",
-        "country": "Włochy"
-      },
-      "mother": {
-        "name": "Amnezja",
-        "country": "Francja"
-      },
-      "grandpa": {
-        "name": "Bogumił",
-        "country": "Brazylia"
-      }
-    },
-    {
-      "id": "lBuIF21KY",
-      "number": "1",
-      "class": "N34qe1Fbq",
-      "name": "Amnezja",
-      "country": "Polska",
-      "year": "2017",
-      "color": "kasztan",
-      "gender": "female",
-      "farmer": {
-        "name": "Wojciech Szewczak",
-        "country": "Polska"
-      },
-      "father": {
-        "name": "Abelardo",
+        "name": "Policio",
         "country": "Meksyk"
       },
       "mother": {
-        "name": "Navalia",
-        "country": "Francja"
+        "name": "Vanessa",
+        "country": "Ukraina"
       },
       "grandpa": {
-        "name": "Kowal",
-        "country": "Uzbekistan"
+        "name": "Wojciech",
+        "country": "Polska"
       }
     }
   ]
