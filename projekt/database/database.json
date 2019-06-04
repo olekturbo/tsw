@@ -22,6 +22,7 @@
       "number": "1",
       "category": "ogiery_trzyletnie",
       "comission": [
+        "lSt-7CWDJ",
         "WQaOCDRR0",
         "nWK76-UnI"
       ]
@@ -32,36 +33,119 @@
       "category": "klacze_roczne",
       "comission": [
         "lSt-7CWDJ",
-        "WQaOCDRR0",
-        "nWK76-UnI"
+        "WQaOCDRR0"
       ]
     }
   ],
   "horses": [
     {
-      "id": "gcwjoUl3J",
+      "id": "cG4S--yRx",
       "number": "1",
       "class": "cP3E5o7ku",
-      "name": "Avanti",
-      "country": "Boliwia",
+      "name": "Las Sontos",
+      "country": "Hiszpania",
+      "year": "2015",
+      "color": "kasztan",
+      "gender": "male",
+      "farmer": {
+        "name": "Adam",
+        "country": "Polak"
+      },
+      "father": {
+        "name": "Vincenty",
+        "country": "Boliwia"
+      },
+      "mother": {
+        "name": "Masena",
+        "country": "Argentyna"
+      },
+      "grandpa": {
+        "name": "Bobo",
+        "country": "Niemcy"
+      },
+      "score": {
+        "marks": {
+          "types": [
+            20,
+            16,
+            12
+          ],
+          "heads": [
+            20,
+            20,
+            20
+          ],
+          "blocks": [
+            5,
+            19.5,
+            20
+          ],
+          "legs": [
+            5,
+            4.5,
+            4
+          ],
+          "moves": [
+            0.5,
+            4.5,
+            9.5
+          ]
+        }
+      }
+    },
+    {
+      "id": "VC4JWgz0f",
+      "number": "2",
+      "class": "cP3E5o7ku",
+      "name": "Bako",
+      "country": "Polska",
       "year": "2016",
       "color": "kasztan",
       "gender": "male",
       "farmer": {
-        "name": "Vino",
-        "country": "Maseratii"
+        "name": "Abadon",
+        "country": "Włochy"
       },
       "father": {
-        "name": "Policio",
-        "country": "Meksyk"
+        "name": "Amsterdam",
+        "country": "Holandia"
       },
       "mother": {
-        "name": "Vanessa",
-        "country": "Ukraina"
+        "name": "Amnezja",
+        "country": "Włochy"
       },
       "grandpa": {
-        "name": "Wojciech",
+        "name": "Niveo",
         "country": "Polska"
+      },
+      "score": {
+        "marks": {
+          "types": [
+            14.5,
+            20,
+            13.5
+          ],
+          "heads": [
+            14,
+            12,
+            11
+          ],
+          "blocks": [
+            13,
+            13,
+            13
+          ],
+          "legs": [
+            14.5,
+            12.5,
+            11.5
+          ],
+          "moves": [
+            7.5,
+            4.5,
+            3.5
+          ]
+        }
       }
     }
   ]

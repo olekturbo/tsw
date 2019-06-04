@@ -168,6 +168,16 @@ app.put('/horse/:id', (req, res) => {
     updateHorse(req, res, id);
 });
 
+app.put('/horse/mark/:id', (req, res) => {
+    const id = req.params.id;
+    markHorse(req, res, id);
+});
+
+app.get('/horse/marked/:id', (req, res) => {
+    const id = req.params.id;
+    getMarkedHorses(req, res, id);
+});
+
 
 /* Referees */
 
@@ -351,6 +361,27 @@ const removeHorse = (req, res, id) => {
     res.status(200).send("Horse has been removed");
 };
 
+const markHorse = (req, res, id) => {
+    db.get('horses')
+    .find({ id: id })
+    .assign({
+        score: {
+            marks: JSON.parse(req.body.marks)
+        }
+    })
+    .write();
+
+    res.status(200).send("Horse has been marked");
+};
+
+const getMarkedHorses = (req, res, id) => {
+    const horses = db.get('horses')
+                    .filter({ class: id })
+                    .value();
+    
+    res.json(horses);
+};
+
 
 db.defaults({ referees: [], classes: [], horses: [] })
   .write();
@@ -388,6 +419,9 @@ sio.use(passportSocketIo.authorize({
 }));
 
 sio.sockets.on('connection', (socket) => {
+    socket.on('markHorse', () => {
+        sio.emit('refreshHorses');
+    });
     console.log('test');
 });
 

@@ -6,6 +6,8 @@ import Referee from "./views/Referee.vue";
 import Class from "./views/Class.vue";
 import Horse from "./views/Horse.vue";
 import SingleHorse from "./views/SingleHorse.vue";
+import Panel from "./views/Panel.vue";
+import PanelClass from "./views/PanelClass.vue";
 import store from "./store";
 
 
@@ -60,6 +62,16 @@ let router =  new Router({
             meta: {
                 auth: true
             }
+        },
+        {
+            path: "/panel",
+            name: "panel",
+            component: Panel,
+        },
+        {
+            path: "/panel/class/:id",
+            name: "panelClass",
+            component: PanelClass,
         }
     ]
 });
