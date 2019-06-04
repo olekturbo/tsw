@@ -266,6 +266,18 @@ const removeClass = (req, res, id) => {
 };
 
 const updateClass = (req, res, id) => {
+
+    const horses = db.get('horses')
+        .filter({ class: id })
+        .value();
+
+    horses.forEach(horse => {
+        db.get('horses')
+        .find({id: horse.id})
+        .unset('score')
+        .write();
+    });
+
     db.get('classes')
     .find({ id: id })
     .assign({
