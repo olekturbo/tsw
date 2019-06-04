@@ -338,6 +338,18 @@ const getHorse = (req, res, id) => {
 };
 
 const updateHorse = (req, res, id) => {
+
+    const horse = db.get('horses')
+        .find({id: id})
+        .value();
+
+    if(horse.class !== req.body.class) {
+        db.get('horses')
+        .find({id: id})
+        .unset('score')
+        .write();
+    }
+
     db.get('horses')
     .find({ id: id })
     .assign({

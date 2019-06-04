@@ -62,9 +62,6 @@
       "grandpa": {
         "name": "Bobo",
         "country": "Niemcy"
-      },
-      "draw": {
-        "fix": "2"
       }
     },
     {
@@ -91,6 +88,35 @@
       "grandpa": {
         "name": "Niveo",
         "country": "Polska"
+      },
+      "score": {
+        "marks": {
+          "types": [
+            1,
+            1,
+            1
+          ],
+          "heads": [
+            2,
+            2,
+            2
+          ],
+          "blocks": [
+            3,
+            3,
+            3
+          ],
+          "legs": [
+            4,
+            4,
+            4
+          ],
+          "moves": [
+            1,
+            1,
+            1
+          ]
+        }
       }
     },
     {
@@ -118,8 +144,34 @@
         "name": "Zbigniew",
         "country": "Polska"
       },
-      "draw": {
-        "fix": "1"
+      "score": {
+        "marks": {
+          "types": [
+            1,
+            1,
+            1
+          ],
+          "heads": [
+            2,
+            2,
+            2
+          ],
+          "blocks": [
+            3,
+            3,
+            3
+          ],
+          "legs": [
+            4,
+            4,
+            4
+          ],
+          "moves": [
+            1,
+            1,
+            1
+          ]
+        }
       }
     }
   ]
