@@ -6,6 +6,7 @@
     <th>Punkty</th>
     <th>Typ</th>
     <th>Ruch</th>
+    <th>Rozjemca</th>
   </tr>
   <tr v-for="(horse, index) in sortedHorses" :key="horse.id">
     <td>{{ index + 1}}</td>
@@ -13,6 +14,10 @@
     <td>{{ horse.score ? getTotalSumByHorse(horse) : 0 }}</td>
     <td>{{ horse.score ? getSumByHorse(horse).types : 0 }}</td>
     <td>{{ horse.score ? getSumByHorse(horse).moves : 0 }}</td>
+    <td v-if="horse.needToFix">
+        <input :id="'input_' + horse.id" type="number" step="1">
+        <button :id="'btn_' + horse.id" @click="fixDraw(horse)" style="margin-left: 30px;" class="btn btn-sm btn-success">OK</button>
+    </td>
   </tr>
 </table>
 </template>
@@ -66,16 +71,25 @@ export default {
         sortHorses() {
             let horses = this.horses;
             horses.sort((x,y) => {
-                let n = this.getTotalSumByHorse(y) - this.getTotalSumByHorse(x);
-                if(n !== 0) {
-                    return n;
-                }
-                let m = this.getSumByHorse(y).types - this.getSumByHorse(x).types;
-                if(m !== 0) {
-                    return m;
-                }
+                if(x.score && y.score) {
+                    let n = this.getTotalSumByHorse(y) - this.getTotalSumByHorse(x);
+                    if(n !== 0) {
+                        return n;
+                    }
+                    let m = this.getSumByHorse(y).types - this.getSumByHorse(x).types;
+                    if(m !== 0) {
+                        return m;
+                    }
 
-                return this.getSumByHorse(y).moves - this.getSumByHorse(x).moves;
+                    let r = this.getSumByHorse(y).moves - this.getSumByHorse(x).moves;
+                    if(r !== 0) {
+                        return r;
+                    }
+
+                    if(x.draw && y.draw) {
+                        return x.draw.fix - y.draw.fix;
+                    }
+                }
             });
             this.sortedHorses = horses;
         },
@@ -84,7 +98,44 @@ export default {
             this.$store.dispatch("loadHorsesByClass", this.$route.params.id);
             setTimeout(() => {
                 this.sortHorses();
+                this.checkIfDraw();
             },100);
+        },
+        checkIfDraw() {
+            for(let i = 0; i < this.sortedHorses.length; i++) {
+                for(let j = 0; j < this.sortedHorses.length - i - 1; j++) {
+                   if(this.sortedHorses[j].score && this.sortedHorses[j+1].score) {
+                        if(this.getTotalSumByHorse(this.sortedHorses[j]) === this.getTotalSumByHorse(this.sortedHorses[j+1])) {
+                            if(this.getSumByHorse(this.sortedHorses[j]).types === this.getSumByHorse(this.sortedHorses[j+1]).types) {
+                                if(this.getSumByHorse(this.sortedHorses[j]).moves === this.getSumByHorse(this.sortedHorses[j+1]).moves) {
+                                    if(!this.sortedHorses[j].draw) {
+                                        this.sortedHorses[j].needToFix = true;
+                                    }
+                                    if(!this.sortedHorses[j+1].draw) {
+                                        this.sortedHorses[j+1].needToFix = true;
+                                    }
+                                }
+                            }
+                        }
+                   }
+                }
+            }
+        },
+        fixDraw(horse) {
+            let input = document.getElementById("input_" + horse.id);
+            let val = input.value;
+
+            const params = new URLSearchParams();
+            params.append("draw", val);
+
+            this.$http
+                .put("horse/draw/" + horse.id, params)
+                .then(response => {
+                    this.refreshData();
+                })
+                .catch(errors => {
+                    console.log(errors);
+            });
         }
     },
     mounted() {

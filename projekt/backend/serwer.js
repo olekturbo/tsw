@@ -173,6 +173,11 @@ app.put('/horse/mark/:id', (req, res) => {
     markHorse(req, res, id);
 });
 
+app.put('/horse/draw/:id', (req, res) => {
+    const id = req.params.id;
+    fixDrawHorse(req, res, id);
+});
+
 app.get('/horse/marked/:id', (req, res) => {
     const id = req.params.id;
     getMarkedHorses(req, res, id);
@@ -380,6 +385,19 @@ const getMarkedHorses = (req, res, id) => {
                     .value();
     
     res.json(horses);
+};
+
+const fixDrawHorse = (req, res, id) => {
+    db.get('horses')
+    .find({ id: id })
+    .assign({
+        draw: {
+            fix: req.body.draw
+        }
+    })
+    .write();
+
+    res.status(200).send("Horse has been fixed");
 };
 
 

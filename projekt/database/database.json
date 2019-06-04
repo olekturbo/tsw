@@ -66,31 +66,34 @@
       "score": {
         "marks": {
           "types": [
+            14.5,
             20,
-            16,
-            12
+            13.5
           ],
           "heads": [
-            20,
-            20,
-            20
+            15,
+            12,
+            11
           ],
           "blocks": [
-            11,
-            19.5,
-            20
+            12,
+            13,
+            13
           ],
           "legs": [
-            5,
-            4.5,
-            4
+            14.5,
+            12.5,
+            11.5
           ],
           "moves": [
-            0.5,
+            7.5,
             4.5,
-            9.5
+            3.5
           ]
         }
+      },
+      "draw": {
+        "fix": "2"
       }
     },
     {
@@ -126,12 +129,12 @@
             13.5
           ],
           "heads": [
-            14,
+            15,
             12,
             11
           ],
           "blocks": [
-            13,
+            12,
             13,
             13
           ],
@@ -146,6 +149,67 @@
             3.5
           ]
         }
+      },
+      "draw": {
+        "fix": "3"
+      }
+    },
+    {
+      "id": "axQICRIXm",
+      "number": "3",
+      "class": "cP3E5o7ku",
+      "name": "Best",
+      "country": "Polska",
+      "year": "2017",
+      "color": "kasztan",
+      "gender": "male",
+      "farmer": {
+        "name": "Andrzej",
+        "country": "Polska"
+      },
+      "father": {
+        "name": "Adam",
+        "country": "Polska"
+      },
+      "mother": {
+        "name": "Bożena",
+        "country": "Polska"
+      },
+      "grandpa": {
+        "name": "Zbigniew",
+        "country": "Polska"
+      },
+      "score": {
+        "marks": {
+          "types": [
+            20,
+            20,
+            8
+          ],
+          "heads": [
+            20,
+            20,
+            20
+          ],
+          "blocks": [
+            8,
+            1,
+            10
+          ],
+          "legs": [
+            15.5,
+            10,
+            10
+          ],
+          "moves": [
+            13.5,
+            1,
+            1
+          ]
+        }
+      },
+      "draw": {
+        "fix": "1"
       }
     }
   ]
