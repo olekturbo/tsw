@@ -16,7 +16,7 @@
           </div>
           <div class="col-md-1">
             <router-link :to="{ name: 'horse', params: { id: horse.id }}">
-              <b-badge variant="success" @click="onClickUpdate(singleClass)">edytuj</b-badge>
+              <b-badge variant="success">edytuj</b-badge>
             </router-link>
           </div>
           <div class="col-md-1">
