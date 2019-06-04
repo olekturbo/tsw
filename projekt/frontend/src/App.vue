@@ -26,9 +26,6 @@
                             <router-link to="/login">Logowanie</router-link>
                         </li>
                     </template>
-                    <li class="nav-item dropdown">
-                        <router-link to="/panel">Panel Kibica</router-link>
-                    </li>
                 </ul>
             </div>
         </nav>
@@ -48,14 +45,12 @@
 
 .nav-item a {
   padding: 30px;
-  outline: 0;
 }
 
 .col-centered {
   float: none;
   margin: 0 auto;
 }
-
 </style>
 
 <script>

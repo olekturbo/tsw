@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kolokwium</title>
+    <style>
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p>Poniżej kilka przykładów odwołań do danych</p>
+
+    <ul>
+        <li>
+            <p>strona główna</p>
+            <pre><code class="bash language-bash">http://10.10.44.6:3000</code></pre>
+        </li>
+        <li>
+            <p>dane na temat województw</p>
+            <pre><code class="bash language-bash">http://10.10.44.6:3000/wojewodztwa </code></pre>
+        </li>
+        <li>
+            <p>wyniki ze wszystkich gmin (duże)</p>
+            <pre><code class="bash language-bash">http://10.10.44.6:3000/wyniki</code></pre>
+        </li>
+        <li>
+            <p>wyniki z województwa pomorskiego</p>
+            <pre><code class="bash language-bash">http://10.10.44.6:3000/wyniki?id_gte=220000&amp;id_lte=239999</code></pre>
+        </li>
+        <li>
+            <p>wyniki z gmin, w których było co najmniej 1000 głosów nieważnych</p>
+            <pre><code class="bash language-bash">http://10.10.44.6:3000/wyniki?Liczba%20g%C5%82os%C3%B3w%20niewa%C5%BCnych_gte=1000</code></pre>
+        </li>
+    </ul>
+</body>
+</html>
