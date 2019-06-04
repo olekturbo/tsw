@@ -11,11 +11,11 @@
             <th>sędzia</th>
         </tr>
         <tr v-for="(referee, index) in referees" :key="referee.id">
-            <td><CustomInput v-model.number="marks.types[index]" :index="1"/></td>
-            <td><CustomInput v-model.number="marks.heads[index]" :index="2"/></td>
-            <td><CustomInput v-model.number="marks.blocks[index]" :index="3"/></td>
-            <td><CustomInput v-model.number="marks.legs[index]" :index="4"/></td>
-            <td><CustomInput v-model.number="marks.moves[index]" :index="5"/></td>
+            <td><CustomInput v-model="marks.types[index]" :index="1"/></td>
+            <td><CustomInput v-model="marks.heads[index]" :index="2"/></td>
+            <td><CustomInput v-model="marks.blocks[index]" :index="3"/></td>
+            <td><CustomInput v-model="marks.legs[index]" :index="4"/></td>
+            <td><CustomInput v-model="marks.moves[index]" :index="5"/></td>
             <td>{{ referee.name }} ({{ getCountryCode(referee.country) }})</td>
         </tr>
         <tr>
@@ -30,11 +30,6 @@
             <td style="background: #22bb33; color: white">{{ totalSum.value }} pkt</td>
         </tr>
     </table>
-    <div class="row" style="margin: 20px 0;">
-        <div class="col-md-12">
-            <button @click="onClickSend" class="btn btn-success">Wyślij</button>
-        </div>
-    </div>
     </div>
 </template>
 
@@ -79,9 +74,6 @@ export default {
     },
     mounted() {
         setTimeout(() => {
-            if(this.horse.score) {
-                this.marks = this.horse.score.marks;
-            }
             this.getClassById(this.horse.class);
             setTimeout(() => {
                 this.getReferees();
@@ -114,18 +106,7 @@ export default {
         },
         getCountryCode(country) {
             return country.substring(0,3).toUpperCase();
-        },
-        onClickSend() {
-            const params = new URLSearchParams();
-            params.append("marks", JSON.stringify(this.marks));
-            this.$http.put("horse/mark/" + this.horse.id, params).then((response) => {
-                this.$socket.emit('markHorse');
-                this.$store.dispatch('loadMessage', "Koń został pomyślnie oceniony");
-            })
-            .catch((e) => {
-                alert("Coś poszło nie tak. Spróbuj ponownie później: " + e.message);
-            });
-        },
+        }
     }
 }
 </script>
