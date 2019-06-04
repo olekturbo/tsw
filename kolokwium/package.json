@@ -1,0 +1,22 @@
+{
+  "name": "szewczak",
+  "version": "1.0.0",
+  "description": "<!DOCTYPE html> <html lang=\"en\"> <head>     <meta charset=\"UTF-8\">     <title>Kolokwium</title>     <style>         .center {             text-align: center;         }     </style> </head> <body>     <p>Poniżej kilka przykładów odwołań do danych</p>",
+  "main": "serwer.js",
+  "scripts": {
+    "start": "nodemon serwer.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chartist": "^0.11.2",
+    "connect": "^3.6.6",
+    "lodash": "^4.17.11",
+    "lowdb": "^1.0.0",
+    "nodemon": "^1.18.11",
+    "request": "^2.81.0",
+    "serve-static": "^1.13.2",
+    "socket.io": "^2.2.0",
+    "xmlhttprequest": "^1.8.0"
+  }
+}
