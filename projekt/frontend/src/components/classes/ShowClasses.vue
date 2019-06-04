@@ -13,8 +13,15 @@
                     <div class="col-md-3">
                         <b-form-select id="category" v-model="singleClass.category" :options="categoryOptions"></b-form-select>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                             <b-form-select v-model="singleClass.comission" :options="refereeOptions" multiple :select-size="5"></b-form-select>
+                    </div>
+                     <div class="col-md-1">
+                        <a href="#">
+                            <b-badge variant="primary">
+                                <router-link style="color: white" :to="{ name: 'showHorsesByClass', params: { id: singleClass.id }}">podgląd</router-link>
+                            </b-badge>
+                        </a>
                     </div>
                     <div class="col-md-1">
                         <a href="#">

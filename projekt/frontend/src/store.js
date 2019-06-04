@@ -32,6 +32,7 @@ const store = new Vuex.Store({
         referees: [],
         classes: [],
         horses: [],
+        horsesByClass: [],
         message: null,
         categoryOptions: [
             { value: "null", text: "Proszę wybrać kategorię", disabled: true},
@@ -88,6 +89,18 @@ const store = new Vuex.Store({
                     console.log(errors);
                 });
         },
+        loadHorsesByClass({
+            commit
+        }, id) {
+            base
+                .get("horse/marked/" + id)
+                .then(response => {
+                    commit("setHorsesByClass", response.data);
+                })
+                .catch(errors => {
+                    console.log(errors);
+                });
+        },
         loadMessage({
             commit
         }, message) {
@@ -119,6 +132,9 @@ const store = new Vuex.Store({
         },
         setHorses(state, horses) {
             state.horses = horses;
+        },
+        setHorsesByClass(state, horses) {
+            state.horsesByClass = horses;
         },
         setMessage(state, message) {
             state.message = message;

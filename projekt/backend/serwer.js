@@ -143,7 +143,7 @@ app.put('/class/:id', (req, res) => {
     updateClass(req, res, id);
 });
 
-/* Horsers */
+/* Horses */
 
 app.post('/horse', (req, res) => {
     addHorse(req, res);

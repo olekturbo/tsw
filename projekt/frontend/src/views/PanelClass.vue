@@ -24,9 +24,13 @@ export default {
     data() {
         return {
             class: null,
-            horses: [],
             sortedHorses: []
         }
+    },
+    computed: {
+        horses() {
+            return this.$store.state.horsesByClass;
+        },
     },
     methods: {
         getClassById(id) {
@@ -34,16 +38,6 @@ export default {
                 .get("class/" + id)
                 .then(response => {
                     this.class = response.data;
-                })
-                .catch(errors => {
-                    console.log(errors);
-            });
-        },
-        getHorsesByClass(id) {
-            this.$http
-                .get("horse/marked/" + id)
-                .then(response => {
-                    this.horses = response.data;
                 })
                 .catch(errors => {
                     console.log(errors);
@@ -84,22 +78,21 @@ export default {
                 return this.getSumByHorse(y).moves - this.getSumByHorse(x).moves;
             });
             this.sortedHorses = horses;
-        }
-    },
-    mounted() {
-        this.getClassById(this.$route.params.id);
-        this.getHorsesByClass(this.$route.params.id);
-        setTimeout(() => {
-            this.sortHorses();
-        },100);
-    },
-    sockets: {
-        refreshHorses: function(data) {
+        },
+        refreshData() {
             this.getClassById(this.$route.params.id);
-            this.getHorsesByClass(this.$route.params.id);
+            this.$store.dispatch("loadHorsesByClass", this.$route.params.id);
             setTimeout(() => {
                 this.sortHorses();
             },100);
+        }
+    },
+    mounted() {
+        this.refreshData();
+    },
+    sockets: {
+        refreshHorses: function(data) {
+            this.refreshData();
         }
     }
 }
