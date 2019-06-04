@@ -369,6 +369,7 @@ const removeHorse = (req, res, id) => {
 const markHorse = (req, res, id) => {
     db.get('horses')
     .find({ id: id })
+    .unset('draw')
     .assign({
         score: {
             marks: JSON.parse(req.body.marks)
