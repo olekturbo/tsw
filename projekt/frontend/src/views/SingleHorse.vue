@@ -254,6 +254,7 @@ export default {
             "loadMessage",
             "Koń " + this.horse.name + " został pomyślnie zaktualizowany."
           );
+          this.$socket.emit('markHorse');
         })
         .catch(errors => {
           console.log(errors);
