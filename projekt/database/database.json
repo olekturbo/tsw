@@ -29,7 +29,7 @@
     },
     {
       "id": "N34qe1Fbq",
-      "number": "2",
+      "number": 2,
       "category": "klacze_roczne",
       "comission": [
         "lSt-7CWDJ",
@@ -40,8 +40,8 @@
   "horses": [
     {
       "id": "cG4S--yRx",
-      "number": "1",
-      "class": "cP3E5o7ku",
+      "number": 2,
+      "class": "N34qe1Fbq",
       "name": "Las Sontos",
       "country": "Hiszpania",
       "year": "2015",
@@ -66,7 +66,7 @@
     },
     {
       "id": "VC4JWgz0f",
-      "number": "2",
+      "number": "1",
       "class": "cP3E5o7ku",
       "name": "Bako",
       "country": "Polska",
@@ -88,35 +88,6 @@
       "grandpa": {
         "name": "Niveo",
         "country": "Polska"
-      },
-      "score": {
-        "marks": {
-          "types": [
-            1,
-            1,
-            1
-          ],
-          "heads": [
-            2,
-            2,
-            2
-          ],
-          "blocks": [
-            3,
-            3,
-            3
-          ],
-          "legs": [
-            4,
-            4,
-            4
-          ],
-          "moves": [
-            1,
-            1,
-            1
-          ]
-        }
       }
     },
     {
@@ -143,35 +114,6 @@
       "grandpa": {
         "name": "Zbigniew",
         "country": "Polska"
-      },
-      "score": {
-        "marks": {
-          "types": [
-            1,
-            1,
-            1
-          ],
-          "heads": [
-            2,
-            2,
-            2
-          ],
-          "blocks": [
-            3,
-            3,
-            3
-          ],
-          "legs": [
-            4,
-            4,
-            4
-          ],
-          "moves": [
-            1,
-            1,
-            1
-          ]
-        }
       }
     }
   ]

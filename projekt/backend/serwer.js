@@ -232,7 +232,32 @@ const updateReferee = (req, res, id) => {
 
 /* Classes */
 
+const moveClass = (req) => {
+     // przesuwanie numerów klas
+     const singleClass = db.get('classes')
+     .find({number: req.body.number})
+     .value();
+
+    const classes = db.get('classes').value();
+
+    if(singleClass) {
+        classes.forEach(s => {
+            if(s.number >= req.body.number) {
+                db.get('classes')
+                .find({ id: s.id })
+                .assign({
+                    number: parseInt(s.number) + 1
+                })
+                .write();
+            }
+        });
+    }
+};
+
 const addClass = (req, res) => {
+
+    moveClass(req);
+
     db.get('classes')
     .push({
         id: shortid.generate(),
@@ -267,6 +292,8 @@ const removeClass = (req, res, id) => {
 
 const updateClass = (req, res, id) => {
 
+    moveClass(req);
+
     const horses = db.get('horses')
         .filter({ class: id })
         .value();
@@ -292,7 +319,32 @@ const updateClass = (req, res, id) => {
 
 /* Horses */
 
+const moveHorse = (req) => {
+    // przesuwanie numerów klas
+    const horse = db.get('horses')
+    .find({number: req.body.number})
+    .value();
+
+   const horses = db.get('horses').value();
+
+   if(horse) {
+       horses.forEach(h => {
+           if(h.number >= req.body.number) {
+               db.get('horses')
+               .find({ id: h.id })
+               .assign({
+                   number: parseInt(h.number) + 1
+               })
+               .write();
+           }
+       });
+   }
+};
+
 const addHorse = (req, res) => {
+
+    moveHorse(req);
+
     db.get('horses')
     .push({
         id: shortid.generate(),
@@ -338,6 +390,8 @@ const getHorse = (req, res, id) => {
 };
 
 const updateHorse = (req, res, id) => {
+
+    moveHorse(req);
 
     const horse = db.get('horses')
         .find({id: id})
