@@ -495,15 +495,15 @@ const onAuthorizeSuccess = (data, accept) => {
     // data – informacje o połączeniu (od Passport.js)
     // accept – funkcja służąca do akceptowania/odrzucania połączenia
     //          odrzucenie: accept(new Error('powód odrzucenia'));
-    console.log('Udane połączenie z socket.io');
+    console.log('Udane połączenie z socket.io (zalogowany)');
     accept();
 };
 // połączenie od nieutoryzowanego użytkownika lub sytuacja błędna
 const onAuthorizeFail = (data, message, error, accept) => {
    
     // połączenie nieautoryzowane (ale nie błąd)
-    console.log('Nieudane połączenie z socket.io');
-    accept(new Error('Brak autoryzacji!'));
+    console.log('Udane połączenie z socket.io (gość)');
+    accept();
 };
 // passport-socketio jako „middleware” dla Socket.io
 sio.use(passportSocketIo.authorize({
@@ -519,7 +519,6 @@ sio.sockets.on('connection', (socket) => {
     socket.on('markHorse', () => {
         sio.emit('refreshHorses');
     });
-    console.log('test');
 });
 
 server.listen(3001, () => {

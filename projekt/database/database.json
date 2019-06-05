@@ -88,6 +88,17 @@
       "grandpa": {
         "name": "Niveo",
         "country": "Polska"
+      },
+      "score": {
+        "marks": {
+          "types": [
+            1
+          ],
+          "heads": [],
+          "blocks": [],
+          "legs": [],
+          "moves": []
+        }
       }
     },
     {
