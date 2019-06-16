@@ -154,6 +154,9 @@
         </div>
       </div>
     </div>
+    <div v-if="errors.length">
+      <b-badge variant="danger" :key="error" v-for="error in errors" class="error-badge">{{ error }}</b-badge>
+    </div>
     <button type="button" class="btn btn-primary" @click="onClickUpdate">Aktualizuj</button>
     <div>
       <Table :horse="horse"/>
@@ -167,6 +170,7 @@ export default {
   name: "SingleHourse",
   data() {
     return {
+      errors: [],
       horse: {
         number: null,
         number: null,
@@ -230,35 +234,51 @@ export default {
         });
     },
     onClickUpdate() {
-      const params = new URLSearchParams();
-      params.append("number", this.horse.number);
-      params.append("class", this.horse.class);
-      params.append("name", this.horse.name);
-      params.append("country", this.horse.country);
-      params.append("year", this.horse.year);
-      params.append("color", this.horse.color);
-      params.append("gender", this.horse.gender);
-      params.append("farmersName", this.horse.farmer.name);
-      params.append("farmersCountry", this.horse.farmer.country);
-      params.append("fathersName", this.horse.father.name);
-      params.append("fathersCountry", this.horse.father.country);
-      params.append("mothersName", this.horse.mother.name);
-      params.append("mothersCountry", this.horse.mother.country);
-      params.append("grandpasName", this.horse.grandpa.name);
-      params.append("grandpasCountry", this.horse.grandpa.country);
-      this.$http
-        .put("horse/" + this.horse.id, params)
-        .then(response => {
-          this.$store.dispatch("loadHorses");
-          this.$store.dispatch(
-            "loadMessage",
-            "Koń " + this.horse.name + " został pomyślnie zaktualizowany."
-          );
-          this.$socket.emit('markHorse');
-        })
-        .catch(errors => {
-          console.log(errors);
-        });
+      this.errors = [];
+      if (this.horse.number && this.horse.class && this.horse.name && this.horse.country) {
+        const params = new URLSearchParams();
+        params.append("number", this.horse.number);
+        params.append("class", this.horse.class);
+        params.append("name", this.horse.name);
+        params.append("country", this.horse.country);
+        params.append("year", this.horse.year);
+        params.append("color", this.horse.color);
+        params.append("gender", this.horse.gender);
+        params.append("farmersName", this.horse.farmer.name);
+        params.append("farmersCountry", this.horse.farmer.country);
+        params.append("fathersName", this.horse.father.name);
+        params.append("fathersCountry", this.horse.father.country);
+        params.append("mothersName", this.horse.mother.name);
+        params.append("mothersCountry", this.horse.mother.country);
+        params.append("grandpasName", this.horse.grandpa.name);
+        params.append("grandpasCountry", this.horse.grandpa.country);
+        this.$http
+          .put("horse/" + this.horse.id, params)
+          .then(response => {
+            this.$store.dispatch("loadHorses");
+            this.$store.dispatch(
+              "loadMessage",
+              "Koń " + this.horse.name + " został pomyślnie zaktualizowany."
+            );
+            this.$socket.emit("markHorse");
+          })
+          .catch(errors => {
+            console.log(errors);
+          });
+      } else {
+        if (!this.horse.number) {
+          this.errors.push("Numer jest wymagany");
+        }
+        if (!this.horse.class) {
+          this.errors.push("Klasa jest wymagana");
+        }
+        if (!this.horse.name) {
+          this.errors.push("Nazwa jest wymagana");
+        }
+        if (!this.horse.country) {
+          this.errors.push("Kraj jest wymagany");
+        }
+      }
     }
   }
 };
