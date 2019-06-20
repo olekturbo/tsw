@@ -17,24 +17,23 @@
             <b-badge variant="primary">otwarta</b-badge>
           </div>
           <div class="col-md-3">
-            <input disabled v-model="singleClass.number">
+            {{ singleClass.number }}
           </div>
           <div class="col-md-3">
-            <b-form-select
-              disabled
-              id="category"
-              v-model="singleClass.category"
-              :options="categoryOptions"
-            ></b-form-select>
+            <div v-for="category in categoryOptions" :key="category.id">
+                <template v-if="singleClass.category === category.value">
+                    {{ category.text }}
+                </template>
+            </div>
           </div>
           <div class="col-md-4">
-            <b-form-select
-              disabled
-              v-model="singleClass.comission"
-              :options="refereeOptions"
-              multiple
-              :select-size="5"
-            ></b-form-select>
+            <ul class="list-unstyled">
+                <li v-for="referee in refereeOptions" :key="referee.id">
+                    <template v-if="singleClass.comission.includes(referee.value)">
+                        {{ referee.text }}
+                    </template>
+                </li>
+            </ul>
           </div>
           <div class="col-md-1">
             <a href="#">

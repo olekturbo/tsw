@@ -84,6 +84,9 @@ let router =  new Router({
             path: "/generator",
             name: "generator",
             component: CustomGenerator,
+            meta: {
+                auth: true
+            }
         }
     ]
 });

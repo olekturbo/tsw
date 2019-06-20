@@ -20,6 +20,9 @@
                         <li class="nav-item dropdown">
                             <router-link to="/horses">Konie</router-link>
                         </li>
+                         <li class="nav-item dropdown">
+                        <a @click="generateData" href="#"><b>Wygeneruj dane</b></a>
+                    </li>
                     </template>
                     <template v-else>
                         <li class="nav-item dropdown">
@@ -28,9 +31,6 @@
                     </template>
                     <li class="nav-item dropdown">
                         <router-link to="/panel">Panel Kibica</router-link>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a @click="generateData" href="#"><b>Wygeneruj dane</b></a>
                     </li>
                 </ul>
             </div>
