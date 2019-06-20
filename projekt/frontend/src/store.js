@@ -74,7 +74,26 @@ const store = new Vuex.Store({
             commit
         }) {
             base.get("class").then((response) => {
-                commit("setClasses", response.data);
+                let classes = response.data;
+                classes.forEach(element => {
+                    base
+                        .get("horse/marked/" + element.id)
+                        .then(response => {
+                            const horses = response.data;
+                            let isClosed = true;
+                            horses.forEach(horse => {
+                                if (!horse.score) {
+                                    isClosed = false;
+                                }
+                            });
+                            if (isClosed) {
+                                element.closed = true;
+                            } else {
+                                element.closed = false;
+                            }
+                        });
+                });
+                commit("setClasses", classes);
             })
                 .catch((errors) => {
                     console.log(errors);
