@@ -66,7 +66,9 @@ const cors = require('cors');
 app.use(cookieParser());
 app.use(cors({
     credentials: true,
-    origin: 'http://localhost:8080'
+    origin: function (origin, callback) {
+        return callback(null, true);
+    },
 }));
 
 // konfiguracja obsługi sesji (poziom Express,js)
