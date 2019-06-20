@@ -1,6 +1,6 @@
 <template>
   <form>
-    <div class="col-md-12 col-centered">
+    <div class="col-md-12 col-centered add-horse">
       <p>
         <b>Koń</b>
       </p>
@@ -265,5 +265,12 @@ export default {
 .error-badge {
   margin-top: 10px !important;
   display: block !important;
+}
+</style>
+
+<style scoped>
+.add-horse {
+  overflow-y: scroll;
+  height: 80vh;
 }
 </style>

@@ -51,18 +51,20 @@ export default {
   },
   methods: {
     onClickRemove(referee) {
-      this.$http
-        .delete("referee/" + referee.id)
-        .then(response => {
-          this.$store.dispatch("loadReferees");
-          this.$store.dispatch(
-            "loadMessage",
-            "Sędzia " + referee.name + " został pomyślnie usunięty."
-          );
-        })
-        .catch(errors => {
-          console.log(errors);
-        });
+      if (confirm("Czy na pewno chcesz usunąć sędziego?")) {
+        this.$http
+          .delete("referee/" + referee.id)
+          .then(response => {
+            this.$store.dispatch("loadReferees");
+            this.$store.dispatch(
+              "loadMessage",
+              "Sędzia " + referee.name + " został pomyślnie usunięty."
+            );
+          })
+          .catch(errors => {
+            console.log(errors);
+          });
+      }
     },
     onClickUpdate(referee) {
       this.errors = [];

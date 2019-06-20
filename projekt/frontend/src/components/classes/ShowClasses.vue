@@ -57,8 +57,8 @@ export default {
   name: "ShowClasses",
   data() {
     return {
-        errors: []
-    }
+      errors: []
+    };
   },
   mounted() {
     this.$store.dispatch("loadClasses");
@@ -79,22 +79,28 @@ export default {
   },
   methods: {
     onClickRemove(singleClass) {
-      this.$http
-        .delete("class/" + singleClass.id)
-        .then(response => {
-          this.$store.dispatch("loadClasses");
-          this.$store.dispatch(
-            "loadMessage",
-            "Klasa nr " + singleClass.number + " została pomyślnie usunięta."
-          );
-        })
-        .catch(errors => {
-          console.log(errors);
-        });
+      if (confirm("Czy na pewno chcesz usunąć klasę?")) {
+        this.$http
+          .delete("class/" + singleClass.id)
+          .then(response => {
+            this.$store.dispatch("loadClasses");
+            this.$store.dispatch(
+              "loadMessage",
+              "Klasa nr " + singleClass.number + " została pomyślnie usunięta."
+            );
+          })
+          .catch(errors => {
+            console.log(errors);
+          });
+      }
     },
     onClickUpdate(singleClass) {
       this.errors = [];
-      if (singleClass.number && singleClass.category && singleClass.comission.length) {
+      if (
+        singleClass.number &&
+        singleClass.category &&
+        singleClass.comission.length
+      ) {
         const params = new URLSearchParams();
         params.append("number", singleClass.number);
         params.append("category", singleClass.category);

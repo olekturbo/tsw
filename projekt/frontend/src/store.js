@@ -14,17 +14,15 @@ Vue.config.productionTip = false;
 const store = new Vuex.Store({
     state: {
         authStatus: new Promise(resolve => {
-            setTimeout(() => {
-                base.get("user")
-                    .then((response) => {
-                        let requestResult = response.data.user ? true : false;
-                        store.commit("setAuthStatus", requestResult);
-                        resolve(requestResult);
-                    })
-                    .catch((errors) => {
-                        console.log(errors);
-                    });
-            }, 1000);
+            base.get("user")
+                .then((response) => {
+                    let requestResult = response.data.user ? true : false;
+                    store.commit("setAuthStatus", requestResult);
+                    resolve(requestResult);
+                })
+                .catch((errors) => {
+                    console.log(errors);
+                });
         }),
         isLoggedIn: false,
         username: "",

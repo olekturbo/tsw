@@ -30,7 +30,7 @@
                         <router-link to="/panel">Panel Kibica</router-link>
                     </li>
                     <li class="nav-item dropdown">
-                        <router-link to="/generator"><b>Generator</b></router-link>
+                        <a @click="generateData" href="#"><b>Wygeneruj dane</b></a>
                     </li>
                 </ul>
             </div>
@@ -59,6 +59,18 @@
   margin: 0 auto;
 }
 
+::-webkit-scrollbar {
+  width: 15px;
+  height: 15px;
+}
+::-webkit-scrollbar-track-piece {
+  background-color: #c2d2e4;
+}
+::-webkit-scrollbar-thumb:vertical {
+  height: 30px;
+  background-color: #0a4c95;
+}
+
 </style>
 
 <script>
@@ -70,6 +82,11 @@
                     this.$router.go(0);
                 });
             },
+            generateData: function() {
+                if(confirm("Czy na pewno chcesz wygenerować przykładowe dane i NADPISAĆ obecne?")) {
+                    this.$router.push('generator');
+                }
+            }
         },
         computed: {
             isLoggedIn() {

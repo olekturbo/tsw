@@ -28,6 +28,11 @@
         </div>
       </b-list-group-item>
     </b-list-group>
+    <div class="mt-3">
+      <button class="btn btn-primary" :disabled="pageNumber==0" @click="prevPage">&lt;</button>
+      <button class="btn btn-primary active">{{ pageNumber + 1 }}</button>
+      <button class="btn btn-primary" :disabled="pageNumber >= pageCount -1" @click="nextPage">&gt;</button>
+    </div>
   </div>
 </template>
 
@@ -36,7 +41,9 @@ export default {
   name: "ShowHorses",
   data() {
     return {
-      search: ""
+      search: "",
+      pageNumber: 0,
+      size: 10
     };
   },
   mounted() {
@@ -51,25 +58,47 @@ export default {
       return this.$store.state.classes;
     },
     filteredHorses() {
-      return this.horses.filter(horse => {
-        return horse.name.toLowerCase().includes(this.search.toLowerCase());
-      });
+      const start = this.pageNumber * this.size,
+        end = start + this.size;
+      if (this.search === "") {
+        const slicedHorses = this.horses.slice(start, end);
+        return slicedHorses.filter(horse => {
+          return horse.name.toLowerCase().includes(this.search.toLowerCase());
+        });
+      } else {
+        return this.horses.filter(horse => {
+          return horse.name.toLowerCase().includes(this.search.toLowerCase());
+        });
+      }
+    },
+    pageCount() {
+      let l = this.horses.length,
+        s = this.size;
+      return Math.ceil(l / s);
     }
   },
   methods: {
     onClickRemove(horse) {
-      this.$http
-        .delete("horse/" + horse.id)
-        .then(response => {
-          this.$store.dispatch("loadHorses");
-          this.$store.dispatch(
-            "loadMessage",
-            "Koń " + horse.name + " został pomyślnie usunięty."
-          );
-        })
-        .catch(errors => {
-          console.log(errors);
-        });
+      if (confirm("Czy na pewno chcesz usunąć konia?")) {
+        this.$http
+          .delete("horse/" + horse.id)
+          .then(response => {
+            this.$store.dispatch("loadHorses");
+            this.$store.dispatch(
+              "loadMessage",
+              "Koń " + horse.name + " został pomyślnie usunięty."
+            );
+          })
+          .catch(errors => {
+            console.log(errors);
+          });
+      }
+    },
+    nextPage() {
+      this.pageNumber++;
+    },
+    prevPage() {
+      this.pageNumber--;
     }
   }
 };
