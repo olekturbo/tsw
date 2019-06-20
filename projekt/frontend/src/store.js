@@ -42,6 +42,10 @@ const store = new Vuex.Store({
             { value: "ogiery_dwuletnie", text: "Ogiery dwuletnie"},
             { value: "klacze_trzyletnie", text: "Klacze trzyletnie"},
             { value: "ogiery_trzyletnie", text: "Ogiery trzyletnie"},
+            { value: "klacze_starsze", text: "Klacze starsze"},
+            { value: "klacze_młodsze", text: "Klacze młodsze"},
+            { value: "ogiery_młodsze", text: "Ogiery młodsze"},
+            { value: "ogiery_starsze", text: "Ogiery starsze"},
         ],
         refereeOptions: [],
         classOptions: []

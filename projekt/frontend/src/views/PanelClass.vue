@@ -6,7 +6,7 @@
     <th>Punkty</th>
     <th>Typ</th>
     <th>Ruch</th>
-    <th>Rozjemca</th>
+    <th v-if="isLogged">Rozjemca</th>
   </tr>
   <tr v-for="(horse, index) in sortedHorses" :key="horse.id">
     <td>{{ index + 1}}</td>
@@ -14,7 +14,7 @@
     <td>{{ horse.score ? getTotalSumByHorse(horse) : 0 }}</td>
     <td>{{ horse.score ? getSumByHorse(horse).types : 0 }}</td>
     <td>{{ horse.score ? getSumByHorse(horse).moves : 0 }}</td>
-    <td v-if="horse.needToFix">
+    <td v-if="horse.needToFix && isLogged">
         <input :id="'input_' + horse.id" type="number" step="1">
         <button :id="'btn_' + horse.id" @click="fixDraw(horse)" style="margin-left: 30px;" class="btn btn-sm btn-success">OK</button>
     </td>
@@ -36,6 +36,9 @@ export default {
         horses() {
             return this.$store.state.horsesByClass;
         },
+        isLogged() {
+            return this.$store.state.isLoggedIn;
+        }
     },
     methods: {
         getClassById(id) {
