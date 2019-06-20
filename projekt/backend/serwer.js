@@ -30,11 +30,11 @@ const socketIo = require('socket.io');
 const passportSocketIo = require('passport.socketio');
 
 // Konfiguracja passport.js
-passport.serializeUser( (user, done) => {
+passport.serializeUser((user, done) => {
     done(null, user);
 });
 
-passport.deserializeUser( (obj, done) => {
+passport.deserializeUser((obj, done) => {
     done(null, obj);
 });
 
@@ -54,11 +54,20 @@ passport.use(new LocalStrategy(
 
 // konfiguracji aplikacji Express.js
 const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
+var bodyParser = require('body-parser');
+app.use(bodyParser.json({
+    limit: '50mb'
+}));
+app.use(bodyParser.urlencoded({
+    limit: '50mb',
+    extended: true
+}));
 const cors = require('cors');
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(cors({credentials: true, origin: 'http://localhost:8080'}));
+app.use(cors({
+    credentials: true,
+    origin: 'http://localhost:8080'
+}));
 
 // konfiguracja obsługi sesji (poziom Express,js)
 const sessionSecret = 'Wielki$ekret44';
@@ -90,7 +99,7 @@ app.get('/logout', (req, res) => {
 });
 
 app.get('/user', (req, res) => {
-      res.send(req.session.passport);
+    res.send(req.session.passport);
 });
 
 /* Referees */
@@ -183,18 +192,31 @@ app.get('/horse/marked/:id', (req, res) => {
     getMarkedHorses(req, res, id);
 });
 
+app.post('/clear', (req, res) => {
+    db.unset('referees').write();
+    db.unset('classes').write();
+    db.unset('horses').write();
+    db.defaults({
+            referees: JSON.parse(req.body.referees),
+            classes: JSON.parse(req.body.classes),
+            horses: JSON.parse(req.body.horses)
+        })
+        .write();
+    res.status(200).send('clear');
+});
+
 
 /* Referees */
 
 const addReferee = (req, res) => {
-        db.get('referees')
+    db.get('referees')
         .push({
             id: shortid.generate(),
             name: req.body.name,
             country: req.body.country
         })
         .write();
-        
+
     res.status(201).send("Referee has been created");
 };
 
@@ -205,27 +227,33 @@ const getReferees = (req, res) => {
 };
 
 const getReferee = (req, res, id) => {
-    const referee = db.get('referees').find({ id: id }).value();
+    const referee = db.get('referees').find({
+        id: id
+    }).value();
 
     res.json(referee);
 };
 
 const removeReferee = (req, res, id) => {
     db.get('referees')
-    .remove({ id: id })
-    .write();
+        .remove({
+            id: id
+        })
+        .write();
 
     res.status(200).send("Referee has been removed");
 };
 
 const updateReferee = (req, res, id) => {
     db.get('referees')
-    .find({ id: id })
-    .assign({
-        name: req.body.name,
-        country: req.body.country
-    })
-    .write();
+        .find({
+            id: id
+        })
+        .assign({
+            name: req.body.name,
+            country: req.body.country
+        })
+        .write();
 
     res.status(200).send("Referee has been updated");
 };
@@ -233,22 +261,26 @@ const updateReferee = (req, res, id) => {
 /* Classes */
 
 const moveClass = (req) => {
-     // przesuwanie numerów klas
-     const singleClass = db.get('classes')
-     .find({number: req.body.number})
-     .value();
+    // przesuwanie numerów klas
+    const singleClass = db.get('classes')
+        .find({
+            number: req.body.number
+        })
+        .value();
 
     const classes = db.get('classes').value();
 
-    if(singleClass) {
+    if (singleClass) {
         classes.forEach(s => {
-            if(s.number >= req.body.number) {
+            if (s.number >= req.body.number) {
                 db.get('classes')
-                .find({ id: s.id })
-                .assign({
-                    number: parseInt(s.number) + 1
-                })
-                .write();
+                    .find({
+                        id: s.id
+                    })
+                    .assign({
+                        number: parseInt(s.number) + 1
+                    })
+                    .write();
             }
         });
     }
@@ -259,14 +291,14 @@ const addClass = (req, res) => {
     moveClass(req);
 
     db.get('classes')
-    .push({
-        id: shortid.generate(),
-        number: req.body.number,
-        category: req.body.category,
-        comission: JSON.parse(req.body.comission)
-    })
-    .write();
-    
+        .push({
+            id: shortid.generate(),
+            number: req.body.number,
+            category: req.body.category,
+            comission: JSON.parse(req.body.comission)
+        })
+        .write();
+
     res.status(201).send("Class has been created");
 };
 
@@ -277,15 +309,19 @@ const getClasses = (req, res) => {
 };
 
 const getClass = (req, res, id) => {
-    const singleClass = db.get('classes').find({ id: id }).value();
+    const singleClass = db.get('classes').find({
+        id: id
+    }).value();
 
     res.json(singleClass);
 };
 
 const removeClass = (req, res, id) => {
     db.get('classes')
-    .remove({ id: id })
-    .write();
+        .remove({
+            id: id
+        })
+        .write();
 
     res.status(200).send("Class has been removed");
 };
@@ -295,24 +331,30 @@ const updateClass = (req, res, id) => {
     moveClass(req);
 
     const horses = db.get('horses')
-        .filter({ class: id })
+        .filter({
+            class: id
+        })
         .value();
 
     horses.forEach(horse => {
         db.get('horses')
-        .find({id: horse.id})
-        .unset('score')
-        .write();
+            .find({
+                id: horse.id
+            })
+            .unset('score')
+            .write();
     });
 
     db.get('classes')
-    .find({ id: id })
-    .assign({
-        number: req.body.number,
-        category: req.body.category,
-        comission: JSON.parse(req.body.comission)
-    })
-    .write();
+        .find({
+            id: id
+        })
+        .assign({
+            number: req.body.number,
+            category: req.body.category,
+            comission: JSON.parse(req.body.comission)
+        })
+        .write();
 
     res.status(200).send("Class has been updated");
 };
@@ -322,23 +364,27 @@ const updateClass = (req, res, id) => {
 const moveHorse = (req) => {
     // przesuwanie numerów klas
     const horse = db.get('horses')
-    .find({number: req.body.number})
-    .value();
+        .find({
+            number: req.body.number
+        })
+        .value();
 
-   const horses = db.get('horses').value();
+    const horses = db.get('horses').value();
 
-   if(horse) {
-       horses.forEach(h => {
-           if(h.number >= req.body.number) {
-               db.get('horses')
-               .find({ id: h.id })
-               .assign({
-                   number: parseInt(h.number) + 1
-               })
-               .write();
-           }
-       });
-   }
+    if (horse) {
+        horses.forEach(h => {
+            if (h.number >= req.body.number) {
+                db.get('horses')
+                    .find({
+                        id: h.id
+                    })
+                    .assign({
+                        number: parseInt(h.number) + 1
+                    })
+                    .write();
+            }
+        });
+    }
 };
 
 const addHorse = (req, res) => {
@@ -346,35 +392,35 @@ const addHorse = (req, res) => {
     moveHorse(req);
 
     db.get('horses')
-    .push({
-        id: shortid.generate(),
-        number: req.body.number,
-        class: req.body.class,
-        name: req.body.name,
-        country: req.body.country,
-        year: req.body.year,
-        color: req.body.color,
-        gender: req.body.gender,
-        farmer: {
-            name: req.body.farmersName,
-            country: req.body.farmersCountry
-        },
-        father: {
-            name: req.body.fathersName,
-            country: req.body.fathersCountry
-        },
-        mother: {
-            name: req.body.mothersName,
-            country: req.body.mothersCountry
-        },
-        grandpa: {
-            name: req.body.grandpasName,
-            country: req.body.grandpasCountry
-        }
-    })
-    .write();
-    
-res.status(201).send("Referee has been created");
+        .push({
+            id: shortid.generate(),
+            number: req.body.number,
+            class: req.body.class,
+            name: req.body.name,
+            country: req.body.country,
+            year: req.body.year,
+            color: req.body.color,
+            gender: req.body.gender,
+            farmer: {
+                name: req.body.farmersName,
+                country: req.body.farmersCountry
+            },
+            father: {
+                name: req.body.fathersName,
+                country: req.body.fathersCountry
+            },
+            mother: {
+                name: req.body.mothersName,
+                country: req.body.mothersCountry
+            },
+            grandpa: {
+                name: req.body.grandpasName,
+                country: req.body.grandpasCountry
+            }
+        })
+        .write();
+
+    res.status(201).send("Referee has been created");
 };
 
 const getHorses = (req, res) => {
@@ -384,7 +430,9 @@ const getHorses = (req, res) => {
 };
 
 const getHorse = (req, res, id) => {
-    const horse = db.get('horses').find({ id: id }).value();
+    const horse = db.get('horses').find({
+        id: id
+    }).value();
 
     res.json(horse);
 };
@@ -394,94 +442,112 @@ const updateHorse = (req, res, id) => {
     moveHorse(req);
 
     const horse = db.get('horses')
-        .find({id: id})
+        .find({
+            id: id
+        })
         .value();
 
-    if(horse.class !== req.body.class) {
+    if (horse.class !== req.body.class) {
         db.get('horses')
-        .find({id: id})
-        .unset('score')
-        .write();
+            .find({
+                id: id
+            })
+            .unset('score')
+            .write();
     }
 
     db.get('horses')
-    .find({ id: id })
-    .assign({
-        number: req.body.number,
-        class: req.body.class,
-        name: req.body.name,
-        country: req.body.country,
-        year: req.body.year,
-        color: req.body.color,
-        gender: req.body.gender,
-        farmer: {
-            name: req.body.farmersName,
-            country: req.body.farmersCountry
-        },
-        father: {
-            name: req.body.fathersName,
-            country: req.body.fathersCountry
-        },
-        mother: {
-            name: req.body.mothersName,
-            country: req.body.mothersCountry
-        },
-        grandpa: {
-            name: req.body.grandpasName,
-            country: req.body.grandpasCountry
-        }
-    })
-    .write();
+        .find({
+            id: id
+        })
+        .assign({
+            number: req.body.number,
+            class: req.body.class,
+            name: req.body.name,
+            country: req.body.country,
+            year: req.body.year,
+            color: req.body.color,
+            gender: req.body.gender,
+            farmer: {
+                name: req.body.farmersName,
+                country: req.body.farmersCountry
+            },
+            father: {
+                name: req.body.fathersName,
+                country: req.body.fathersCountry
+            },
+            mother: {
+                name: req.body.mothersName,
+                country: req.body.mothersCountry
+            },
+            grandpa: {
+                name: req.body.grandpasName,
+                country: req.body.grandpasCountry
+            }
+        })
+        .write();
 
     res.status(200).send("Horse has been updated");
 };
 
 const removeHorse = (req, res, id) => {
     db.get('horses')
-    .remove({ id: id })
-    .write();
+        .remove({
+            id: id
+        })
+        .write();
 
     res.status(200).send("Horse has been removed");
 };
 
 const markHorse = (req, res, id) => {
     db.get('horses')
-    .find({ id: id })
-    .assign({
-        score: {
-            marks: JSON.parse(req.body.marks)
-        }
-    })
-    .unset('draw')
-    .write();
+        .find({
+            id: id
+        })
+        .assign({
+            score: {
+                marks: JSON.parse(req.body.marks)
+            }
+        })
+        .unset('draw')
+        .write();
 
     res.status(200).send("Horse has been marked");
 };
 
 const getMarkedHorses = (req, res, id) => {
     const horses = db.get('horses')
-                    .filter({ class: id })
-                    .value();
-    
+        .filter({
+            class: id
+        })
+        .value();
+
     res.json(horses);
 };
 
 const fixDrawHorse = (req, res, id) => {
     db.get('horses')
-    .find({ id: id })
-    .assign({
-        draw: {
-            fix: req.body.draw
-        }
-    })
-    .write();
+        .find({
+            id: id
+        })
+        .assign({
+            draw: {
+                fix: req.body.draw
+            }
+        })
+        .write();
 
     res.status(200).send("Horse has been fixed");
 };
 
 
-db.defaults({ referees: [], classes: [], horses: [] })
-  .write();
+db.defaults({
+        referees: [],
+        classes: [],
+        horses: []
+    })
+    .write();
 
 // serwer HTTP dla aplikacji „app”
 const server = require('http').createServer(app);
@@ -500,7 +566,7 @@ const onAuthorizeSuccess = (data, accept) => {
 };
 // połączenie od nieutoryzowanego użytkownika lub sytuacja błędna
 const onAuthorizeFail = (data, message, error, accept) => {
-   
+
     // połączenie nieautoryzowane (ale nie błąd)
     console.log('Udane połączenie z socket.io (gość)');
     accept();
@@ -508,11 +574,11 @@ const onAuthorizeFail = (data, message, error, accept) => {
 // passport-socketio jako „middleware” dla Socket.io
 sio.use(passportSocketIo.authorize({
     cookieParser: cookieParser,
-    key:          sessionKey,
-    secret:       sessionSecret,
-    store:        sessionStore,
-    success:      onAuthorizeSuccess,
-    fail:         onAuthorizeFail
+    key: sessionKey,
+    secret: sessionSecret,
+    store: sessionStore,
+    success: onAuthorizeSuccess,
+    fail: onAuthorizeFail
 }));
 
 sio.sockets.on('connection', (socket) => {

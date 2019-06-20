@@ -29,6 +29,9 @@
                     <li class="nav-item dropdown">
                         <router-link to="/panel">Panel Kibica</router-link>
                     </li>
+                    <li class="nav-item dropdown">
+                        <router-link to="/generator"><b>Generator</b></router-link>
+                    </li>
                 </ul>
             </div>
         </nav>

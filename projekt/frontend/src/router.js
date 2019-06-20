@@ -8,6 +8,7 @@ import Horse from "./views/Horse.vue";
 import SingleHorse from "./views/SingleHorse.vue";
 import Panel from "./views/Panel.vue";
 import PanelClass from "./views/PanelClass.vue";
+import CustomGenerator from "./components/CustomGenerator.vue";
 import ShowHorsesByClass from "./components/horses/ShowHorsesByClass.vue";
 import store from "./store";
 
@@ -78,6 +79,11 @@ let router =  new Router({
             path: "/class/:id/horses",
             name: "showHorsesByClass",
             component: ShowHorsesByClass,
+        },
+        {
+            path: "/generator",
+            name: "generator",
+            component: CustomGenerator,
         }
     ]
 });
