@@ -11,7 +11,7 @@ const sessionStore = new RedisStore({
     host: 'localhost',
     port: 6379,
     client: require('redis').createClient(),
-    ttl:  260
+    disableTTL: true
 });
 
 // baza danych lowdb
