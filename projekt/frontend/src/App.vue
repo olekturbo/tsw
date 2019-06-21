@@ -78,7 +78,6 @@
         methods: {
             onClickLogout: function() {
                 this.$http.get("logout").then(() => {
-                    this.$store.commit("setAuthStatus", false);
                     this.$router.go(0);
                 });
             },

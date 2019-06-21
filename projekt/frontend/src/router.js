@@ -92,15 +92,14 @@ let router =  new Router({
 });
 
 router.beforeEach((to, from, next) => {
-    store.state.authStatus.then(isLoggedIn => {
-        if(to.matched.some(record => record.meta.guest)) {
-            isLoggedIn ? next({name: "home"}) : next();
-        } else if(to.matched.some(record => record.meta.auth)) {
-            isLoggedIn ?  next() : next({name: "home"});
-        } else {
-            next(); 
-        }
-    });
+    const isLoggedIn = store.state.isLoggedIn;
+    if(to.matched.some(record => record.meta.guest)) {
+        isLoggedIn ? next({name: "home"}) : next();
+    } else if(to.matched.some(record => record.meta.auth)) {
+        isLoggedIn ?  next() : next({name: "home"});
+    } else {
+        next(); 
+    }
 });
 
 export default router;

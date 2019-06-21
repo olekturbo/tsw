@@ -49,7 +49,6 @@ export default {
         .post("login", params)
         .then(() => {
           this.$router.go(0);
-          this.$store.commit("setAuthStatus", true);
         })
         .catch(e => {
           alert("Coś poszło nie tak. Spróbuj ponownie później: " + e.message);

@@ -100,10 +100,6 @@ app.get('/logout', (req, res) => {
     res.send("Wylogowano");
 });
 
-app.get('/user', (req, res) => {
-    res.send(req.session.passport);
-});
-
 /* Referees */
 
 app.post('/referee', (req, res) => {
@@ -587,6 +583,7 @@ sio.sockets.on('connection', (socket) => {
     socket.on('markHorse', () => {
         sio.emit('refreshHorses');
     });
+    socket.emit('IS_AUTHORIZED', socket.request.user.logged_in);
 });
 
 server.listen(3001, () => {

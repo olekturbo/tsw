@@ -13,17 +13,6 @@ Vue.config.productionTip = false;
 
 const store = new Vuex.Store({
     state: {
-        authStatus: new Promise(resolve => {
-            base.get("user")
-                .then((response) => {
-                    let requestResult = response.data.user ? true : false;
-                    store.commit("setAuthStatus", requestResult);
-                    resolve(requestResult);
-                })
-                .catch((errors) => {
-                    console.log(errors);
-                });
-        }),
         isLoggedIn: false,
         username: "",
         referees: [],
@@ -48,18 +37,6 @@ const store = new Vuex.Store({
         classOptions: []
     },
     actions: {
-        loadUsername({
-            commit
-        }) {
-            base.get("user")
-                .then((response) => {
-                    let requestName = response.data.user ? response.data.user.username : "Gość";
-                    commit("setUsername", requestName);
-                })
-                .catch((errors) => {
-                    console.log(errors);
-                });
-        },
         loadReferees({
             commit
         }) {
@@ -138,11 +115,8 @@ const store = new Vuex.Store({
         }
     },
     mutations: {
-        setAuthStatus(state, isLoggedIn) {
+        SOCKET_IS_AUTHORIZED(state, isLoggedIn) {
             state.isLoggedIn = isLoggedIn;
-        },
-        setUsername(state, username) {
-            state.username = username;
         },
         setReferees(state, referees) {
             state.referees = referees;
