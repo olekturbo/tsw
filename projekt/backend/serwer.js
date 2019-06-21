@@ -583,7 +583,7 @@ sio.sockets.on('connection', (socket) => {
     socket.on('markHorse', () => {
         sio.emit('refreshHorses');
     });
-    socket.emit('IS_AUTHORIZED', socket.request.user.logged_in);
+    socket.emit('IS_AUTHORIZED', socket.request.user);
 });
 
 server.listen(3001, () => {

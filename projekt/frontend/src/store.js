@@ -115,8 +115,9 @@ const store = new Vuex.Store({
         }
     },
     mutations: {
-        SOCKET_IS_AUTHORIZED(state, isLoggedIn) {
-            state.isLoggedIn = isLoggedIn;
+        SOCKET_IS_AUTHORIZED(state, user) {
+            state.isLoggedIn = user.logged_in;
+            state.username = user.username;
         },
         setReferees(state, referees) {
             state.referees = referees;
