@@ -5,7 +5,7 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 const base = axios.create({
-    baseURL: "http://localhost:3001/",
+    baseURL: "http://192.168.1.12:3001/",
     withCredentials: true
 });
 

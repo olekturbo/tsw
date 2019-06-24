@@ -76,8 +76,8 @@ module.exports = () => {
     };
     for (let cno = 1; cno <= klasy.length; cno += 1) {
       let n = faker.random.number({
-        min: 7,
-        max: 17
+        min: 3,
+        max: 5
       })
       info.total += n;
       info.breaks.push(info.total)

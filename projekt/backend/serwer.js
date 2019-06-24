@@ -8,7 +8,7 @@ const app = express();
 const session = require('express-session');
 const RedisStore = require('connect-redis')(session);
 const sessionStore = new RedisStore({
-    host: 'localhost',
+    host: '192.168.1.12',
     port: 6379,
     client: require('redis').createClient(),
     disableTTL: true
@@ -586,6 +586,6 @@ sio.sockets.on('connection', (socket) => {
     socket.emit('IS_AUTHORIZED', socket.request.user);
 });
 
-server.listen(3001, () => {
-    console.log('Serwer pod adresem http://localhost:3001/');
+server.listen(3001, '192.168.1.12', () => {
+    console.log('Serwer pod adresem http://192.168.1.12:3001/');
 });
