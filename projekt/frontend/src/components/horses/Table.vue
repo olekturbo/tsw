@@ -122,7 +122,7 @@ export default {
           .get("referee/" + id)
           .then(response => {
             this.referees.push(response.data);
-            document.getElementById("loader").style.display = "none";
+            document.getElementById("loader").remove();
             document.getElementById("table").style.display = "block";
           })
           .catch(errors => {
