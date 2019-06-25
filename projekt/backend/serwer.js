@@ -258,14 +258,11 @@ const updateReferee = (req, res, id) => {
 
 /* Classes */
 
-const moveClass = (req) => {
-    // przesuwanie numerów klas
-    const singleClass = db.get('classes')
-        .find({
-            number: req.body.number
-        })
-        .value();
+const moveClassOnAdd = (req) => {
 
+    const singleClass = db.get('classes').find({
+        "number": parseInt(req.body.number)
+    }).value();
     const classes = db.get('classes').value();
 
     if (singleClass) {
@@ -284,14 +281,51 @@ const moveClass = (req) => {
     }
 };
 
+const moveClassOnUpdate = (req) => {
+
+    const oldNumber = db.get('classes').find({
+        "id": req.body.id
+    }).value().number;
+    const newNumber = req.body.number;
+    const classes = db.get('classes').value();
+
+    if (newNumber < oldNumber) {
+        classes.forEach(s => {
+            if (s.number >= newNumber && s.number < oldNumber) {
+                db.get('classes')
+                    .find({
+                        id: s.id
+                    })
+                    .assign({
+                        number: parseInt(s.number) + 1
+                    })
+                    .write();
+            }
+        });
+    } else if (newNumber > oldNumber) {
+        classes.forEach(s => {
+            if (s.number <= newNumber && s.number > oldNumber) {
+                db.get('classes')
+                    .find({
+                        id: s.id
+                    })
+                    .assign({
+                        number: parseInt(s.number) - 1
+                    })
+                    .write();
+            }
+        });
+    }
+};
+
 const addClass = (req, res) => {
 
-    moveClass(req);
+    moveClassOnAdd(req);
 
     db.get('classes')
         .push({
             id: shortid.generate(),
-            number: req.body.number,
+            number: parseInt(req.body.number),
             category: req.body.category,
             comission: JSON.parse(req.body.comission)
         })
@@ -326,7 +360,7 @@ const removeClass = (req, res, id) => {
 
 const updateClass = (req, res, id) => {
 
-    moveClass(req);
+    moveClassOnUpdate(req);
 
     const horses = db.get('horses')
         .filter({
@@ -348,7 +382,7 @@ const updateClass = (req, res, id) => {
             id: id
         })
         .assign({
-            number: req.body.number,
+            number: parseInt(req.body.number),
             category: req.body.category,
             comission: JSON.parse(req.body.comission)
         })
@@ -358,15 +392,11 @@ const updateClass = (req, res, id) => {
 };
 
 /* Horses */
+const moveHorseOnAdd = (req) => {
 
-const moveHorse = (req) => {
-    // przesuwanie numerów klas
-    const horse = db.get('horses')
-        .find({
-            number: req.body.number
-        })
-        .value();
-
+    const horse = db.get('horses').find({
+        "number": parseInt(req.body.number)
+    }).value();
     const horses = db.get('horses').value();
 
     if (horse) {
@@ -385,9 +415,46 @@ const moveHorse = (req) => {
     }
 };
 
+const moveHorseOnUpdate = (req) => {
+
+    const oldNumber = db.get('horses').find({
+        "id": req.body.id
+    }).value().number;
+    const newNumber = req.body.number;
+    const horses = db.get('horses').value();
+
+    if (newNumber < oldNumber) {
+        horses.forEach(h => {
+            if (h.number >= newNumber && h.number < oldNumber) {
+                db.get('horses')
+                    .find({
+                        id: h.id
+                    })
+                    .assign({
+                        number: parseInt(h.number) + 1
+                    })
+                    .write();
+            }
+        });
+    } else if (newNumber > oldNumber) {
+        horses.forEach(h => {
+            if (h.number <= newNumber && h.number > oldNumber) {
+                db.get('horses')
+                    .find({
+                        id: h.id
+                    })
+                    .assign({
+                        number: parseInt(h.number) - 1
+                    })
+                    .write();
+            }
+        });
+    }
+};
+
 const addHorse = (req, res) => {
 
-    moveHorse(req);
+    moveHorseOnAdd(req);
 
     db.get('horses')
         .push({
@@ -437,7 +504,7 @@ const getHorse = (req, res, id) => {
 
 const updateHorse = (req, res, id) => {
 
-    moveHorse(req);
+    moveHorseOnUpdate(req);
 
     const horse = db.get('horses')
         .find({

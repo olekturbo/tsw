@@ -102,6 +102,7 @@ export default {
         singleClass.comission.length
       ) {
         const params = new URLSearchParams();
+        params.append("id", singleClass.id);
         params.append("number", singleClass.number);
         params.append("category", singleClass.category);
         params.append("comission", JSON.stringify(singleClass.comission));

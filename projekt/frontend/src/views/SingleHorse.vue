@@ -237,6 +237,7 @@ export default {
       this.errors = [];
       if (this.horse.number && this.horse.class && this.horse.name && this.horse.country) {
         const params = new URLSearchParams();
+        params.append("id", this.horse.id);
         params.append("number", this.horse.number);
         params.append("class", this.horse.class);
         params.append("name", this.horse.name);
