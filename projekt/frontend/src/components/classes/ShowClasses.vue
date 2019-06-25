@@ -90,7 +90,10 @@ export default {
             );
           })
           .catch(errors => {
-            console.log(errors);
+           this.$store.dispatch(
+              "loadMessage",
+              "Klasa nr " + singleClass.number + " nie może zostać usunięta - bierze udział w rozgrywce."
+            );
           });
       }
     },

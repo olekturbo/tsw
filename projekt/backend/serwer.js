@@ -233,13 +233,27 @@ const getReferee = (req, res, id) => {
 };
 
 const removeReferee = (req, res, id) => {
-    db.get('referees')
-        .remove({
-            id: id
-        })
-        .write();
 
-    res.status(200).send("Referee has been removed");
+    const classes = db.get('classes').value();
+    let canRemove = true;
+
+    classes.forEach(singleClass => {
+        if ((singleClass.comission).includes(id)) {
+            canRemove = false;
+        }
+    });
+
+    if (canRemove) {
+        db.get('referees')
+            .remove({
+                id: id
+            })
+            .write();
+
+        res.status(200).send("Referee has been removed");
+    } else {
+        res.status(500).send("Referee cannot be removed");
+    }
 };
 
 const updateReferee = (req, res, id) => {
@@ -349,13 +363,27 @@ const getClass = (req, res, id) => {
 };
 
 const removeClass = (req, res, id) => {
-    db.get('classes')
-        .remove({
-            id: id
-        })
-        .write();
 
-    res.status(200).send("Class has been removed");
+    const horses = db.get('horses').value();
+    let canRemove = true;
+
+    horses.forEach(horse => {
+        if (horse.class == id) {
+            canRemove = false;
+        }
+    });
+
+    if (canRemove) {
+        db.get('classes')
+            .remove({
+                id: id
+            })
+            .write();
+
+        res.status(200).send("Class has been removed");
+    } else {
+        res.status(500).send("Class cannot be removed");
+    }
 };
 
 const updateClass = (req, res, id) => {

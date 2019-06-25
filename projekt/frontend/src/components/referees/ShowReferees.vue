@@ -62,7 +62,10 @@ export default {
             );
           })
           .catch(errors => {
-            console.log(errors);
+            this.$store.dispatch(
+              "loadMessage",
+              "Sędzia " + referee.name + " nie może być usunięty - bierze udział w rozgrywce."
+            );
           });
       }
     },

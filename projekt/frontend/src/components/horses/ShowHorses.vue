@@ -4,11 +4,15 @@
     <input type="text" class="float-right" placeholder="Wyszukaj konia..." v-model="search">
     <b-list-group>
       <div class="row">
+        <div class="col-md-3">Numer</div>
         <div class="col-md-3">Imię</div>
         <div class="col-md-3">Kraj</div>
       </div>
       <b-list-group-item v-for="horse in filteredHorses" :key="horse.id">
         <div class="row">
+          <div class="col-md-3">
+            {{ horse.number}}
+          </div>
           <div class="col-md-3">
             <router-link :to="{ name: 'horse', params: { id: horse.id }}">{{ horse.name }}</router-link>
           </div>
