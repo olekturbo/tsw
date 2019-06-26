@@ -5,7 +5,7 @@ export default {
   mounted() {
     let th = this;
     this.$gen
-      .get("http://192.168.1.12:3000/db")
+      .get("http://10.10.4.71:3000/db")
       .then(function(response) {
         // handle success
         const params = new URLSearchParams();

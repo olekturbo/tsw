@@ -102,7 +102,7 @@ export default {
             setTimeout(() => {
                 this.sortHorses();
                 this.checkIfDraw();
-            },100);
+            },300);
         },
         checkIfDraw() {
             for(let i = 0; i < this.sortedHorses.length; i++) {

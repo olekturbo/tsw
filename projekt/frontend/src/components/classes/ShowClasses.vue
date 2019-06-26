@@ -10,7 +10,7 @@
       <b-list-group-item v-for="singleClass in classes" :key="singleClass.id">
         <div class="row">
           <div class="col-md-3">
-            <input v-model="singleClass.number">
+            <input  @change="color(singleClass.id)" v-model="singleClass.number">
           </div>
           <div class="col-md-3">
             <b-form-select id="category" v-model="singleClass.category" :options="categoryOptions"></b-form-select>
@@ -35,7 +35,7 @@
           </div>
           <div class="col-md-1">
             <a href="#">
-              <b-badge variant="success" @click="onClickUpdate(singleClass)">edytuj</b-badge>
+              <b-badge :id="singleClass.id" @click="onClickUpdate(singleClass)">edytuj</b-badge>
             </a>
           </div>
           <div class="col-md-1">
@@ -134,6 +134,10 @@ export default {
           this.errors.push("Komisja jest wymagana.");
         }
       }
+    },
+    color(id) {
+      console.log(id);
+      document.getElementById(id).style.background = "green";
     }
   }
 };

@@ -139,19 +139,7 @@ export default {
       return country.substring(0, 3).toUpperCase();
     },
     onClickSend() {
-      const params = new URLSearchParams();
-      params.append("marks", JSON.stringify(this.marks));
-      params.append("totalSum", JSON.stringify(this.totalSum));
-      params.append("sum", JSON.stringify(this.sum));
-      this.$http
-        .put("horse/mark/" + this.horse.id, params)
-        .then(response => {
-          this.$socket.emit("markHorse");
-          this.$store.dispatch("loadMessage", "Koń został pomyślnie oceniony");
-        })
-        .catch(e => {
-          alert("Coś poszło nie tak. Spróbuj ponownie później: " + e.message);
-        });
+      this.$store.dispatch("setScores", [this.horse, this.marks, this.totalSum, this.sum]);
     }
   }
 };

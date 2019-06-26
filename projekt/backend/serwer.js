@@ -8,7 +8,7 @@ const app = express();
 const session = require('express-session');
 const RedisStore = require('connect-redis')(session);
 const sessionStore = new RedisStore({
-    host: '192.168.1.12',
+    host: '10.10.4.71',
     port: 6379,
     client: require('redis').createClient(),
     disableTTL: true
@@ -66,9 +66,7 @@ const cors = require('cors');
 app.use(cookieParser());
 app.use(cors({
     credentials: true,
-    origin: function (origin, callback) {
-        return callback(null, true);
-    },
+    origin: 'http://10.10.4.71:8080'
 }));
 
 // konfiguracja obsługi sesji (poziom Express,js)
@@ -681,6 +679,6 @@ sio.sockets.on('connection', (socket) => {
     socket.emit('IS_AUTHORIZED', socket.request.user);
 });
 
-server.listen(3001, '192.168.1.12', () => {
-    console.log('Serwer pod adresem http://192.168.1.12:3001/');
+server.listen(3001, '10.10.4.71', () => {
+    console.log('Serwer pod adresem http://10.10.4.71:3001/');
 });

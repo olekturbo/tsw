@@ -5,7 +5,7 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 const base = axios.create({
-    baseURL: "http://192.168.1.12:3001/",
+    baseURL: "http://10.10.4.71:3001/",
     withCredentials: true
 });
 
@@ -94,6 +94,22 @@ const store = new Vuex.Store({
             commit
         }, classes) {
             commit("setClassOptions", classes);
+        },
+        setScores({
+            commit
+        }, [horse, marks, totalSum, sum]) {
+            const params = new URLSearchParams();
+            params.append("marks", JSON.stringify(marks));
+            params.append("totalSum", JSON.stringify(totalSum));
+            params.append("sum", JSON.stringify(sum));
+            base
+                .put("horse/mark/" + horse.id, params)
+                .then(response => {
+                    commit("setScores");
+                })
+                .catch(e => {
+                    alert("Coś poszło nie tak. Spróbuj ponownie później: " + e.message);
+                });
         }
     },
     mutations: {
@@ -146,6 +162,10 @@ const store = new Vuex.Store({
             });
 
             state.classOptions = options;
+        },
+        setScores(state) {
+            this._vm.$socket.emit('markHorse');
+            store.dispatch("loadMessage", "Koń został pomyślnie oceniony");
         }
     }
 });

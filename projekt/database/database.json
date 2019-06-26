@@ -2,33 +2,33 @@
   "referees": [
     {
       "id": "1",
-      "name": "Cara Sipes",
-      "country": "PM"
+      "name": "Jude Labadie",
+      "country": "ES"
     },
     {
       "id": "2",
-      "name": "Pansy Rosenbaum",
-      "country": "FO"
+      "name": "Daisy Schaden",
+      "country": "IM"
     },
     {
       "id": "3",
-      "name": "Gage Ondricka",
-      "country": "HR"
+      "name": "Jay Weissnat",
+      "country": "QA"
     },
     {
       "id": "4",
-      "name": "Vergie Hamill",
-      "country": "TC"
+      "name": "Jaqueline Koelpin",
+      "country": "JO"
     },
     {
       "id": "5",
-      "name": "Elvera Kuphal",
-      "country": "AM"
+      "name": "Camron Dickens",
+      "country": "CO"
     },
     {
       "id": "6",
-      "name": "Shanel Hirthe",
-      "country": "WF"
+      "name": "Kadin Abshire",
+      "country": "CF"
     }
   ],
   "classes": [
@@ -45,7 +45,7 @@
     },
     {
       "id": "2",
-      "number": 2,
+      "number": 3,
       "category": "klacze_roczne",
       "comission": [
         "2",
@@ -56,7 +56,7 @@
     },
     {
       "id": "3",
-      "number": 3,
+      "number": 2,
       "category": "ogiery_roczne",
       "comission": [
         "3",
@@ -79,7 +79,7 @@
     {
       "id": "5",
       "number": 5,
-      "category": "klacze_dwuletnie",
+      "category": "ogiery_roczne",
       "comission": [
         "5",
         "1",
@@ -90,7 +90,7 @@
     {
       "id": "6",
       "number": 6,
-      "category": "ogiery_dwuletnie",
+      "category": "klacze_dwuletnie",
       "comission": [
         "1",
         "2",
@@ -101,7 +101,7 @@
     {
       "id": "7",
       "number": 7,
-      "category": "klacze_trzyletnie",
+      "category": "ogiery_dwuletnie",
       "comission": [
         "2",
         "3",
@@ -123,7 +123,7 @@
     {
       "id": "9",
       "number": 9,
-      "category": "ogiery_trzyletnie",
+      "category": "klacze_trzyletnie",
       "comission": [
         "4",
         "5",
@@ -134,7 +134,7 @@
     {
       "id": "10",
       "number": 10,
-      "category": "klacze_młodsze",
+      "category": "klacze_trzyletnie",
       "comission": [
         "5",
         "1",
@@ -145,7 +145,7 @@
     {
       "id": "11",
       "number": 11,
-      "category": "klacze_młodsze",
+      "category": "ogiery_trzyletnie",
       "comission": [
         "1",
         "2",
@@ -156,7 +156,7 @@
     {
       "id": "12",
       "number": 12,
-      "category": "ogiery_młodsze",
+      "category": "klacze_młodsze",
       "comission": [
         "2",
         "3",
@@ -167,7 +167,7 @@
     {
       "id": "13",
       "number": 13,
-      "category": "klacze_starsze",
+      "category": "ogiery_młodsze",
       "comission": [
         "3",
         "4",
@@ -189,7 +189,7 @@
     {
       "id": "15",
       "number": 15,
-      "category": "klacze_starsze",
+      "category": "ogiery_starsze",
       "comission": [
         "5",
         "1",
@@ -206,17 +206,6 @@
         "2",
         "3",
         "4"
-      ]
-    },
-    {
-      "id": "17",
-      "number": 17,
-      "category": "ogiery_starsze",
-      "comission": [
-        "2",
-        "3",
-        "4",
-        "5"
       ]
     }
   ],
@@ -225,57 +214,57 @@
       "id": "1",
       "number": 1,
       "class": "1",
-      "name": "Emma",
-      "country": "PT",
+      "name": "Aliyah",
+      "country": "CX",
       "year": "2018",
-      "color": "kaszt.",
+      "color": "kara",
       "gender": "male",
       "farmer": {
-        "name": "Guiseppe Quitzon IV",
-        "country": "JO"
+        "name": "Sandy Weimann",
+        "country": "BA"
       },
       "father": {
-        "name": "Belle Cassin",
-        "country": "VU"
+        "name": "Ulises Bernier",
+        "country": "SL"
       },
       "mother": {
-        "name": "Camryn Wiegand",
-        "country": "GE"
+        "name": "Josh Renner MD",
+        "country": "SI"
       },
       "grandpa": {
-        "name": "Burley Stracke",
-        "country": "LK"
+        "name": "Lukas Hahn",
+        "country": "MW"
       },
       "score": {
         "marks": {
           "types": [
-            12.5,
-            15.5,
-            10.5,
-            11
+            19.5,
+            17.5,
+            16,
+            17
           ],
           "heads": [
-            17,
-            18,
-            10.5,
-            17
+            11,
+            16,
+            13.5,
+            20
           ],
           "blocks": [
-            16.5,
-            13,
-            16,
-            16.5
+            18.5,
+            10.5,
+            17.5,
+            15
           ],
           "legs": [
-            11.5,
-            12,
-            15,
-            17
+            20,
+            18.5,
+            16.5,
+            15.5
           ],
           "moves": [
-            16,
+            13,
             16.5,
-            10.5,
+            15.5,
             13.5
           ]
         }
@@ -283,60 +272,60 @@
     },
     {
       "id": "2",
-      "number": "2",
+      "number": 2,
       "class": "1",
-      "name": "Timmothy",
-      "country": "YE",
+      "name": "Brennan",
+      "country": "ZM",
       "year": "2018",
-      "color": "siwa",
+      "color": "kara",
       "gender": "male",
       "farmer": {
-        "name": "Sincere Effertz",
-        "country": "FI"
+        "name": "Kim Harris",
+        "country": "MC"
       },
       "father": {
-        "name": "Mr. Catharine Von",
-        "country": "NC"
+        "name": "Garrett Wisozk Sr.",
+        "country": "TZ"
       },
       "mother": {
-        "name": "Ron Schamberger",
-        "country": "NG"
+        "name": "Terrence Walker",
+        "country": "SM"
       },
       "grandpa": {
-        "name": "Kris Rowe",
-        "country": "BB"
+        "name": "Kolby Bode",
+        "country": "RU"
       },
       "score": {
         "marks": {
           "types": [
-            10,
-            12.5,
-            12,
-            12
-          ],
-          "heads": [
-            20,
-            14.5,
-            10.5,
-            13.5
-          ],
-          "blocks": [
-            19,
-            10,
-            16,
-            14
-          ],
-          "legs": [
-            12.5,
-            14.5,
-            17,
-            11
-          ],
-          "moves": [
-            17.5,
             14,
             10.5,
-            12.5
+            13,
+            17
+          ],
+          "heads": [
+            16.5,
+            12,
+            13,
+            14.5
+          ],
+          "blocks": [
+            16.5,
+            10.5,
+            15.5,
+            19.5
+          ],
+          "legs": [
+            15,
+            15.5,
+            10,
+            16
+          ],
+          "moves": [
+            15,
+            10,
+            19.5,
+            19.5
           ]
         }
       }
@@ -345,58 +334,58 @@
       "id": "3",
       "number": 3,
       "class": "1",
-      "name": "Marjolaine",
-      "country": "AG",
+      "name": "Golden",
+      "country": "VA",
       "year": "2018",
       "color": "sk.gn.",
       "gender": "male",
       "farmer": {
-        "name": "Cristal Rau MD",
-        "country": "AZ"
+        "name": "Polly Corwin",
+        "country": "IS"
       },
       "father": {
-        "name": "Tobin Murazik II",
-        "country": "EC"
+        "name": "Elmer Jacobi",
+        "country": "IS"
       },
       "mother": {
-        "name": "Felton Dibbert",
-        "country": "CH"
+        "name": "Beau Ziemann",
+        "country": "HT"
       },
       "grandpa": {
-        "name": "Mrs. Eliezer Bernier",
-        "country": "CV"
+        "name": "Orval Blanda",
+        "country": "MS"
       },
       "score": {
         "marks": {
           "types": [
-            10.5,
-            13.5,
-            11,
-            12.5
-          ],
-          "heads": [
-            15,
-            10.5,
-            18,
-            11.5
-          ],
-          "blocks": [
-            10,
-            18,
             18.5,
-            13
-          ],
-          "legs": [
-            17,
-            11,
-            14,
+            11.5,
+            12.5,
             20
           ],
-          "moves": [
-            13,
-            10,
+          "heads": [
+            12.5,
+            15.5,
+            16.5,
+            11
+          ],
+          "blocks": [
+            12,
+            19.5,
             18,
-            17.5
+            17
+          ],
+          "legs": [
+            16,
+            12.5,
+            15,
+            19
+          ],
+          "moves": [
+            15.5,
+            12,
+            10.5,
+            12.5
           ]
         }
       }
@@ -405,58 +394,58 @@
       "id": "4",
       "number": 4,
       "class": "1",
-      "name": "Alysha",
-      "country": "TK",
+      "name": "Mazie",
+      "country": "WS",
       "year": "2018",
-      "color": "sk.gn.",
+      "color": "siwa",
       "gender": "male",
       "farmer": {
-        "name": "Germaine Swift",
-        "country": "SZ"
+        "name": "Elias Koss",
+        "country": "PF"
       },
       "father": {
-        "name": "Cameron Pollich",
-        "country": "GY"
+        "name": "Freddie Mohr",
+        "country": "SR"
       },
       "mother": {
-        "name": "Sallie Blanda",
-        "country": "ZW"
+        "name": "Velda Lindgren",
+        "country": "CL"
       },
       "grandpa": {
-        "name": "Noble Abshire",
-        "country": "IE"
+        "name": "Francis Hayes",
+        "country": "IT"
       },
       "score": {
         "marks": {
           "types": [
-            15.5,
-            13.5,
-            14.5,
-            15
+            13,
+            10,
+            18.5,
+            19.5
           ],
           "heads": [
+            12.5,
             18.5,
             16,
-            18,
-            17
+            15.5
           ],
           "blocks": [
-            12,
-            10,
-            14,
-            16
+            20,
+            18,
+            19.5,
+            18.5
           ],
           "legs": [
-            20,
-            17.5,
-            13.5,
+            15,
+            19,
+            14.5,
             17
           ],
           "moves": [
-            18.5,
-            17,
-            17,
-            16.5
+            12,
+            11.5,
+            16,
+            18.5
           ]
         }
       }
@@ -465,58 +454,58 @@
       "id": "5",
       "number": 5,
       "class": "1",
-      "name": "Magdalena",
-      "country": "SG",
+      "name": "Isabelle",
+      "country": "BH",
       "year": "2018",
-      "color": "sk.gn.",
+      "color": "siwa",
       "gender": "male",
       "farmer": {
-        "name": "Theron Miller",
-        "country": "CM"
+        "name": "Ms. Tad Spencer",
+        "country": "SS"
       },
       "father": {
-        "name": "Conrad Block",
-        "country": "RO"
+        "name": "Bradly Hills",
+        "country": "BG"
       },
       "mother": {
-        "name": "Eleanora Goodwin",
-        "country": "CK"
+        "name": "Sammy Huels",
+        "country": "TL"
       },
       "grandpa": {
-        "name": "Laverna Mueller",
-        "country": "FO"
+        "name": "Otilia O'Hara V",
+        "country": "LI"
       },
       "score": {
         "marks": {
           "types": [
+            12.5,
+            10,
             19.5,
-            18,
-            12,
-            11
+            14.5
           ],
           "heads": [
-            19.5,
-            16.5,
-            16.5,
-            13
+            15.5,
+            12.5,
+            18.5,
+            10
           ],
           "blocks": [
-            15.5,
-            11.5,
-            13,
-            17
+            14,
+            18.5,
+            10.5,
+            11.5
           ],
           "legs": [
-            10.5,
-            18.5,
-            11,
-            12
+            11.5,
+            14.5,
+            14,
+            14.5
           ],
           "moves": [
-            18.5,
-            19.5,
-            18,
-            16
+            14,
+            19,
+            17.5,
+            15.5
           ]
         }
       }
@@ -525,58 +514,58 @@
       "id": "6",
       "number": 6,
       "class": "2",
-      "name": "Brooke",
-      "country": "EC",
+      "name": "Ara",
+      "country": "AW",
       "year": "2018",
-      "color": "kaszt.",
+      "color": "kara",
       "gender": "male",
       "farmer": {
-        "name": "Judd Hermann IV",
-        "country": "MG"
+        "name": "Garett Kshlerin",
+        "country": "EG"
       },
       "father": {
-        "name": "Sanford Swift",
-        "country": "SC"
+        "name": "Johathan Koelpin",
+        "country": "MU"
       },
       "mother": {
-        "name": "Keeley Runolfsson PhD",
-        "country": "PM"
+        "name": "Josefa Nienow",
+        "country": "SE"
       },
       "grandpa": {
-        "name": "Sincere Hegmann",
-        "country": "CD"
+        "name": "Cristobal Rosenbaum IV",
+        "country": "BJ"
       },
       "score": {
         "marks": {
           "types": [
-            12.5,
-            19.5,
-            20,
-            10.5
+            0,
+            14.5,
+            18,
+            13
           ],
           "heads": [
-            16,
-            16.5,
-            13,
-            13.5
+            18,
+            15.5,
+            19,
+            16.5
           ],
           "blocks": [
-            19.5,
-            16.5,
             18,
-            15
+            15.5,
+            14.5,
+            15.5
           ],
           "legs": [
-            17,
-            20,
-            14,
-            14
+            17.5,
+            10,
+            13,
+            16.5
           ],
           "moves": [
-            11.5,
             14,
-            14.5,
-            20
+            17.5,
+            17,
+            12.5
           ]
         }
       }
@@ -585,58 +574,58 @@
       "id": "7",
       "number": 7,
       "class": "2",
-      "name": "Wilburn",
-      "country": "PK",
+      "name": "Holden",
+      "country": "SB",
       "year": "2018",
-      "color": "gniada",
+      "color": "kara",
       "gender": "male",
       "farmer": {
-        "name": "Stuart Legros",
-        "country": "CX"
+        "name": "Laury Keebler",
+        "country": "MA"
       },
       "father": {
-        "name": "Dustin Gorczany",
-        "country": "BI"
+        "name": "Mason Nicolas",
+        "country": "FI"
       },
       "mother": {
-        "name": "Miss Phyllis MacGyver",
-        "country": "FM"
+        "name": "Randal Armstrong",
+        "country": "KZ"
       },
       "grandpa": {
-        "name": "Jovan Bernier",
-        "country": "JE"
+        "name": "Garett Berge",
+        "country": "GE"
       },
       "score": {
         "marks": {
           "types": [
-            14,
-            16,
-            18,
-            17
+            12,
+            17.5,
+            10,
+            13.5
           ],
           "heads": [
-            10.5,
-            11,
-            13.5,
-            11
-          ],
-          "blocks": [
-            13.5,
-            15.5,
-            18,
-            17
-          ],
-          "legs": [
-            10,
-            10.5,
-            12,
+            11.5,
+            19.5,
+            14,
             18.5
           ],
-          "moves": [
-            10.5,
-            18,
+          "blocks": [
+            18.5,
             15,
+            19.5,
             13.5
+          ],
+          "legs": [
+            12,
+            11.5,
+            14,
+            11.5
+          ],
+          "moves": [
+            11,
+            14,
+            13.5,
+            11
           ]
         }
       }
@@ -645,58 +634,58 @@
       "id": "8",
       "number": 8,
       "class": "2",
-      "name": "Noemi",
-      "country": "BE",
+      "name": "Wendell",
+      "country": "SJ",
       "year": "2018",
       "color": "gniada",
       "gender": "male",
       "farmer": {
-        "name": "Kenton Kohler",
-        "country": "GE"
+        "name": "Hope Rath",
+        "country": "AS"
       },
       "father": {
-        "name": "Amina Brown",
-        "country": "ET"
+        "name": "Katherine Goldner",
+        "country": "PW"
       },
       "mother": {
-        "name": "Sherman Leannon DVM",
-        "country": "GU"
+        "name": "Lela Nikolaus",
+        "country": "PA"
       },
       "grandpa": {
-        "name": "Kim Fahey",
-        "country": "GR"
+        "name": "Moriah Kiehn DVM",
+        "country": "NA"
       },
       "score": {
         "marks": {
           "types": [
+            19.5,
+            20,
             13,
-            18,
-            18.5,
-            18.5
+            20
           ],
           "heads": [
-            17.5,
-            16.5,
-            20,
-            14
+            14.5,
+            18.5,
+            14.5,
+            12.5
           ],
           "blocks": [
-            12.5,
-            12.5,
-            16.5,
-            15.5
+            17,
+            11.5,
+            12,
+            10.5
           ],
           "legs": [
-            19.5,
-            15.5,
             10.5,
-            17
+            18,
+            14,
+            15
           ],
           "moves": [
-            13.5,
+            13,
             12.5,
-            17,
-            13
+            19,
+            11.5
           ]
         }
       }
@@ -705,58 +694,58 @@
       "id": "9",
       "number": 9,
       "class": "2",
-      "name": "Alysha",
-      "country": "SA",
+      "name": "Demetrius",
+      "country": "MY",
       "year": "2018",
-      "color": "kaszt.",
+      "color": "siwa",
       "gender": "male",
       "farmer": {
-        "name": "Dejah Schmidt",
-        "country": "LK"
+        "name": "Nettie Fritsch",
+        "country": "KY"
       },
       "father": {
-        "name": "Alphonso Schinner",
-        "country": "BL"
+        "name": "Julie Stanton",
+        "country": "GW"
       },
       "mother": {
-        "name": "Trisha Streich",
+        "name": "Mr. Antonietta Langworth",
         "country": "PL"
       },
       "grandpa": {
-        "name": "Miss Ian D'Amore",
-        "country": "TZ"
+        "name": "Isaiah Champlin",
+        "country": "AX"
       },
       "score": {
         "marks": {
           "types": [
-            17.5,
-            16.5,
-            16.5,
-            10.5
+            20,
+            20,
+            20,
+            20
           ],
           "heads": [
-            19,
-            18.5,
-            18.5,
-            10
+            20,
+            20,
+            20,
+            20
           ],
           "blocks": [
-            17,
-            12,
-            12.5,
-            15.5
+            20,
+            20,
+            20,
+            20
           ],
           "legs": [
-            16.5,
-            15.5,
-            13.5,
-            15.5
+            20,
+            20,
+            20,
+            20
           ],
           "moves": [
-            12.5,
-            13.5,
-            15.5,
-            10
+            20,
+            20,
+            20,
+            20
           ]
         }
       }
@@ -765,358 +754,188 @@
       "id": "10",
       "number": 10,
       "class": "3",
-      "name": "Theron",
-      "country": "UG",
+      "name": "Grace",
+      "country": "ES",
       "year": "2018",
-      "color": "kary",
+      "color": "sk.gn.",
       "gender": "female",
       "farmer": {
-        "name": "Mckenzie Turcotte",
-        "country": "BW"
+        "name": "Tobin Pfannerstill",
+        "country": "MP"
       },
       "father": {
-        "name": "Janick Pfannerstill",
-        "country": "RS"
+        "name": "Aniya Stamm V",
+        "country": "DZ"
       },
       "mother": {
-        "name": "Tyshawn Pacocha",
-        "country": "NL"
+        "name": "Nedra Cole",
+        "country": "BW"
       },
       "grandpa": {
-        "name": "Alvah Roob",
-        "country": "AW"
-      },
-      "score": {
-        "marks": {
-          "types": [
-            11.5,
-            10.5,
-            14.5,
-            19.5
-          ],
-          "heads": [
-            13,
-            12,
-            11,
-            18
-          ],
-          "blocks": [
-            10,
-            14.5,
-            14.5,
-            19
-          ],
-          "legs": [
-            14.5,
-            10,
-            19.5,
-            10.5
-          ],
-          "moves": [
-            12,
-            15.5,
-            13,
-            10.5
-          ]
-        }
+        "name": "Elnora Walter",
+        "country": "GY"
       }
     },
     {
       "id": "11",
       "number": 11,
       "class": "3",
-      "name": "Alvera",
-      "country": "BI",
+      "name": "Ulises",
+      "country": "ST",
       "year": "2018",
-      "color": "sk.gn.",
+      "color": "siwy",
       "gender": "female",
       "farmer": {
-        "name": "Juvenal Kihn",
-        "country": "DO"
+        "name": "Ashley Hayes",
+        "country": "MG"
       },
       "father": {
-        "name": "Juana Volkman",
-        "country": "LT"
+        "name": "Fausto Hermann",
+        "country": "QA"
       },
       "mother": {
-        "name": "Trystan Rosenbaum",
-        "country": "LI"
+        "name": "Mrs. Florine Rempel",
+        "country": "KW"
       },
       "grandpa": {
-        "name": "Miss Skylar McCullough",
-        "country": "US"
-      },
-      "score": {
-        "marks": {
-          "types": [
-            18,
-            11.5,
-            19.5,
-            19
-          ],
-          "heads": [
-            10.5,
-            16.5,
-            11,
-            13.5
-          ],
-          "blocks": [
-            17,
-            19,
-            15,
-            13
-          ],
-          "legs": [
-            19.5,
-            12,
-            19.5,
-            18
-          ],
-          "moves": [
-            10.5,
-            14,
-            15.5,
-            10
-          ]
-        }
+        "name": "Adrien Hahn III",
+        "country": "MS"
       }
     },
     {
       "id": "12",
       "number": 12,
       "class": "3",
-      "name": "Florine",
-      "country": "KI",
+      "name": "Shanon",
+      "country": "GL",
       "year": "2018",
-      "color": "kaszt.",
+      "color": "kary",
       "gender": "female",
       "farmer": {
-        "name": "Jerald Reynolds",
-        "country": "SE"
+        "name": "Johnpaul Goodwin",
+        "country": "TM"
       },
       "father": {
-        "name": "Ocie Raynor",
-        "country": "KI"
+        "name": "Rashad Windler",
+        "country": "BI"
       },
       "mother": {
-        "name": "Angeline Schimmel",
-        "country": "CY"
+        "name": "Tyra Kuhn",
+        "country": "TL"
       },
       "grandpa": {
-        "name": "Caesar Blanda",
-        "country": "AO"
-      },
-      "score": {
-        "marks": {
-          "types": [
-            12,
-            15.5,
-            19,
-            11.5
-          ],
-          "heads": [
-            14,
-            12,
-            17,
-            13.5
-          ],
-          "blocks": [
-            13.5,
-            11,
-            11,
-            18.5
-          ],
-          "legs": [
-            13,
-            10,
-            19,
-            18
-          ],
-          "moves": [
-            13.5,
-            11,
-            17.5,
-            18.5
-          ]
-        }
+        "name": "Mustafa Mayer",
+        "country": "SS"
       }
     },
     {
       "id": "13",
       "number": 13,
       "class": "3",
-      "name": "Felicia",
-      "country": "TM",
+      "name": "Elfrieda",
+      "country": "UZ",
       "year": "2018",
-      "color": "sk.gn.",
+      "color": "siwy",
       "gender": "female",
       "farmer": {
-        "name": "Anthony DuBuque",
-        "country": "PL"
+        "name": "Bertram Kulas",
+        "country": "KR"
       },
       "father": {
-        "name": "Jessyca Romaguera",
-        "country": "PS"
+        "name": "Jarrod Turcotte",
+        "country": "BR"
       },
       "mother": {
-        "name": "Lenore Dare DDS",
-        "country": "FO"
+        "name": "Una Lakin",
+        "country": "JP"
       },
       "grandpa": {
-        "name": "Camylle Hodkiewicz",
-        "country": "PG"
-      },
-      "score": {
-        "marks": {
-          "types": [
-            16,
-            19,
-            20,
-            16.5
-          ],
-          "heads": [
-            13.5,
-            18,
-            12,
-            18.5
-          ],
-          "blocks": [
-            12,
-            17.5,
-            18,
-            11.5
-          ],
-          "legs": [
-            10,
-            11.5,
-            16,
-            11
-          ],
-          "moves": [
-            13.5,
-            13.5,
-            15.5,
-            12.5
-          ]
-        }
+        "name": "Vaughn Weber",
+        "country": "PT"
       }
     },
     {
       "id": "14",
       "number": 14,
       "class": "3",
-      "name": "Gonzalo",
-      "country": "GF",
+      "name": "Jammie",
+      "country": "QA",
       "year": "2018",
-      "color": "siwy",
+      "color": "kaszt.",
       "gender": "female",
       "farmer": {
-        "name": "Dane Lueilwitz III",
-        "country": "DE"
+        "name": "Marion Bailey",
+        "country": "BB"
       },
       "father": {
-        "name": "Justice Schmeler IV",
-        "country": "HT"
+        "name": "Rosalind Doyle",
+        "country": "PY"
       },
       "mother": {
-        "name": "Sydnee Hegmann",
-        "country": "DZ"
+        "name": "Aniya Stokes",
+        "country": "NO"
       },
       "grandpa": {
-        "name": "Antoinette Harris",
-        "country": "GF"
-      },
-      "score": {
-        "marks": {
-          "types": [
-            19,
-            17,
-            20,
-            14
-          ],
-          "heads": [
-            14.5,
-            14.5,
-            14.5,
-            14
-          ],
-          "blocks": [
-            19.5,
-            17.5,
-            15,
-            18
-          ],
-          "legs": [
-            16.5,
-            20,
-            13.5,
-            16.5
-          ],
-          "moves": [
-            19,
-            13.5,
-            15,
-            18.5
-          ]
-        }
+        "name": "Retha Little",
+        "country": "AZ"
       }
     },
     {
       "id": "15",
       "number": 15,
       "class": "4",
-      "name": "Mia",
-      "country": "LU",
+      "name": "Johnpaul",
+      "country": "TR",
       "year": "2018",
-      "color": "kaszt.",
+      "color": "gniady",
       "gender": "female",
       "farmer": {
-        "name": "Trevion Sawayn I",
-        "country": "TO"
+        "name": "Rhoda Parker",
+        "country": "CN"
       },
       "father": {
-        "name": "Laverne Murazik",
-        "country": "HK"
+        "name": "Gloria Doyle",
+        "country": "LB"
       },
       "mother": {
-        "name": "Virginie Donnelly",
-        "country": "TN"
+        "name": "Dave Klocko",
+        "country": "PS"
       },
       "grandpa": {
-        "name": "Johathan Hartmann",
-        "country": "CW"
+        "name": "Giuseppe Osinski",
+        "country": "DM"
       },
       "score": {
         "marks": {
           "types": [
-            10.5,
-            11,
-            16,
-            11
+            11.5,
+            16.5,
+            18.5,
+            14
           ],
           "heads": [
-            12,
-            11,
-            15,
-            13
+            17.5,
+            18,
+            16.5,
+            11
           ],
           "blocks": [
-            19,
-            19,
-            19,
-            13
+            12.5,
+            11,
+            12,
+            11
           ],
           "legs": [
             12,
-            13.5,
-            17,
-            17
+            19.5,
+            20,
+            19.5
           ],
           "moves": [
-            10.5,
-            12,
-            19.5,
-            16.5
+            12.5,
+            20,
+            17,
+            13.5
           ]
         }
       }
@@ -1125,57 +944,57 @@
       "id": "16",
       "number": 16,
       "class": "4",
-      "name": "Ashleigh",
-      "country": "NR",
+      "name": "Gunnar",
+      "country": "AW",
       "year": "2018",
-      "color": "kary",
+      "color": "gniady",
       "gender": "female",
       "farmer": {
-        "name": "Dorothea Gusikowski",
-        "country": "NF"
+        "name": "Mekhi Zboncak",
+        "country": "SX"
       },
       "father": {
-        "name": "Dallin Wiegand",
-        "country": "CL"
+        "name": "Melyssa Casper",
+        "country": "BZ"
       },
       "mother": {
-        "name": "Lawrence Krajcik",
-        "country": "MG"
+        "name": "Adah Corkery",
+        "country": "EG"
       },
       "grandpa": {
-        "name": "Lurline Roob V",
-        "country": "MS"
+        "name": "Kenna Gislason",
+        "country": "FM"
       },
       "score": {
         "marks": {
           "types": [
-            13,
-            13,
-            10,
-            16
+            19.5,
+            19.5,
+            16.5,
+            13.5
           ],
           "heads": [
             15,
-            19.5,
-            19.5,
+            17,
+            12.5,
             10.5
           ],
           "blocks": [
-            14.5,
-            19.5,
+            11.5,
             11,
-            16.5
+            18.5,
+            11
           ],
           "legs": [
-            16,
-            10,
-            19.5,
-            14.5
+            17,
+            15,
+            20,
+            17.5
           ],
           "moves": [
-            10,
-            19.5,
+            15,
             20,
+            19.5,
             20
           ]
         }
@@ -1185,58 +1004,58 @@
       "id": "17",
       "number": 17,
       "class": "4",
-      "name": "Christ",
-      "country": "HK",
+      "name": "Adolf",
+      "country": "EE",
       "year": "2018",
-      "color": "siwy",
+      "color": "kaszt.",
       "gender": "female",
       "farmer": {
-        "name": "Gage Crist",
-        "country": "UA"
+        "name": "Raymundo D'Amore",
+        "country": "TG"
       },
       "father": {
-        "name": "Patrick Schuppe",
-        "country": "AX"
+        "name": "Efren Hilll",
+        "country": "PS"
       },
       "mother": {
-        "name": "Richmond Rau",
-        "country": "PE"
+        "name": "Lyric Willms",
+        "country": "MF"
       },
       "grandpa": {
-        "name": "Candice Quitzon",
-        "country": "CN"
+        "name": "Ms. Keenan Wisoky",
+        "country": "TN"
       },
       "score": {
         "marks": {
           "types": [
-            17.5,
-            11,
-            11.5,
-            18.5
+            18,
+            12,
+            13,
+            18
           ],
           "heads": [
-            13.5,
-            12,
-            16,
-            15
+            11.5,
+            11,
+            11,
+            20
           ],
           "blocks": [
             15.5,
-            17.5,
-            13,
-            12
+            16.5,
+            14,
+            16
           ],
           "legs": [
-            11,
-            11,
-            14,
-            10
+            17,
+            11.5,
+            14.5,
+            16
           ],
           "moves": [
-            14,
-            17,
-            14,
-            19.5
+            16.5,
+            10,
+            12.5,
+            13
           ]
         }
       }
@@ -1245,58 +1064,58 @@
       "id": "18",
       "number": 18,
       "class": "4",
-      "name": "Thalia",
-      "country": "AS",
+      "name": "Ismael",
+      "country": "SC",
       "year": "2018",
-      "color": "kaszt.",
+      "color": "gniady",
       "gender": "female",
       "farmer": {
-        "name": "Brain Reichert DDS",
-        "country": "BY"
+        "name": "Wilber Muller",
+        "country": "MS"
       },
       "father": {
-        "name": "Josue Emard",
-        "country": "BT"
+        "name": "Dr. Dawson Hermann",
+        "country": "RS"
       },
       "mother": {
-        "name": "Raven Paucek",
-        "country": "EE"
+        "name": "Hudson Douglas Sr.",
+        "country": "GY"
       },
       "grandpa": {
-        "name": "Julianne Braun",
-        "country": "TV"
+        "name": "Araceli Reichel",
+        "country": "SX"
       },
       "score": {
         "marks": {
           "types": [
-            15,
-            10,
+            16.5,
+            10.5,
             19.5,
-            10.5
-          ],
-          "heads": [
-            19,
-            12,
-            14.5,
-            15.5
-          ],
-          "blocks": [
-            10.5,
-            11.5,
-            10,
-            17.5
-          ],
-          "legs": [
-            17,
-            17.5,
-            10.5,
             17
           ],
-          "moves": [
-            16,
-            17,
+          "heads": [
+            16.5,
+            15.5,
+            18,
+            16
+          ],
+          "blocks": [
             12.5,
-            13
+            13,
+            13,
+            19.5
+          ],
+          "legs": [
+            18,
+            13,
+            16.5,
+            10.5
+          ],
+          "moves": [
+            14,
+            15,
+            14,
+            15
           ]
         }
       }
@@ -1304,59 +1123,59 @@
     {
       "id": "19",
       "number": 19,
-      "class": "5",
-      "name": "Conner",
-      "country": "TT",
-      "year": "2017",
-      "color": "sk.gn.",
-      "gender": "male",
+      "class": "4",
+      "name": "Millie",
+      "country": "DJ",
+      "year": "2018",
+      "color": "siwy",
+      "gender": "female",
       "farmer": {
-        "name": "Monte Thiel",
-        "country": "AT"
+        "name": "Harvey Schaden",
+        "country": "KH"
       },
       "father": {
-        "name": "Misty Ruecker",
-        "country": "QA"
+        "name": "Dr. Kirsten Sauer",
+        "country": "GR"
       },
       "mother": {
-        "name": "Mr. Kaylah Ziemann",
-        "country": "VC"
+        "name": "Kayla Crooks",
+        "country": "JO"
       },
       "grandpa": {
-        "name": "Meredith Torphy",
-        "country": "PA"
+        "name": "Elda Farrell",
+        "country": "GI"
       },
       "score": {
         "marks": {
           "types": [
-            14.5,
-            19.5,
-            15,
-            19
+            10,
+            17.5,
+            13.5,
+            15
           ],
           "heads": [
-            16.5,
-            14.5,
-            19,
-            14
+            11,
+            19.5,
+            20,
+            19.5
           ],
           "blocks": [
-            12,
-            18.5,
-            10.5,
-            15.5
+            15,
+            11,
+            17,
+            12
           ],
           "legs": [
+            19,
+            11,
             18,
-            16.5,
-            12.5,
-            10
+            12
           ],
           "moves": [
-            10.5,
-            10,
-            19,
-            17
+            14.5,
+            20,
+            11.5,
+            14
           ]
         }
       }
@@ -1365,58 +1184,58 @@
       "id": "20",
       "number": 20,
       "class": "5",
-      "name": "Wilber",
-      "country": "DO",
-      "year": "2017",
-      "color": "gniada",
-      "gender": "male",
+      "name": "Angeline",
+      "country": "PE",
+      "year": "2018",
+      "color": "kaszt.",
+      "gender": "female",
       "farmer": {
-        "name": "Valerie Herman",
-        "country": "EC"
+        "name": "Dr. Maximus Mueller",
+        "country": "CR"
       },
       "father": {
-        "name": "Jaylon Nikolaus",
-        "country": "DM"
+        "name": "Roman Rowe",
+        "country": "VU"
       },
       "mother": {
-        "name": "Estevan Schuppe",
-        "country": "GD"
+        "name": "Aimee Macejkovic",
+        "country": "LR"
       },
       "grandpa": {
-        "name": "Nina Nitzsche",
-        "country": "NP"
+        "name": "Miss Reynold Ruecker",
+        "country": "HT"
       },
       "score": {
         "marks": {
           "types": [
-            17,
-            15.5,
-            15,
-            20
+            14,
+            19,
+            19,
+            15.5
           ],
           "heads": [
-            11,
-            15,
+            17,
+            19.5,
             10,
-            13.5
+            11
           ],
           "blocks": [
-            13.5,
-            11,
-            12.5,
+            16,
+            10,
+            14.5,
             10
           ],
           "legs": [
-            15.5,
-            11,
+            12,
+            14.5,
             17,
-            14
+            15.5
           ],
           "moves": [
-            18,
-            14.5,
-            18.5,
-            14.5
+            19,
+            15,
+            12,
+            13
           ]
         }
       }
@@ -1425,58 +1244,58 @@
       "id": "21",
       "number": 21,
       "class": "5",
-      "name": "Keyon",
-      "country": "LI",
-      "year": "2017",
+      "name": "Wilford",
+      "country": "TW",
+      "year": "2018",
       "color": "sk.gn.",
-      "gender": "male",
+      "gender": "female",
       "farmer": {
-        "name": "Clay Steuber",
-        "country": "GH"
+        "name": "Oceane Feil",
+        "country": "PM"
       },
       "father": {
-        "name": "Adrain Okuneva",
-        "country": "TG"
+        "name": "Adrien Wuckert",
+        "country": "TR"
       },
       "mother": {
-        "name": "Joyce Anderson",
-        "country": "GB"
+        "name": "Alanis Kris",
+        "country": "PL"
       },
       "grandpa": {
-        "name": "Neal Gerhold",
-        "country": "NP"
+        "name": "Mrs. Kay Doyle",
+        "country": "MN"
       },
       "score": {
         "marks": {
           "types": [
-            12,
-            20,
-            17.5,
-            12.5
+            19.5,
+            10.5,
+            12.5,
+            19
           ],
           "heads": [
-            17,
-            13.5,
-            11.5,
-            17.5
+            12,
+            18.5,
+            15.5,
+            16
           ],
           "blocks": [
-            16,
-            14,
+            12.5,
+            12,
             14.5,
-            16
+            12.5
           ],
           "legs": [
             12.5,
-            11,
-            15,
+            10,
+            14.5,
             11.5
           ],
           "moves": [
-            16.5,
-            19,
-            16,
-            15
+            20,
+            18.5,
+            15.5,
+            20
           ]
         }
       }
@@ -1485,58 +1304,58 @@
       "id": "22",
       "number": 22,
       "class": "5",
-      "name": "Euna",
-      "country": "FO",
-      "year": "2017",
-      "color": "kara",
-      "gender": "male",
+      "name": "Kian",
+      "country": "IE",
+      "year": "2018",
+      "color": "siwy",
+      "gender": "female",
       "farmer": {
-        "name": "Wava Boyer",
-        "country": "CR"
+        "name": "Sonya Kshlerin",
+        "country": "LC"
       },
       "father": {
-        "name": "Miss Joannie Erdman",
-        "country": "SZ"
+        "name": "Jaiden Wolf",
+        "country": "NE"
       },
       "mother": {
-        "name": "Reanna Kovacek",
-        "country": "GL"
+        "name": "Gisselle Gerlach",
+        "country": "VE"
       },
       "grandpa": {
-        "name": "Carmelo Wehner",
-        "country": "GQ"
+        "name": "Ardella Kerluke",
+        "country": "BJ"
       },
       "score": {
         "marks": {
           "types": [
-            18.5,
             16.5,
-            19.5,
-            19.5
+            13,
+            15,
+            18.5
           ],
           "heads": [
-            17.5,
+            10,
+            16,
             18.5,
-            15.5,
-            12
+            14.5
           ],
           "blocks": [
             16.5,
-            16,
-            16.5,
-            17.5
+            19.5,
+            19.5,
+            13
           ],
           "legs": [
+            17.5,
+            14,
             14.5,
-            16,
-            13.5,
             17.5
           ],
           "moves": [
-            19.5,
-            13.5,
-            17,
-            10
+            19,
+            12,
+            18.5,
+            10.5
           ]
         }
       }
@@ -1545,58 +1364,58 @@
       "id": "23",
       "number": 23,
       "class": "5",
-      "name": "Emmalee",
-      "country": "UZ",
-      "year": "2017",
-      "color": "sk.gn.",
-      "gender": "male",
+      "name": "Cedrick",
+      "country": "ID",
+      "year": "2018",
+      "color": "kaszt.",
+      "gender": "female",
       "farmer": {
-        "name": "Ms. Melissa Sauer",
-        "country": "GB"
+        "name": "Cruz Wisoky",
+        "country": "TW"
       },
       "father": {
-        "name": "Steve Boyer",
-        "country": "HM"
+        "name": "Dr. Erich Zboncak",
+        "country": "CZ"
       },
       "mother": {
-        "name": "Newell Davis",
-        "country": "VN"
+        "name": "Murphy Predovic",
+        "country": "TF"
       },
       "grandpa": {
-        "name": "Enoch Erdman",
-        "country": "MD"
+        "name": "Maurine Bruen",
+        "country": "AF"
       },
       "score": {
         "marks": {
           "types": [
+            15,
+            13.5,
             17,
-            12,
-            10.5,
-            15
+            16
           ],
           "heads": [
-            19,
+            10.5,
             17.5,
-            14.5,
-            12
+            11,
+            18.5
           ],
           "blocks": [
-            14.5,
-            16,
-            16,
-            11
+            11,
+            19.5,
+            14,
+            16
           ],
           "legs": [
-            17,
-            11.5,
-            14,
-            19.5
+            12,
+            16,
+            12,
+            14.5
           ],
           "moves": [
-            16,
-            10,
-            16,
-            15.5
+            11.5,
+            12,
+            14.5,
+            18
           ]
         }
       }
@@ -1605,58 +1424,58 @@
       "id": "24",
       "number": 24,
       "class": "6",
-      "name": "Ocie",
-      "country": "TN",
+      "name": "Savanah",
+      "country": "IR",
       "year": "2017",
-      "color": "kary",
-      "gender": "female",
+      "color": "sk.gn.",
+      "gender": "male",
       "farmer": {
-        "name": "Jaleel Kunze",
-        "country": "GN"
+        "name": "Hershel Conroy",
+        "country": "MU"
       },
       "father": {
-        "name": "Lorenza Casper",
-        "country": "TJ"
+        "name": "Keegan Pfannerstill",
+        "country": "BR"
       },
       "mother": {
-        "name": "Hardy Funk",
-        "country": "CF"
+        "name": "Jeanette Heller Sr.",
+        "country": "CM"
       },
       "grandpa": {
-        "name": "Ana McClure",
-        "country": "EH"
+        "name": "Madisyn Cruickshank V",
+        "country": "RE"
       },
       "score": {
         "marks": {
           "types": [
-            16,
-            10,
-            20,
-            20
-          ],
-          "heads": [
-            10,
-            11.5,
-            11.5,
-            14
-          ],
-          "blocks": [
-            18,
-            14.5,
+            17.5,
+            19.5,
             11,
             17
           ],
-          "legs": [
+          "heads": [
+            18,
             11,
-            15.5,
-            11.5,
+            18.5,
             10
           ],
+          "blocks": [
+            12,
+            16.5,
+            18,
+            18.5
+          ],
+          "legs": [
+            18.5,
+            10.5,
+            10.5,
+            20
+          ],
           "moves": [
+            19.5,
             18,
-            12.5,
-            18,
-            14.5
+            19,
+            19.5
           ]
         }
       }
@@ -1665,58 +1484,58 @@
       "id": "25",
       "number": 25,
       "class": "6",
-      "name": "Ricardo",
-      "country": "MP",
+      "name": "Akeem",
+      "country": "EG",
       "year": "2017",
-      "color": "gniady",
-      "gender": "female",
+      "color": "siwa",
+      "gender": "male",
       "farmer": {
-        "name": "Clair Morissette",
-        "country": "SV"
+        "name": "Bonnie Ward Jr.",
+        "country": "MG"
       },
       "father": {
-        "name": "Fabian Hyatt",
-        "country": "CU"
+        "name": "Jake Kulas",
+        "country": "GP"
       },
       "mother": {
-        "name": "Jamil Graham",
-        "country": "HT"
+        "name": "Glennie Pollich",
+        "country": "SN"
       },
       "grandpa": {
-        "name": "Annabell Pfeffer",
-        "country": "PG"
+        "name": "Emmie Konopelski",
+        "country": "GY"
       },
       "score": {
         "marks": {
           "types": [
             10.5,
-            19,
-            11.5,
-            11.5
+            12.5,
+            16.5,
+            14.5
           ],
           "heads": [
-            12.5,
-            17,
+            16,
+            10.5,
             14.5,
             12.5
           ],
           "blocks": [
             18,
-            18.5,
-            12,
-            11.5
+            16.5,
+            15.5,
+            20
           ],
           "legs": [
-            12,
             11,
-            18.5,
-            17
+            16.5,
+            11.5,
+            12
           ],
           "moves": [
-            16.5,
-            17,
+            14,
             10,
-            12
+            12.5,
+            16
           ]
         }
       }
@@ -1725,58 +1544,58 @@
       "id": "26",
       "number": 26,
       "class": "6",
-      "name": "Justina",
+      "name": "Maxwell",
       "country": "BE",
       "year": "2017",
-      "color": "sk.gn.",
-      "gender": "female",
+      "color": "gniada",
+      "gender": "male",
       "farmer": {
-        "name": "Isabelle Schmitt",
-        "country": "LU"
+        "name": "Jarrett Turcotte DDS",
+        "country": "CV"
       },
       "father": {
-        "name": "Juliet Lakin",
-        "country": "MF"
+        "name": "Philip Effertz",
+        "country": "TO"
       },
       "mother": {
-        "name": "Ms. Muriel Bergnaum",
-        "country": "JO"
+        "name": "Christelle Windler",
+        "country": "TT"
       },
       "grandpa": {
-        "name": "Gladys Kunde",
-        "country": "ME"
+        "name": "Irving Lakin",
+        "country": "PL"
       },
       "score": {
         "marks": {
           "types": [
-            18.5,
-            15.5,
-            19,
-            13
+            11,
+            14,
+            18,
+            12
           ],
           "heads": [
-            17,
+            19.5,
             20,
-            10,
-            12.5
+            10.5,
+            16
           ],
           "blocks": [
+            20,
+            16,
             11.5,
-            13.5,
-            19,
-            20
+            13
           ],
           "legs": [
-            10,
-            12,
-            17,
-            20
+            18,
+            16.5,
+            18,
+            19
           ],
           "moves": [
-            19.5,
-            19.5,
-            13,
-            12
+            15,
+            20,
+            14.5,
+            14.5
           ]
         }
       }
@@ -1784,59 +1603,59 @@
     {
       "id": "27",
       "number": 27,
-      "class": "7",
-      "name": "Aglae",
-      "country": "TJ",
-      "year": "2016",
+      "class": "6",
+      "name": "Courtney",
+      "country": "CL",
+      "year": "2017",
       "color": "sk.gn.",
       "gender": "male",
       "farmer": {
-        "name": "Tre Shields",
-        "country": "CN"
+        "name": "Garnet Raynor",
+        "country": "BI"
       },
       "father": {
-        "name": "Laron Kerluke",
-        "country": "GD"
+        "name": "Genevieve Glover",
+        "country": "ST"
       },
       "mother": {
-        "name": "Alexandria Reynolds",
-        "country": "AS"
+        "name": "Eugene Rice",
+        "country": "SO"
       },
       "grandpa": {
-        "name": "Berta Torphy",
-        "country": "FI"
+        "name": "Edgar Jacobson",
+        "country": "AD"
       },
       "score": {
         "marks": {
           "types": [
-            16,
-            10,
-            13,
-            19
+            14.5,
+            12.5,
+            16.5,
+            20
           ],
           "heads": [
-            17.5,
-            17,
-            15,
-            12
+            19.5,
+            10,
+            12.5,
+            17.5
           ],
           "blocks": [
-            14.5,
-            12,
-            17.5,
-            11
-          ],
-          "legs": [
-            14.5,
+            13.5,
+            13,
             16,
-            15,
             18
           ],
+          "legs": [
+            14,
+            17.5,
+            17.5,
+            19
+          ],
           "moves": [
-            19.5,
-            13.5,
-            19,
-            13.5
+            14,
+            15,
+            14.5,
+            18
           ]
         }
       }
@@ -1845,58 +1664,58 @@
       "id": "28",
       "number": 28,
       "class": "7",
-      "name": "Mariano",
-      "country": "RU",
-      "year": "2016",
-      "color": "gniada",
-      "gender": "male",
+      "name": "Maryam",
+      "country": "GA",
+      "year": "2017",
+      "color": "siwy",
+      "gender": "female",
       "farmer": {
-        "name": "Zachary Thiel",
-        "country": "NE"
+        "name": "Antoinette Moen",
+        "country": "JM"
       },
       "father": {
-        "name": "Ms. Sabryna Corkery",
-        "country": "RU"
+        "name": "Royal Zieme",
+        "country": "EC"
       },
       "mother": {
-        "name": "Norberto Mitchell DVM",
-        "country": "GW"
+        "name": "Aron Rath",
+        "country": "CG"
       },
       "grandpa": {
-        "name": "Guiseppe Gaylord",
-        "country": "PK"
+        "name": "Chanelle Botsford Sr.",
+        "country": "LT"
       },
       "score": {
         "marks": {
           "types": [
-            14,
-            10,
-            15.5,
-            10.5
+            17,
+            17.5,
+            15,
+            17
           ],
           "heads": [
             16,
-            17,
+            12,
             19.5,
-            10.5
+            15.5
           ],
           "blocks": [
-            11,
-            11.5,
-            20,
-            19
+            14.5,
+            17,
+            16.5,
+            12.5
           ],
           "legs": [
-            13.5,
-            14.5,
-            11.5,
-            15
+            16.5,
+            19,
+            19.5,
+            12
           ],
           "moves": [
-            14.5,
-            10,
+            13.5,
+            16.5,
             15,
-            13.5
+            18
           ]
         }
       }
@@ -1905,58 +1724,58 @@
       "id": "29",
       "number": 29,
       "class": "7",
-      "name": "Vita",
-      "country": "LU",
-      "year": "2016",
-      "color": "siwa",
-      "gender": "male",
+      "name": "Deion",
+      "country": "DE",
+      "year": "2017",
+      "color": "kaszt.",
+      "gender": "female",
       "farmer": {
-        "name": "Sid Wyman",
-        "country": "HK"
+        "name": "Keira Stiedemann",
+        "country": "GR"
       },
       "father": {
-        "name": "Miss Donny Schiller",
-        "country": "TG"
+        "name": "Mrs. Lydia Mante",
+        "country": "ZW"
       },
       "mother": {
-        "name": "Jammie Grant",
-        "country": "MV"
+        "name": "Isabelle McGlynn",
+        "country": "SZ"
       },
       "grandpa": {
-        "name": "Tomas Predovic",
-        "country": "VI"
+        "name": "Madilyn Considine",
+        "country": "CC"
       },
       "score": {
         "marks": {
           "types": [
-            19,
-            18,
-            17,
-            18.5
+            15.5,
+            15,
+            15.5,
+            17
           ],
           "heads": [
-            18.5,
-            15,
-            10.5,
-            13
+            18,
+            19,
+            14,
+            15
           ],
           "blocks": [
-            12,
-            14.5,
-            11,
-            14
+            10.5,
+            13,
+            16.5,
+            20
           ],
           "legs": [
-            11.5,
-            16,
+            19,
             18,
-            15.5
+            20,
+            17.5
           ],
           "moves": [
-            18,
-            15.5,
-            16.5,
-            11.5
+            13,
+            19.5,
+            11.5,
+            10.5
           ]
         }
       }
@@ -1965,58 +1784,58 @@
       "id": "30",
       "number": 30,
       "class": "7",
-      "name": "Cordell",
-      "country": "KG",
-      "year": "2016",
-      "color": "gniada",
-      "gender": "male",
+      "name": "Graciela",
+      "country": "GG",
+      "year": "2017",
+      "color": "kary",
+      "gender": "female",
       "farmer": {
-        "name": "Pat Hackett",
-        "country": "AW"
+        "name": "Casper Gutmann",
+        "country": "PL"
       },
       "father": {
-        "name": "Devyn Deckow",
-        "country": "CK"
+        "name": "Sibyl Block",
+        "country": "DO"
       },
       "mother": {
-        "name": "Krystal Heller",
-        "country": "LK"
+        "name": "Harley Pfannerstill",
+        "country": "BA"
       },
       "grandpa": {
-        "name": "Mrs. Paige Herzog",
-        "country": "TG"
+        "name": "Jeffery Dickinson",
+        "country": "GN"
       },
       "score": {
         "marks": {
           "types": [
-            18,
-            15,
-            13,
-            12
+            12,
+            18.5,
+            12.5,
+            10.5
           ],
           "heads": [
             13.5,
-            11.5,
-            13.5,
-            14
+            18,
+            18.5,
+            18
           ],
           "blocks": [
-            13,
-            17.5,
-            14,
-            17
+            16,
+            18.5,
+            15,
+            15
           ],
           "legs": [
-            11.5,
-            19.5,
-            13,
-            13.5
+            14,
+            13.5,
+            18,
+            11.5
           ],
           "moves": [
-            10.5,
-            20,
-            18.5,
-            19
+            11.5,
+            11,
+            10,
+            11.5
           ]
         }
       }
@@ -2025,58 +1844,58 @@
       "id": "31",
       "number": 31,
       "class": "8",
-      "name": "London",
-      "country": "BQ",
+      "name": "Iva",
+      "country": "IM",
       "year": "2016",
-      "color": "siwa",
+      "color": "kara",
       "gender": "male",
       "farmer": {
-        "name": "Miss Juliet Schroeder",
-        "country": "GT"
+        "name": "Santiago Bins",
+        "country": "JO"
       },
       "father": {
-        "name": "Narciso Hammes",
-        "country": "AD"
+        "name": "Bart Yundt",
+        "country": "SH"
       },
       "mother": {
-        "name": "Nettie Brekke",
-        "country": "BZ"
+        "name": "Forest Feeney",
+        "country": "UG"
       },
       "grandpa": {
-        "name": "Rosalee Shanahan",
-        "country": "LC"
+        "name": "Mr. Jazmyne Wyman",
+        "country": "BH"
       },
       "score": {
         "marks": {
           "types": [
-            16.5,
+            20,
+            12,
             19.5,
-            14,
-            12
+            19.5
           ],
           "heads": [
-            13,
-            19,
-            16.5,
-            10.5
+            11,
+            15.5,
+            11.5,
+            12.5
           ],
           "blocks": [
-            17.5,
-            15.5,
-            10,
-            16
+            20,
+            16,
+            12,
+            10
           ],
           "legs": [
-            19,
-            14.5,
-            14.5,
-            18.5
+            17.5,
+            17,
+            15,
+            16
           ],
           "moves": [
-            19.5,
-            13.5,
-            15.5,
-            18
+            16,
+            10.5,
+            20,
+            19.5
           ]
         }
       }
@@ -2085,58 +1904,58 @@
       "id": "32",
       "number": 32,
       "class": "8",
-      "name": "Vernice",
-      "country": "AW",
+      "name": "Devan",
+      "country": "BY",
       "year": "2016",
-      "color": "gniada",
+      "color": "sk.gn.",
       "gender": "male",
       "farmer": {
-        "name": "Micheal White",
-        "country": "FM"
+        "name": "Mrs. Preston VonRueden",
+        "country": "PE"
       },
       "father": {
-        "name": "Dino Johns",
-        "country": "TC"
+        "name": "Torey Lueilwitz",
+        "country": "UZ"
       },
       "mother": {
-        "name": "Ludie Graham",
-        "country": "CY"
+        "name": "Joanie Lemke DDS",
+        "country": "ZW"
       },
       "grandpa": {
-        "name": "Eudora Beer",
-        "country": "VG"
+        "name": "Arianna Dibbert",
+        "country": "MV"
       },
       "score": {
         "marks": {
           "types": [
-            13.5,
+            19.5,
             14.5,
-            13,
-            14
+            17.5,
+            17.5
           ],
           "heads": [
-            16.5,
-            14.5,
-            10,
-            10
+            11.5,
+            15.5,
+            17.5,
+            10.5
           ],
           "blocks": [
-            14.5,
             17,
             13,
-            11
+            20,
+            19
           ],
           "legs": [
-            14.5,
-            18.5,
-            11,
-            13
+            10,
+            13,
+            14,
+            10.5
           ],
           "moves": [
             16,
-            19.5,
-            18.5,
-            18
+            17.5,
+            14,
+            14
           ]
         }
       }
@@ -2145,58 +1964,58 @@
       "id": "33",
       "number": 33,
       "class": "8",
-      "name": "Brenden",
-      "country": "UA",
+      "name": "Dion",
+      "country": "QA",
       "year": "2016",
       "color": "gniada",
       "gender": "male",
       "farmer": {
-        "name": "Caroline Johns",
-        "country": "OM"
+        "name": "Jerry Spinka",
+        "country": "CH"
       },
       "father": {
-        "name": "Fabian Nikolaus",
+        "name": "Winifred Cummings",
         "country": "ZM"
       },
       "mother": {
-        "name": "Anahi Sawayn",
-        "country": "ER"
+        "name": "Marietta Reichel",
+        "country": "JO"
       },
       "grandpa": {
-        "name": "Sigurd Wilkinson",
-        "country": "SX"
+        "name": "Ms. Kayla Lubowitz",
+        "country": "CI"
       },
       "score": {
         "marks": {
           "types": [
-            16.5,
-            14.5,
-            15.5,
-            11.5
+            11,
+            14,
+            12.5,
+            13.5
           ],
           "heads": [
-            15.5,
-            13.5,
             16.5,
-            14.5
+            12.5,
+            16.5,
+            19.5
           ],
           "blocks": [
-            11.5,
-            14,
-            19,
-            14.5
+            11,
+            13,
+            10,
+            19
           ],
           "legs": [
-            12.5,
-            15.5,
-            19.5,
-            17.5
+            16,
+            13,
+            10.5,
+            19
           ],
           "moves": [
-            15.5,
             10,
-            11.5,
-            15.5
+            19.5,
+            15,
+            14
           ]
         }
       }
@@ -2205,58 +2024,58 @@
       "id": "34",
       "number": 34,
       "class": "8",
-      "name": "Rita",
-      "country": "NF",
+      "name": "Lisette",
+      "country": "UZ",
       "year": "2016",
       "color": "kaszt.",
       "gender": "male",
       "farmer": {
-        "name": "Ryder Jacobs",
-        "country": "GS"
+        "name": "Carey Schamberger",
+        "country": "MX"
       },
       "father": {
-        "name": "Miss Jessica Watsica",
-        "country": "RO"
+        "name": "Kendall Labadie",
+        "country": "IR"
       },
       "mother": {
-        "name": "Elliott Bradtke",
-        "country": "PA"
+        "name": "Rafael Jenkins",
+        "country": "KW"
       },
       "grandpa": {
-        "name": "Leonora Hudson",
-        "country": "MG"
+        "name": "Mrs. Carlotta Bartell",
+        "country": "HN"
       },
       "score": {
         "marks": {
           "types": [
-            18.5,
-            13.5,
+            16.5,
+            14.5,
             12,
-            15.5
+            18.5
           ],
           "heads": [
-            18.5,
-            10.5,
-            13,
-            14
-          ],
-          "blocks": [
-            18,
             15.5,
-            13.5,
+            19.5,
+            20,
             18
           ],
-          "legs": [
-            11.5,
+          "blocks": [
             14.5,
-            16,
-            11.5
+            11.5,
+            16.5,
+            14
+          ],
+          "legs": [
+            19.5,
+            19,
+            16.5,
+            20
           ],
           "moves": [
             14,
-            14.5,
-            11,
-            12.5
+            19,
+            12,
+            20
           ]
         }
       }
@@ -2264,59 +2083,59 @@
     {
       "id": "35",
       "number": 35,
-      "class": "8",
-      "name": "Hipolito",
-      "country": "BE",
+      "class": "9",
+      "name": "Brielle",
+      "country": "WS",
       "year": "2016",
-      "color": "siwa",
+      "color": "sk.gn.",
       "gender": "male",
       "farmer": {
-        "name": "Llewellyn Bernhard",
-        "country": "PS"
+        "name": "Julie Watsica",
+        "country": "BB"
       },
       "father": {
-        "name": "Vito Cruickshank",
-        "country": "KI"
+        "name": "Sydney Aufderhar",
+        "country": "FI"
       },
       "mother": {
-        "name": "Wyatt Predovic",
-        "country": "DM"
+        "name": "Letha Nikolaus",
+        "country": "GH"
       },
       "grandpa": {
-        "name": "Pascale Smith",
-        "country": "DJ"
+        "name": "Jammie Block",
+        "country": "LU"
       },
       "score": {
         "marks": {
           "types": [
-            14,
-            14,
-            20,
-            17
+            15,
+            13.5,
+            10,
+            12
           ],
           "heads": [
-            16,
-            18,
-            18,
-            14
+            15.5,
+            17.5,
+            13.5,
+            13
           ],
           "blocks": [
-            18,
             19,
-            18,
-            13.5
+            16,
+            14,
+            16.5
           ],
           "legs": [
-            14.5,
-            13.5,
+            18,
             11,
-            11
+            16.5,
+            14
           ],
           "moves": [
-            11,
-            10.5,
-            17.5,
-            16.5
+            13.5,
+            14.5,
+            13,
+            19.5
           ]
         }
       }
@@ -2325,58 +2144,58 @@
       "id": "36",
       "number": 36,
       "class": "9",
-      "name": "Joanne",
-      "country": "AD",
+      "name": "Edyth",
+      "country": "GH",
       "year": "2016",
-      "color": "kary",
-      "gender": "female",
+      "color": "kara",
+      "gender": "male",
       "farmer": {
-        "name": "Mrs. Brayan Nicolas",
-        "country": "AT"
+        "name": "Buster Reynolds",
+        "country": "SJ"
       },
       "father": {
-        "name": "Nikki Champlin",
-        "country": "CI"
+        "name": "Edison Spencer",
+        "country": "LB"
       },
       "mother": {
-        "name": "Dedrick Bernhard",
-        "country": "BA"
+        "name": "Curt Volkman",
+        "country": "ID"
       },
       "grandpa": {
-        "name": "Daisha Johnston",
-        "country": "TK"
+        "name": "Katlyn Russel",
+        "country": "FK"
       },
       "score": {
         "marks": {
           "types": [
-            17.5,
-            15,
-            12,
-            19
+            16,
+            14,
+            10.5,
+            16
           ],
           "heads": [
-            11,
-            14.5,
-            14,
-            16.5
+            17,
+            16,
+            10,
+            16
           ],
           "blocks": [
-            13.5,
-            15.5,
-            17.5,
-            19
+            16,
+            18.5,
+            18.5,
+            11
           ],
           "legs": [
-            15,
             13,
-            19,
-            17
+            16.5,
+            13.5,
+            16
           ],
           "moves": [
             10,
-            17,
             13,
-            17
+            15,
+            13.5
           ]
         }
       }
@@ -2385,58 +2204,58 @@
       "id": "37",
       "number": 37,
       "class": "9",
-      "name": "Elliott",
-      "country": "TK",
+      "name": "Ricky",
+      "country": "RO",
       "year": "2016",
-      "color": "siwy",
-      "gender": "female",
+      "color": "sk.gn.",
+      "gender": "male",
       "farmer": {
-        "name": "Isobel Koss",
-        "country": "PF"
+        "name": "Miss Arlene Tromp",
+        "country": "AF"
       },
       "father": {
-        "name": "Stanford Bernier MD",
-        "country": "MQ"
+        "name": "Marvin Cassin DVM",
+        "country": "TT"
       },
       "mother": {
-        "name": "Cassandre Yundt",
-        "country": "CH"
+        "name": "Christophe Miller",
+        "country": "NO"
       },
       "grandpa": {
-        "name": "Audrey Feest",
-        "country": "ML"
+        "name": "Jarvis Lang",
+        "country": "AS"
       },
       "score": {
         "marks": {
           "types": [
+            10,
             19.5,
-            14.5,
-            20,
-            17.5
+            18.5,
+            19
           ],
           "heads": [
-            18.5,
-            18.5,
-            17,
-            11.5
+            14.5,
+            14,
+            12,
+            10.5
           ],
           "blocks": [
-            12,
+            10.5,
+            14.5,
             15.5,
-            18,
-            18
+            17
           ],
           "legs": [
-            14.5,
-            20,
-            17,
-            18
+            15,
+            14,
+            12.5,
+            15
           ],
           "moves": [
-            11.5,
-            15,
-            15.5,
-            10
+            17.5,
+            16,
+            16.5,
+            16
           ]
         }
       }
@@ -2445,58 +2264,58 @@
       "id": "38",
       "number": 38,
       "class": "9",
-      "name": "Grayce",
-      "country": "DZ",
+      "name": "Filomena",
+      "country": "AD",
       "year": "2016",
-      "color": "gniady",
-      "gender": "female",
+      "color": "kaszt.",
+      "gender": "male",
       "farmer": {
-        "name": "Clinton Bogisich",
-        "country": "TH"
+        "name": "Torey Brakus",
+        "country": "LB"
       },
       "father": {
-        "name": "Ms. Christop Hintz",
-        "country": "UM"
+        "name": "Evie Graham",
+        "country": "NP"
       },
       "mother": {
-        "name": "Ewald Okuneva",
-        "country": "TR"
+        "name": "Earnest Rempel",
+        "country": "GG"
       },
       "grandpa": {
-        "name": "Mr. Lexie Hoeger",
-        "country": "AI"
+        "name": "Lucienne Pfeffer",
+        "country": "SB"
       },
       "score": {
         "marks": {
           "types": [
-            10.5,
-            12.5,
-            17,
-            11.5
+            18,
+            11.5,
+            11,
+            15.5
           ],
           "heads": [
-            11.5,
-            13,
+            14.5,
+            10,
             17,
-            11.5
+            13.5
           ],
           "blocks": [
-            13.5,
             18.5,
-            10.5,
-            11
+            15.5,
+            17.5,
+            14
           ],
           "legs": [
-            19.5,
-            11.5,
+            16,
             10,
-            14
+            13.5,
+            14.5
           ],
           "moves": [
             13,
-            16.5,
-            17.5,
-            13
+            12.5,
+            14.5,
+            14.5
           ]
         }
       }
@@ -2504,59 +2323,59 @@
     {
       "id": "39",
       "number": 39,
-      "class": "9",
-      "name": "Elliott",
-      "country": "GG",
+      "class": "10",
+      "name": "Brook",
+      "country": "CK",
       "year": "2016",
-      "color": "kary",
-      "gender": "female",
+      "color": "sk.gn.",
+      "gender": "male",
       "farmer": {
-        "name": "Miss Idella Jacobs",
-        "country": "AU"
+        "name": "Mr. Lillian Rath",
+        "country": "SN"
       },
       "father": {
-        "name": "Laurianne Green",
-        "country": "TR"
+        "name": "Lucienne Klocko",
+        "country": "SN"
       },
       "mother": {
-        "name": "Chesley Weber",
-        "country": "AS"
+        "name": "Daphnee Prohaska",
+        "country": "CV"
       },
       "grandpa": {
-        "name": "Maynard Watsica PhD",
-        "country": "CX"
+        "name": "Nick Schinner IV",
+        "country": "ST"
       },
       "score": {
         "marks": {
           "types": [
-            11.5,
-            17.5,
+            16,
+            14,
             13,
-            20
+            11.5
           ],
           "heads": [
-            19.5,
-            13.5,
             15,
-            14
-          ],
-          "blocks": [
             16.5,
-            11.5,
-            10.5,
-            14
-          ],
-          "legs": [
-            18.5,
-            11.5,
-            19,
+            16,
             13.5
           ],
+          "blocks": [
+            13.5,
+            10,
+            11,
+            14.5
+          ],
+          "legs": [
+            19,
+            19,
+            18.5,
+            10.5
+          ],
           "moves": [
-            11.5,
-            18,
-            14,
-            11
+            11,
+            19.5,
+            10,
+            13.5
           ]
         }
       }
@@ -2565,58 +2384,58 @@
       "id": "40",
       "number": 40,
       "class": "10",
-      "name": "Lavon",
-      "country": "AE",
-      "year": "2013",
+      "name": "Adolphus",
+      "country": "GS",
+      "year": "2016",
       "color": "gniada",
       "gender": "male",
       "farmer": {
-        "name": "Alexane Larkin",
-        "country": "BW"
+        "name": "Uriel Treutel",
+        "country": "KG"
       },
       "father": {
-        "name": "Chadrick Satterfield Sr.",
-        "country": "PM"
+        "name": "Darrion Lehner",
+        "country": "LS"
       },
       "mother": {
-        "name": "Reed Raynor",
-        "country": "AZ"
+        "name": "Kayleigh Reilly",
+        "country": "CW"
       },
       "grandpa": {
-        "name": "Xzavier Feest",
-        "country": "LC"
+        "name": "Dr. Clotilde Kihn",
+        "country": "AZ"
       },
       "score": {
         "marks": {
           "types": [
-            19,
-            10.5,
-            19,
-            14
+            12,
+            16.5,
+            13.5,
+            13.5
           ],
           "heads": [
             11.5,
-            17.5,
-            18,
-            15.5
+            10,
+            14.5,
+            20
           ],
           "blocks": [
+            15.5,
+            11,
             14.5,
-            14,
-            12.5,
-            15
+            16
           ],
           "legs": [
-            10,
-            10,
-            19,
-            12
+            18,
+            14.5,
+            17,
+            15.5
           ],
           "moves": [
-            17.5,
-            11,
-            18.5,
-            15.5
+            19.5,
+            16,
+            10,
+            11.5
           ]
         }
       }
@@ -2625,58 +2444,58 @@
       "id": "41",
       "number": 41,
       "class": "10",
-      "name": "Rodolfo",
-      "country": "AE",
-      "year": "2013",
-      "color": "kara",
+      "name": "Treva",
+      "country": "VN",
+      "year": "2016",
+      "color": "sk.gn.",
       "gender": "male",
       "farmer": {
-        "name": "Jimmy Wilkinson",
-        "country": "CC"
+        "name": "Domenick Rutherford",
+        "country": "GR"
       },
       "father": {
-        "name": "Martine Connelly",
-        "country": "AG"
+        "name": "Jarod Swaniawski",
+        "country": "BE"
       },
       "mother": {
-        "name": "Valerie Wehner",
-        "country": "AS"
+        "name": "Vance McClure",
+        "country": "CW"
       },
       "grandpa": {
-        "name": "Jerad Considine",
-        "country": "HR"
+        "name": "Alyce Goodwin",
+        "country": "UG"
       },
       "score": {
         "marks": {
           "types": [
-            15.5,
-            15.5,
-            13.5,
-            11.5
+            18.5,
+            11.5,
+            14,
+            18.5
           ],
           "heads": [
-            12.5,
             16.5,
-            14.5,
-            13
+            15,
+            17.5,
+            20
           ],
           "blocks": [
-            19.5,
-            17,
-            13.5,
-            15
+            16.5,
+            16.5,
+            16.5,
+            12.5
           ],
           "legs": [
-            19.5,
-            17,
-            19,
+            15,
+            18,
+            18.5,
             17.5
           ],
           "moves": [
-            13,
-            10,
-            13.5,
-            18
+            15,
+            14,
+            14.5,
+            14
           ]
         }
       }
@@ -2685,58 +2504,58 @@
       "id": "42",
       "number": 42,
       "class": "10",
-      "name": "Kellie",
-      "country": "EG",
-      "year": "2014",
-      "color": "gniada",
+      "name": "Royal",
+      "country": "CM",
+      "year": "2016",
+      "color": "sk.gn.",
       "gender": "male",
       "farmer": {
-        "name": "Alek Sanford",
-        "country": "IR"
+        "name": "Pablo Wisoky PhD",
+        "country": "GP"
       },
       "father": {
-        "name": "Derick Kuhlman",
-        "country": "CA"
+        "name": "Keely Homenick",
+        "country": "KZ"
       },
       "mother": {
-        "name": "Laverna Wilderman PhD",
-        "country": "AZ"
+        "name": "Diana Cole",
+        "country": "SI"
       },
       "grandpa": {
-        "name": "Mr. Ayden Kassulke",
-        "country": "LS"
+        "name": "Granville Carter",
+        "country": "RE"
       },
       "score": {
         "marks": {
           "types": [
-            15.5,
-            16,
-            12.5,
-            11
+            19.5,
+            11.5,
+            14,
+            18
           ],
           "heads": [
-            14.5,
-            14.5,
-            10.5,
-            13.5
+            19,
+            15.5,
+            19.5,
+            11
           ],
           "blocks": [
-            10.5,
+            18,
+            16.5,
             19.5,
-            17,
-            19.5
+            12
           ],
           "legs": [
-            10,
-            11,
-            19.5,
-            15
+            13,
+            10.5,
+            17,
+            16
           ],
           "moves": [
-            15,
-            16.5,
-            16,
-            19.5
+            13,
+            17,
+            12,
+            14
           ]
         }
       }
@@ -2745,58 +2564,58 @@
       "id": "43",
       "number": 43,
       "class": "11",
-      "name": "Norwood",
-      "country": "TM",
-      "year": "2015",
-      "color": "kaszt.",
-      "gender": "male",
+      "name": "Tyrique",
+      "country": "NC",
+      "year": "2016",
+      "color": "siwy",
+      "gender": "female",
       "farmer": {
-        "name": "Mariam Dickens",
-        "country": "PT"
+        "name": "Mr. Lazaro Rempel",
+        "country": "MO"
       },
       "father": {
-        "name": "Bradly Greenholt",
-        "country": "VI"
+        "name": "Cale Terry",
+        "country": "GT"
       },
       "mother": {
-        "name": "Darrell Gislason MD",
-        "country": "GB"
+        "name": "Ludwig Harber",
+        "country": "CO"
       },
       "grandpa": {
-        "name": "Quentin Zemlak",
-        "country": "CV"
+        "name": "Pierce Roberts",
+        "country": "RU"
       },
       "score": {
         "marks": {
           "types": [
-            16.5,
-            14.5,
             19.5,
-            19.5
+            10.5,
+            13,
+            10
           ],
           "heads": [
-            10,
-            20,
-            18,
-            15.5
+            12.5,
+            11,
+            16,
+            11.5
           ],
           "blocks": [
-            16.5,
-            15,
-            16.5,
-            12
+            12.5,
+            15.5,
+            17,
+            16.5
           ],
           "legs": [
-            19.5,
-            14.5,
-            17,
-            10.5
+            11,
+            12,
+            18,
+            18
           ],
           "moves": [
-            14,
-            16.5,
+            18.5,
             15.5,
-            10
+            11.5,
+            14
           ]
         }
       }
@@ -2805,58 +2624,58 @@
       "id": "44",
       "number": 44,
       "class": "11",
-      "name": "Christian",
-      "country": "CA",
-      "year": "2013",
-      "color": "sk.gn.",
-      "gender": "male",
+      "name": "Gianni",
+      "country": "PR",
+      "year": "2016",
+      "color": "kary",
+      "gender": "female",
       "farmer": {
-        "name": "Stella Klein",
-        "country": "LK"
+        "name": "Mrs. Ethan Ullrich",
+        "country": "ZA"
       },
       "father": {
-        "name": "Joshua Thompson",
-        "country": "BQ"
+        "name": "Jaleel Moen",
+        "country": "SO"
       },
       "mother": {
-        "name": "Dr. Hollis Robel",
-        "country": "LB"
+        "name": "Callie Douglas",
+        "country": "AE"
       },
       "grandpa": {
-        "name": "Ms. Jaron Cassin",
-        "country": "GI"
+        "name": "Mr. Gussie Osinski",
+        "country": "CG"
       },
       "score": {
         "marks": {
           "types": [
-            11.5,
+            15,
+            10,
             17.5,
-            13.5,
-            19.5
+            18.5
           ],
           "heads": [
-            18.5,
+            12,
+            16.5,
             19,
-            17.5,
             10
           ],
           "blocks": [
-            20,
-            10,
-            16,
-            12.5
+            11,
+            19,
+            13,
+            10.5
           ],
           "legs": [
-            18,
-            20,
+            15.5,
+            13.5,
             17,
-            15.5
+            13
           ],
           "moves": [
+            18,
             19.5,
-            17,
-            16.5,
-            14
+            19.5,
+            18.5
           ]
         }
       }
@@ -2865,58 +2684,58 @@
       "id": "45",
       "number": 45,
       "class": "11",
-      "name": "Lenna",
-      "country": "NG",
-      "year": "2015",
-      "color": "sk.gn.",
-      "gender": "male",
+      "name": "Belle",
+      "country": "DM",
+      "year": "2016",
+      "color": "kaszt.",
+      "gender": "female",
       "farmer": {
-        "name": "Milton Schoen",
-        "country": "BW"
+        "name": "Price Kunde",
+        "country": "TD"
       },
       "father": {
-        "name": "Jessy Mohr",
-        "country": "OM"
+        "name": "Jody Rutherford",
+        "country": "AI"
       },
       "mother": {
-        "name": "Kurtis Mante",
-        "country": "RO"
+        "name": "Theo Johns II",
+        "country": "CL"
       },
       "grandpa": {
-        "name": "Baron Blick",
-        "country": "LU"
+        "name": "Mr. Layne Franecki",
+        "country": "AM"
       },
       "score": {
         "marks": {
           "types": [
-            19.5,
-            15.5,
-            14.5,
-            14
-          ],
-          "heads": [
-            12.5,
-            16.5,
-            16,
-            19
-          ],
-          "blocks": [
-            18,
-            20,
-            15.5,
-            17
-          ],
-          "legs": [
-            12.5,
-            16.5,
-            17.5,
-            13
-          ],
-          "moves": [
             13,
             14,
-            10,
-            10
+            16.5,
+            11.5
+          ],
+          "heads": [
+            16.5,
+            12,
+            15.5,
+            16.5
+          ],
+          "blocks": [
+            11.5,
+            13,
+            14.5,
+            20
+          ],
+          "legs": [
+            13,
+            18.5,
+            18.5,
+            17
+          ],
+          "moves": [
+            15,
+            19.5,
+            12,
+            11.5
           ]
         }
       }
@@ -2924,59 +2743,59 @@
     {
       "id": "46",
       "number": 46,
-      "class": "12",
-      "name": "Rupert",
-      "country": "CN",
-      "year": "2014",
-      "color": "siwy",
+      "class": "11",
+      "name": "Junior",
+      "country": "BW",
+      "year": "2016",
+      "color": "kary",
       "gender": "female",
       "farmer": {
-        "name": "Dasia Larkin",
-        "country": "DO"
+        "name": "Dexter Schmidt",
+        "country": "KH"
       },
       "father": {
-        "name": "Marlon Jakubowski",
-        "country": "SS"
+        "name": "Ollie Kautzer",
+        "country": "LB"
       },
       "mother": {
-        "name": "Jon Doyle",
-        "country": "MC"
+        "name": "Alana McGlynn",
+        "country": "LA"
       },
       "grandpa": {
-        "name": "Helga Barrows",
-        "country": "BQ"
+        "name": "Bud Simonis",
+        "country": "SC"
       },
       "score": {
         "marks": {
           "types": [
-            11,
-            14,
-            16,
-            15
-          ],
-          "heads": [
-            18,
-            16.5,
-            18,
-            19.5
-          ],
-          "blocks": [
-            11,
-            14.5,
+            18.5,
             19.5,
-            16
-          ],
-          "legs": [
-            16.5,
-            10.5,
-            18,
+            19,
             14
           ],
-          "moves": [
-            12.5,
-            18.5,
+          "heads": [
+            11.5,
             10,
-            12.5
+            10.5,
+            10.5
+          ],
+          "blocks": [
+            10,
+            19,
+            16,
+            10.5
+          ],
+          "legs": [
+            11.5,
+            19.5,
+            18,
+            11.5
+          ],
+          "moves": [
+            15,
+            16.5,
+            19,
+            15.5
           ]
         }
       }
@@ -2985,58 +2804,58 @@
       "id": "47",
       "number": 47,
       "class": "12",
-      "name": "Raegan",
-      "country": "SE",
+      "name": "Germaine",
+      "country": "IR",
       "year": "2013",
-      "color": "siwy",
-      "gender": "female",
+      "color": "kara",
+      "gender": "male",
       "farmer": {
-        "name": "Horace Bahringer",
-        "country": "CI"
+        "name": "Ewald McDermott",
+        "country": "IE"
       },
       "father": {
-        "name": "Wayne Bednar",
-        "country": "SD"
+        "name": "Lia Robel III",
+        "country": "GL"
       },
       "mother": {
-        "name": "Dandre Johns",
-        "country": "IO"
+        "name": "Jared Carter",
+        "country": "MU"
       },
       "grandpa": {
-        "name": "Emma Johnston",
-        "country": "AI"
+        "name": "Clemens Rodriguez",
+        "country": "KY"
       },
       "score": {
         "marks": {
           "types": [
-            18.5,
             17,
-            15.5,
-            12.5
+            10,
+            18,
+            14
           ],
           "heads": [
-            20,
-            20,
+            12.5,
             12,
-            17.5
+            14.5,
+            18.5
           ],
           "blocks": [
+            13.5,
+            17.5,
             12,
-            19,
-            17,
-            15.5
+            18.5
           ],
           "legs": [
-            20,
-            13.5,
-            19,
-            19
+            19.5,
+            18.5,
+            12.5,
+            12
           ],
           "moves": [
-            11.5,
             19.5,
-            10.5,
-            10
+            17,
+            16,
+            11
           ]
         }
       }
@@ -3045,58 +2864,58 @@
       "id": "48",
       "number": 48,
       "class": "12",
-      "name": "Estevan",
-      "country": "FJ",
+      "name": "Ernie",
+      "country": "UZ",
       "year": "2015",
-      "color": "kary",
-      "gender": "female",
+      "color": "kara",
+      "gender": "male",
       "farmer": {
-        "name": "Ashly Nitzsche II",
-        "country": "AI"
+        "name": "Mrs. Cathryn Spencer",
+        "country": "CG"
       },
       "father": {
-        "name": "Rudolph Krajcik",
-        "country": "VI"
+        "name": "Theo Stokes",
+        "country": "TO"
       },
       "mother": {
-        "name": "Sadye Doyle",
-        "country": "GD"
+        "name": "Zoila Ferry",
+        "country": "VN"
       },
       "grandpa": {
-        "name": "Orin Hartmann",
-        "country": "DM"
+        "name": "Caitlyn Hayes DVM",
+        "country": "SX"
       },
       "score": {
         "marks": {
           "types": [
-            19.5,
-            13.5,
-            18,
-            15
+            16,
+            15.5,
+            17.5,
+            13
           ],
           "heads": [
-            13.5,
-            11,
-            19,
-            20
+            19.5,
+            17,
+            18,
+            16
           ],
           "blocks": [
-            18.5,
-            13,
-            15.5,
-            18.5
+            12,
+            19,
+            10,
+            14.5
           ],
           "legs": [
-            18,
-            13.5,
-            16,
-            11.5
+            18.5,
+            10.5,
+            10.5,
+            19.5
           ],
           "moves": [
-            17,
-            16,
-            17,
-            16
+            10.5,
+            11,
+            13.5,
+            13
           ]
         }
       }
@@ -3105,58 +2924,58 @@
       "id": "49",
       "number": 49,
       "class": "12",
-      "name": "Berry",
-      "country": "LS",
+      "name": "Lawson",
+      "country": "IT",
       "year": "2014",
-      "color": "kary",
-      "gender": "female",
+      "color": "gniada",
+      "gender": "male",
       "farmer": {
-        "name": "Arvilla Quitzon",
-        "country": "IL"
+        "name": "Kip Lindgren",
+        "country": "TH"
       },
       "father": {
-        "name": "Alvena O'Connell I",
-        "country": "MA"
+        "name": "Maybelle Bailey",
+        "country": "SC"
       },
       "mother": {
-        "name": "Loy Hickle",
-        "country": "ID"
+        "name": "Kirsten Fahey",
+        "country": "DZ"
       },
       "grandpa": {
-        "name": "Miss Maiya McClure",
-        "country": "TM"
+        "name": "Rosario DuBuque Jr.",
+        "country": "VC"
       },
       "score": {
         "marks": {
           "types": [
-            15.5,
             14,
-            16.5,
-            13.5
+            17,
+            17,
+            11.5
           ],
           "heads": [
-            19.5,
-            12,
-            15,
-            13.5
+            12.5,
+            17,
+            10.5,
+            14
           ],
           "blocks": [
-            20,
-            17.5,
+            17,
+            10,
             12.5,
-            11
+            15
           ],
           "legs": [
+            20,
             19.5,
-            11,
-            10,
-            16.5
+            19,
+            17
           ],
           "moves": [
-            15.5,
-            17.5,
-            17.5,
-            12
+            19.5,
+            13.5,
+            18,
+            10.5
           ]
         }
       }
@@ -3165,58 +2984,58 @@
       "id": "50",
       "number": 50,
       "class": "13",
-      "name": "Tara",
-      "country": "LI",
-      "year": "2004",
-      "color": "gniada",
-      "gender": "male",
+      "name": "Cortez",
+      "country": "KR",
+      "year": "2014",
+      "color": "siwy",
+      "gender": "female",
       "farmer": {
-        "name": "Horace Volkman",
-        "country": "GL"
+        "name": "Leola Tremblay",
+        "country": "MW"
       },
       "father": {
-        "name": "Ova Fahey III",
-        "country": "TD"
+        "name": "Garfield Goodwin",
+        "country": "AL"
       },
       "mother": {
-        "name": "Troy McLaughlin",
-        "country": "CN"
+        "name": "Sam Leuschke",
+        "country": "ER"
       },
       "grandpa": {
-        "name": "Mr. Carlos Boyer",
-        "country": "GS"
+        "name": "Corrine Flatley",
+        "country": "SL"
       },
       "score": {
         "marks": {
           "types": [
-            15.5,
-            14.5,
-            17,
-            13.5
+            12.5,
+            20,
+            14,
+            16
           ],
           "heads": [
-            17,
-            19,
-            18.5,
-            19
-          ],
-          "blocks": [
-            17,
+            13,
             17.5,
             17,
+            15
+          ],
+          "blocks": [
+            17.5,
+            20,
+            19.5,
             16
           ],
           "legs": [
+            16,
             13.5,
-            13.5,
-            20,
-            12
+            19.5,
+            12.5
           ],
           "moves": [
-            17.5,
-            11.5,
+            15,
+            13,
             14,
-            13.5
+            15.5
           ]
         }
       }
@@ -3225,58 +3044,58 @@
       "id": "51",
       "number": 51,
       "class": "13",
-      "name": "Javonte",
-      "country": "PE",
-      "year": "2007",
-      "color": "siwa",
-      "gender": "male",
+      "name": "Jordyn",
+      "country": "CZ",
+      "year": "2014",
+      "color": "kaszt.",
+      "gender": "female",
       "farmer": {
-        "name": "Herminio Spinka DDS",
-        "country": "DZ"
-      },
-      "father": {
-        "name": "Gloria Howell",
-        "country": "NC"
-      },
-      "mother": {
-        "name": "Dr. Regan Ortiz",
+        "name": "Madisen Crooks",
         "country": "DO"
       },
+      "father": {
+        "name": "Hettie Jenkins",
+        "country": "TW"
+      },
+      "mother": {
+        "name": "Carrie Medhurst",
+        "country": "MK"
+      },
       "grandpa": {
-        "name": "Loren Schamberger",
-        "country": "YE"
+        "name": "Mac Lakin",
+        "country": "CY"
       },
       "score": {
         "marks": {
           "types": [
-            14.5,
-            19.5,
-            18.5,
-            11
+            16.5,
+            20,
+            14,
+            11.5
           ],
           "heads": [
-            10.5,
-            19,
-            14,
-            15.5
+            11,
+            16,
+            16.5,
+            18
           ],
           "blocks": [
-            13.5,
-            14.5,
-            18,
-            10
+            17,
+            11.5,
+            12,
+            14
           ],
           "legs": [
-            19.5,
-            10,
-            16,
-            18.5
+            19,
+            12,
+            18,
+            13
           ],
           "moves": [
-            14,
-            16.5,
-            13.5,
-            15
+            12.5,
+            19,
+            13,
+            18
           ]
         }
       }
@@ -3285,57 +3104,57 @@
       "id": "52",
       "number": 52,
       "class": "13",
-      "name": "General",
-      "country": "CX",
-      "year": "2007",
-      "color": "sk.gn.",
-      "gender": "male",
+      "name": "Aubrey",
+      "country": "AT",
+      "year": "2013",
+      "color": "siwy",
+      "gender": "female",
       "farmer": {
-        "name": "Alek Bergnaum",
-        "country": "LA"
+        "name": "Kris Lebsack",
+        "country": "BW"
       },
       "father": {
-        "name": "Khalil Romaguera",
-        "country": "QA"
+        "name": "Trystan Durgan",
+        "country": "UM"
       },
       "mother": {
-        "name": "Carmelo Jenkins",
-        "country": "NR"
+        "name": "Ida Harvey",
+        "country": "LY"
       },
       "grandpa": {
-        "name": "Leila Pollich",
-        "country": "GE"
+        "name": "Bernardo Ledner",
+        "country": "BA"
       },
       "score": {
         "marks": {
           "types": [
-            15,
-            16.5,
-            16,
-            20
+            14,
+            12,
+            18.5,
+            19
           ],
           "heads": [
-            18,
-            10.5,
-            12,
-            19.5
-          ],
-          "blocks": [
-            14,
-            17.5,
-            12,
-            12
-          ],
-          "legs": [
-            11,
             17.5,
             16.5,
-            19.5
+            11.5,
+            10.5
+          ],
+          "blocks": [
+            12,
+            20,
+            18,
+            16
+          ],
+          "legs": [
+            15.5,
+            17.5,
+            15.5,
+            10.5
           ],
           "moves": [
-            18,
+            10,
+            10.5,
             12,
-            15.5,
             10
           ]
         }
@@ -3344,59 +3163,59 @@
     {
       "id": "53",
       "number": 53,
-      "class": "13",
-      "name": "Eleonore",
-      "country": "TJ",
-      "year": "2009",
-      "color": "siwa",
+      "class": "14",
+      "name": "Pedro",
+      "country": "AQ",
+      "year": "1999",
+      "color": "kara",
       "gender": "male",
       "farmer": {
-        "name": "Dr. Frank Lynch",
-        "country": "NI"
+        "name": "Dr. Ricardo Bogan",
+        "country": "TG"
       },
       "father": {
-        "name": "Jamison Hackett Sr.",
-        "country": "YE"
+        "name": "Deon Huel PhD",
+        "country": "ZA"
       },
       "mother": {
-        "name": "Mathias Halvorson I",
-        "country": "CY"
+        "name": "Winona Cole",
+        "country": "SE"
       },
       "grandpa": {
-        "name": "Hortense Haag",
-        "country": "CW"
+        "name": "Katharina Runte",
+        "country": "CX"
       },
       "score": {
         "marks": {
           "types": [
+            17,
             16,
-            14.5,
-            19,
-            19.5
+            13.5,
+            13.5
           ],
           "heads": [
-            11.5,
-            14.5,
-            11.5,
-            14.5
+            19,
+            15,
+            15,
+            18
           ],
           "blocks": [
-            18.5,
-            19.5,
-            19,
-            14
+            13,
+            13.5,
+            14.5,
+            18
           ],
           "legs": [
-            12,
+            19,
+            16,
             15.5,
-            11,
-            20
+            14
           ],
           "moves": [
-            13.5,
-            15,
-            17.5,
-            18.5
+            19,
+            15.5,
+            20,
+            11
           ]
         }
       }
@@ -3404,59 +3223,59 @@
     {
       "id": "54",
       "number": 54,
-      "class": "13",
-      "name": "Fernando",
-      "country": "AU",
-      "year": "2012",
-      "color": "kaszt.",
+      "class": "14",
+      "name": "Madyson",
+      "country": "MK",
+      "year": "2008",
+      "color": "kara",
       "gender": "male",
       "farmer": {
-        "name": "Dena Hartmann",
-        "country": "MC"
+        "name": "Lilly Fay",
+        "country": "KY"
       },
       "father": {
-        "name": "Stanton Hansen",
-        "country": "BF"
+        "name": "Trevion Zboncak I",
+        "country": "RE"
       },
       "mother": {
-        "name": "Johanna Sporer",
-        "country": "BZ"
+        "name": "Ryan Simonis",
+        "country": "PN"
       },
       "grandpa": {
-        "name": "Nolan Ward",
-        "country": "KM"
+        "name": "Brandi Koss",
+        "country": "PS"
       },
       "score": {
         "marks": {
           "types": [
-            12.5,
-            14.5,
-            20,
-            18
+            17.5,
+            10.5,
+            19.5,
+            17.5
           ],
           "heads": [
-            12,
-            20,
-            17,
-            19.5
+            12.5,
+            11,
+            10.5,
+            17
           ],
           "blocks": [
+            13.5,
             14.5,
-            19.5,
-            18.5,
-            10
+            12.5,
+            16.5
           ],
           "legs": [
-            12,
-            17.5,
-            16.5,
-            12
+            18.5,
+            10,
+            20,
+            19.5
           ],
           "moves": [
-            14,
-            11.5,
-            14,
-            10.5
+            10,
+            10,
+            10,
+            11.5
           ]
         }
       }
@@ -3465,58 +3284,58 @@
       "id": "55",
       "number": 55,
       "class": "14",
-      "name": "Lorenzo",
-      "country": "HM",
-      "year": "2002",
-      "color": "sk.gn.",
+      "name": "Houston",
+      "country": "SX",
+      "year": "2003",
+      "color": "gniada",
       "gender": "male",
       "farmer": {
-        "name": "Bryon Mills",
-        "country": "KN"
+        "name": "Meta McGlynn",
+        "country": "SB"
       },
       "father": {
-        "name": "Heber Mosciski",
-        "country": "VG"
+        "name": "Daisy Spencer",
+        "country": "DM"
       },
       "mother": {
-        "name": "Eliane Koch",
-        "country": "VN"
+        "name": "Celestino Fisher",
+        "country": "ID"
       },
       "grandpa": {
-        "name": "Roberto Block",
-        "country": "BH"
+        "name": "Anahi Jacobson",
+        "country": "JO"
       },
       "score": {
         "marks": {
           "types": [
             17.5,
-            18,
-            10.5,
-            17
+            17,
+            17.5,
+            13.5
           ],
           "heads": [
-            19.5,
-            14,
-            11,
-            19
+            15,
+            16,
+            16.5,
+            18.5
           ],
           "blocks": [
-            10.5,
             13,
-            14,
-            15.5
+            12.5,
+            19,
+            20
           ],
           "legs": [
-            13.5,
-            10.5,
-            13.5,
-            19
+            16,
+            17.5,
+            14.5,
+            13
           ],
           "moves": [
-            16.5,
-            16,
-            15,
-            10.5
+            19.5,
+            15.5,
+            17,
+            11.5
           ]
         }
       }
@@ -3525,58 +3344,58 @@
       "id": "56",
       "number": 56,
       "class": "14",
-      "name": "Noe",
-      "country": "CL",
-      "year": "1998",
-      "color": "siwa",
+      "name": "Giuseppe",
+      "country": "NA",
+      "year": "2007",
+      "color": "gniada",
       "gender": "male",
       "farmer": {
-        "name": "Jordi McGlynn",
-        "country": "VN"
+        "name": "Emanuel Veum",
+        "country": "BB"
       },
       "father": {
-        "name": "Jude Purdy",
-        "country": "ES"
+        "name": "Lazaro Lind",
+        "country": "AS"
       },
       "mother": {
-        "name": "Alejandrin Jenkins",
-        "country": "NI"
+        "name": "Mr. Neoma Corwin",
+        "country": "LS"
       },
       "grandpa": {
-        "name": "Miss Kaycee Adams",
-        "country": "LC"
+        "name": "Jabari Klocko",
+        "country": "SH"
       },
       "score": {
         "marks": {
           "types": [
             14,
-            15.5,
-            20,
-            13.5
+            10.5,
+            19,
+            12.5
           ],
           "heads": [
-            18.5,
+            15.5,
+            14.5,
             17.5,
-            13,
-            14.5
+            14
           ],
           "blocks": [
-            18,
-            11.5,
-            16,
-            11
-          ],
-          "legs": [
-            11.5,
-            19,
-            18,
+            14,
+            14,
+            14,
             20
           ],
-          "moves": [
-            15.5,
-            16.5,
+          "legs": [
+            14.5,
+            18.5,
             20,
-            13.5
+            10.5
+          ],
+          "moves": [
+            10,
+            16.5,
+            14.5,
+            16.5
           ]
         }
       }
@@ -3584,59 +3403,59 @@
     {
       "id": "57",
       "number": 57,
-      "class": "14",
-      "name": "Andreanne",
-      "country": "QA",
-      "year": "1999",
-      "color": "siwa",
-      "gender": "male",
+      "class": "15",
+      "name": "Hugh",
+      "country": "MK",
+      "year": "2001",
+      "color": "kary",
+      "gender": "female",
       "farmer": {
-        "name": "Anjali Smith",
-        "country": "KE"
+        "name": "Ms. Royce Champlin",
+        "country": "CO"
       },
       "father": {
-        "name": "Koby Abshire",
-        "country": "AT"
+        "name": "Marques Zieme",
+        "country": "SJ"
       },
       "mother": {
-        "name": "Margot Crooks",
-        "country": "HN"
+        "name": "Ms. Clifton Ernser",
+        "country": "HT"
       },
       "grandpa": {
-        "name": "Russ Kirlin",
-        "country": "KE"
+        "name": "Marcel Koss",
+        "country": "AD"
       },
       "score": {
         "marks": {
           "types": [
             13.5,
-            12,
-            16.5,
-            15.5
-          ],
-          "heads": [
-            11,
-            20,
-            19,
+            18,
+            16,
             19.5
           ],
+          "heads": [
+            15,
+            15,
+            15,
+            12.5
+          ],
           "blocks": [
-            11.5,
-            14,
+            19,
+            11,
             18.5,
-            16.5
+            12.5
           ],
           "legs": [
+            11.5,
+            19,
             19.5,
-            16,
-            16.5,
-            11
+            15
           ],
           "moves": [
-            10.5,
-            17.5,
-            15,
-            13.5
+            19.5,
+            16,
+            13.5,
+            10.5
           ]
         }
       }
@@ -3644,58 +3463,58 @@
     {
       "id": "58",
       "number": 58,
-      "class": "14",
-      "name": "Andres",
-      "country": "GE",
-      "year": "2012",
-      "color": "siwa",
-      "gender": "male",
+      "class": "15",
+      "name": "Lillie",
+      "country": "GP",
+      "year": "2011",
+      "color": "kaszt.",
+      "gender": "female",
       "farmer": {
-        "name": "Ryleigh Denesik",
-        "country": "AZ"
+        "name": "Cooper Doyle",
+        "country": "PK"
       },
       "father": {
-        "name": "Kristin Hagenes",
-        "country": "AG"
+        "name": "Davion Lebsack",
+        "country": "KM"
       },
       "mother": {
-        "name": "Jennifer Conroy II",
-        "country": "CY"
+        "name": "Kelton Gottlieb",
+        "country": "HK"
       },
       "grandpa": {
-        "name": "Garett Altenwerth",
-        "country": "BB"
+        "name": "Antonina Collins",
+        "country": "MF"
       },
       "score": {
         "marks": {
           "types": [
-            19.5,
-            10,
+            10.5,
             11.5,
-            11
+            12,
+            16
           ],
           "heads": [
-            11,
+            18.5,
             18,
-            10,
-            13.5
+            10.5,
+            17.5
           ],
           "blocks": [
-            14,
-            16.5,
-            14.5,
-            10.5
+            12.5,
+            17.5,
+            19,
+            13.5
           ],
           "legs": [
-            19.5,
+            18.5,
             11,
-            19,
-            17
+            14,
+            11
           ],
           "moves": [
             15,
-            17,
-            17.5,
+            10.5,
+            15.5,
             15.5
           ]
         }
@@ -3705,58 +3524,58 @@
       "id": "59",
       "number": 59,
       "class": "15",
-      "name": "Vallie",
-      "country": "TO",
-      "year": "2001",
-      "color": "kara",
-      "gender": "male",
+      "name": "Delaney",
+      "country": "MW",
+      "year": "2012",
+      "color": "sk.gn.",
+      "gender": "female",
       "farmer": {
-        "name": "Zella Dickinson",
-        "country": "ER"
+        "name": "Kaylie Graham",
+        "country": "AM"
       },
       "father": {
-        "name": "Karianne Schmidt",
-        "country": "LT"
+        "name": "Terrence Lehner",
+        "country": "CI"
       },
       "mother": {
-        "name": "Ryley Wolf",
-        "country": "CN"
+        "name": "Johnpaul Beier",
+        "country": "KM"
       },
       "grandpa": {
-        "name": "Ms. Abbigail Batz",
-        "country": "PS"
+        "name": "Sarai Boyer",
+        "country": "RW"
       },
       "score": {
         "marks": {
           "types": [
-            16,
-            19,
-            15.5,
-            11
+            13,
+            10.5,
+            18,
+            10
           ],
           "heads": [
-            19.5,
-            14,
-            19.5,
-            20
+            13,
+            13,
+            10.5,
+            16.5
           ],
           "blocks": [
-            17,
-            18.5,
+            12.5,
             11.5,
-            10.5
+            18,
+            10
           ],
           "legs": [
-            15,
-            19,
-            12.5,
-            17
+            15.5,
+            15.5,
+            10,
+            11.5
           ],
           "moves": [
-            14.5,
-            18.5,
-            10,
-            12
+            18,
+            13,
+            13,
+            20
           ]
         }
       }
@@ -3765,58 +3584,58 @@
       "id": "60",
       "number": 60,
       "class": "15",
-      "name": "Kariane",
-      "country": "GR",
-      "year": "2012",
-      "color": "kara",
-      "gender": "male",
+      "name": "Avis",
+      "country": "CX",
+      "year": "2008",
+      "color": "kary",
+      "gender": "female",
       "farmer": {
-        "name": "Estefania Hirthe",
-        "country": "NG"
+        "name": "Elliott Hilpert",
+        "country": "DM"
       },
       "father": {
-        "name": "Vena Gottlieb",
-        "country": "SL"
+        "name": "Joshua McGlynn",
+        "country": "MO"
       },
       "mother": {
-        "name": "Sadye Lubowitz III",
-        "country": "LV"
+        "name": "Joanie Harvey",
+        "country": "BG"
       },
       "grandpa": {
-        "name": "Effie Padberg",
-        "country": "LC"
+        "name": "Letha Wuckert",
+        "country": "HN"
       },
       "score": {
         "marks": {
           "types": [
-            17,
+            10,
+            10,
             17.5,
-            11.5,
-            17.5
+            10
           ],
           "heads": [
-            19,
-            15,
-            16.5,
-            19.5
+            18,
+            16,
+            12.5,
+            11
           ],
           "blocks": [
-            12,
-            14,
-            18,
-            13
+            14.5,
+            16,
+            18.5,
+            19
           ],
           "legs": [
-            11.5,
+            20,
             19,
-            11.5,
-            15
+            19,
+            10.5
           ],
           "moves": [
-            15,
-            19,
-            17.5,
-            10.5
+            10,
+            16,
+            14.5,
+            12.5
           ]
         }
       }
@@ -3825,58 +3644,58 @@
       "id": "61",
       "number": 61,
       "class": "15",
-      "name": "Adriel",
-      "country": "NO",
-      "year": "2009",
-      "color": "kara",
-      "gender": "male",
+      "name": "Elaina",
+      "country": "PH",
+      "year": "2012",
+      "color": "kary",
+      "gender": "female",
       "farmer": {
-        "name": "Dr. Leola Bergnaum",
-        "country": "LT"
+        "name": "Dr. Alexandre Lueilwitz",
+        "country": "FR"
       },
       "father": {
-        "name": "Alexandre Bergstrom IV",
-        "country": "MO"
+        "name": "Nelle Spencer",
+        "country": "JM"
       },
       "mother": {
-        "name": "Cora Spencer",
-        "country": "AZ"
+        "name": "Jevon Gutmann",
+        "country": "SE"
       },
       "grandpa": {
-        "name": "Camilla Cummings",
-        "country": "AG"
+        "name": "Lysanne Pfeffer",
+        "country": "VG"
       },
       "score": {
         "marks": {
           "types": [
-            19,
-            16,
-            10,
-            19.5
+            15.5,
+            13,
+            13,
+            16
           ],
           "heads": [
-            12.5,
-            17,
-            17.5,
-            18
+            16.5,
+            13.5,
+            10,
+            17.5
           ],
           "blocks": [
-            14.5,
-            16.5,
-            16.5,
-            15.5
+            18.5,
+            17.5,
+            11.5,
+            18.5
           ],
           "legs": [
+            13.5,
             18,
-            12.5,
-            17.5,
-            13
+            19.5,
+            15
           ],
           "moves": [
-            16.5,
-            17,
+            12,
             11,
-            18.5
+            13,
+            10
           ]
         }
       }
@@ -3885,58 +3704,58 @@
       "id": "62",
       "number": 62,
       "class": "16",
-      "name": "Graham",
-      "country": "CZ",
-      "year": "1999",
-      "color": "sk.gn.",
+      "name": "Cornelius",
+      "country": "HT",
+      "year": "2012",
+      "color": "kary",
       "gender": "female",
       "farmer": {
-        "name": "Amalia White",
-        "country": "FM"
+        "name": "Tobin Brekke",
+        "country": "KN"
       },
       "father": {
-        "name": "Halie Gottlieb",
-        "country": "CR"
+        "name": "Fern Leuschke",
+        "country": "CZ"
       },
       "mother": {
-        "name": "Arch Auer",
-        "country": "VA"
+        "name": "Heber Hansen",
+        "country": "SL"
       },
       "grandpa": {
-        "name": "Mona Reichel",
-        "country": "KP"
+        "name": "Ettie Macejkovic",
+        "country": "IM"
       },
       "score": {
         "marks": {
           "types": [
-            16,
-            12.5,
-            15,
-            14
+            20,
+            10,
+            19.5,
+            10.5
           ],
           "heads": [
-            17.5,
             12.5,
-            19,
-            10
+            15.5,
+            12,
+            17
           ],
           "blocks": [
-            20,
-            13,
-            17,
-            14
+            11.5,
+            18.5,
+            16,
+            13.5
           ],
           "legs": [
-            18,
-            15.5,
-            18,
-            11
+            16.5,
+            16.5,
+            11.5,
+            15
           ],
           "moves": [
-            14,
-            17.5,
-            19.5,
-            15
+            12,
+            13.5,
+            15,
+            10.5
           ]
         }
       }
@@ -3945,58 +3764,58 @@
       "id": "63",
       "number": 63,
       "class": "16",
-      "name": "Jarvis",
-      "country": "HU",
-      "year": "2008",
-      "color": "sk.gn.",
+      "name": "Jamey",
+      "country": "DM",
+      "year": "1998",
+      "color": "gniady",
       "gender": "female",
       "farmer": {
-        "name": "Francesca Block Jr.",
-        "country": "AU"
+        "name": "Fae Purdy",
+        "country": "GF"
       },
       "father": {
-        "name": "Janis Torphy",
-        "country": "LB"
+        "name": "Alize Bednar",
+        "country": "GN"
       },
       "mother": {
-        "name": "Laurine Conn",
-        "country": "AZ"
+        "name": "Bradly Hilpert",
+        "country": "SJ"
       },
       "grandpa": {
-        "name": "Keenan Keeling",
-        "country": "NA"
+        "name": "Melyssa Pacocha",
+        "country": "BO"
       },
       "score": {
         "marks": {
           "types": [
-            13,
-            11.5,
-            14,
-            16.5
+            16,
+            15.5,
+            15.5,
+            10.5
           ],
           "heads": [
-            14.5,
-            16,
-            11.5,
-            19
+            14,
+            17.5,
+            15.5,
+            13.5
           ],
           "blocks": [
-            11.5,
-            16,
-            20,
-            12.5
-          ],
-          "legs": [
+            17,
             12.5,
-            10.5,
-            19.5,
-            19.5
-          ],
-          "moves": [
-            13,
-            18,
             14,
             19.5
+          ],
+          "legs": [
+            15.5,
+            13,
+            12.5,
+            13.5
+          ],
+          "moves": [
+            20,
+            19,
+            13,
+            16.5
           ]
         }
       }
@@ -4005,58 +3824,58 @@
       "id": "64",
       "number": 64,
       "class": "16",
-      "name": "Angelo",
-      "country": "LR",
-      "year": "2000",
-      "color": "siwy",
+      "name": "Timothy",
+      "country": "SX",
+      "year": "2010",
+      "color": "kary",
       "gender": "female",
       "farmer": {
-        "name": "Janet Gerlach",
-        "country": "GF"
+        "name": "Delilah Cruickshank",
+        "country": "GB"
       },
       "father": {
-        "name": "Deion Gaylord II",
-        "country": "SO"
+        "name": "Mr. Ima Deckow",
+        "country": "CY"
       },
       "mother": {
-        "name": "Wyman Frami",
-        "country": "AG"
+        "name": "Cheyanne Howe Jr.",
+        "country": "KZ"
       },
       "grandpa": {
-        "name": "Elenora Cremin",
-        "country": "YT"
+        "name": "Cayla Kerluke",
+        "country": "IT"
       },
       "score": {
         "marks": {
           "types": [
-            19.5,
             18,
-            10.5,
-            18
+            17.5,
+            13.5,
+            12
           ],
           "heads": [
-            15,
-            14.5,
+            18.5,
+            18,
             13,
-            12.5
+            18
           ],
           "blocks": [
-            11,
+            12.5,
             17.5,
-            17.5,
-            11
+            18.5,
+            15
           ],
           "legs": [
-            16,
-            16.5,
-            17.5,
-            19.5
+            19.5,
+            15.5,
+            12,
+            17
           ],
           "moves": [
-            14,
-            12,
-            12.5,
-            18.5
+            15.5,
+            17,
+            14.5,
+            16.5
           ]
         }
       }
@@ -4065,58 +3884,58 @@
       "id": "65",
       "number": 65,
       "class": "16",
-      "name": "Christ",
-      "country": "DE",
-      "year": "2006",
-      "color": "kary",
+      "name": "Curtis",
+      "country": "BY",
+      "year": "2001",
+      "color": "kaszt.",
       "gender": "female",
       "farmer": {
-        "name": "Marilie Emmerich",
-        "country": "ES"
+        "name": "Meda Gaylord",
+        "country": "DJ"
       },
       "father": {
-        "name": "Mr. Dorthy Zboncak",
-        "country": "VG"
+        "name": "Andreanne Durgan",
+        "country": "TM"
       },
       "mother": {
-        "name": "Dolores Prosacco",
-        "country": "BH"
+        "name": "Eda Bailey",
+        "country": "CW"
       },
       "grandpa": {
-        "name": "Maddison Kerluke DVM",
-        "country": "CV"
+        "name": "Glen Blick",
+        "country": "AW"
       },
       "score": {
         "marks": {
           "types": [
-            18.5,
-            17.5,
-            11,
-            11.5
+            15.5,
+            11.5,
+            14,
+            13
           ],
           "heads": [
-            19,
-            20,
-            15,
-            17.5
+            10.5,
+            11,
+            10.5,
+            14
           ],
           "blocks": [
-            12,
-            17,
-            17.5,
-            15
+            11.5,
+            10.5,
+            12.5,
+            17.5
           ],
           "legs": [
-            16.5,
-            10.5,
+            19,
             14.5,
-            15.5
+            17,
+            18
           ],
           "moves": [
-            15,
-            18,
-            16,
-            15.5
+            19,
+            17,
+            15.5,
+            13
           ]
         }
       }
@@ -4124,239 +3943,59 @@
     {
       "id": "66",
       "number": 66,
-      "class": "17",
-      "name": "Alejandrin",
-      "country": "TH",
-      "year": "1998",
+      "class": "16",
+      "name": "Gia",
+      "country": "CX",
+      "year": "2001",
       "color": "siwy",
       "gender": "female",
       "farmer": {
-        "name": "Brennan Rosenbaum",
-        "country": "ET"
+        "name": "Kelvin Dooley",
+        "country": "MD"
       },
       "father": {
-        "name": "Myra Rau V",
-        "country": "SH"
+        "name": "Adela Metz",
+        "country": "BA"
       },
       "mother": {
-        "name": "Lavinia Kautzer",
-        "country": "KN"
+        "name": "Cordelia Kreiger",
+        "country": "AX"
       },
       "grandpa": {
-        "name": "Miss Jamal Reynolds",
-        "country": "TR"
+        "name": "Dino Streich I",
+        "country": "PG"
       },
       "score": {
         "marks": {
           "types": [
-            16,
-            11.5,
-            18,
-            11.5
-          ],
-          "heads": [
-            13.5,
-            10,
-            18.5,
-            15
-          ],
-          "blocks": [
             19,
-            10,
-            10.5,
+            13,
+            15,
             17
           ],
-          "legs": [
-            15,
-            15,
-            16.5,
-            20
-          ],
-          "moves": [
-            14,
-            18.5,
-            10.5,
-            13.5
-          ]
-        }
-      }
-    },
-    {
-      "id": "67",
-      "number": 67,
-      "class": "17",
-      "name": "Sigrid",
-      "country": "PL",
-      "year": "2012",
-      "color": "gniady",
-      "gender": "female",
-      "farmer": {
-        "name": "Gene Runte",
-        "country": "ZW"
-      },
-      "father": {
-        "name": "Hattie Buckridge",
-        "country": "NI"
-      },
-      "mother": {
-        "name": "Myrtie Hickle",
-        "country": "SC"
-      },
-      "grandpa": {
-        "name": "Nella Ledner",
-        "country": "GB"
-      },
-      "score": {
-        "marks": {
-          "types": [
-            10,
-            14.5,
-            10,
-            19.5
-          ],
           "heads": [
-            15,
-            14,
-            18.5,
-            17.5
+            18,
+            11.5,
+            13,
+            18
           ],
           "blocks": [
-            10,
-            15.5,
-            18.5,
-            17.5
-          ],
-          "legs": [
-            17,
-            19.5,
-            13.5,
-            14.5
-          ],
-          "moves": [
             16,
-            11,
-            11,
-            11.5
-          ]
-        }
-      }
-    },
-    {
-      "id": "68",
-      "number": 68,
-      "class": "17",
-      "name": "Cordell",
-      "country": "VI",
-      "year": "2005",
-      "color": "gniady",
-      "gender": "female",
-      "farmer": {
-        "name": "Emily Armstrong",
-        "country": "MX"
-      },
-      "father": {
-        "name": "Abe Bergnaum",
-        "country": "TW"
-      },
-      "mother": {
-        "name": "Myrtis Funk",
-        "country": "EE"
-      },
-      "grandpa": {
-        "name": "Candice Waelchi",
-        "country": "CL"
-      },
-      "score": {
-        "marks": {
-          "types": [
-            12,
-            15.5,
-            11.5,
-            14
-          ],
-          "heads": [
-            15.5,
-            19.5,
-            15.5,
+            16,
+            17.5,
             12
           ],
-          "blocks": [
-            18.5,
-            12,
-            17,
-            14
-          ],
           "legs": [
-            12,
-            14.5,
-            16,
-            14
-          ],
-          "moves": [
-            15,
-            11.5,
-            12.5,
-            13.5
-          ]
-        }
-      }
-    },
-    {
-      "id": "69",
-      "number": 69,
-      "class": "17",
-      "name": "Joseph",
-      "country": "MN",
-      "year": "2006",
-      "color": "siwy",
-      "gender": "female",
-      "farmer": {
-        "name": "Fabiola Schinner",
-        "country": "BL"
-      },
-      "father": {
-        "name": "Cedrick Durgan",
-        "country": "KG"
-      },
-      "mother": {
-        "name": "Tara Daniel",
-        "country": "AI"
-      },
-      "grandpa": {
-        "name": "Bryon Bogisich",
-        "country": "GS"
-      },
-      "score": {
-        "marks": {
-          "types": [
-            11,
-            15.5,
-            20,
-            15
-          ],
-          "heads": [
+            13,
+            13.5,
             10.5,
-            19.5,
-            19.5,
-            12
-          ],
-          "blocks": [
-            13.5,
-            13.5,
-            14,
-            15.5
-          ],
-          "legs": [
-            20,
-            17,
-            12.5,
-            20
+            13
           ],
           "moves": [
             13,
-            13.5,
-            16.5,
-            17
+            11,
+            10.5,
+            11.5
           ]
         }
       }

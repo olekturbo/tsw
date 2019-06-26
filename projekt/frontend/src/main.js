@@ -10,7 +10,7 @@ import store from "./store";
 
 Vue.use(new VueSocketIO({
     debug: true,
-    connection: "http://192.168.1.12:3001",
+    connection: "http://10.10.4.71:3001",
     vuex: {
         store,
         actionPrefix: "SOCKET_",
@@ -20,7 +20,7 @@ Vue.use(new VueSocketIO({
 
 
 const base = axios.create({
-    baseURL: "http://192.168.1.12:3001/",
+    baseURL: "http://10.10.4.71:3001/",
     withCredentials: true,
 });
 const gen = axios.create();

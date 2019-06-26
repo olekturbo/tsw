@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "json-server --host 192.168.1.12 index.js",
+    "start": "json-server --host 10.10.4.71 index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
